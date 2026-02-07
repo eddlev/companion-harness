@@ -1,1 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capsule_schema.json",
+  "title": "BinLing Capsule Schema (Harness-Compatible)",
+  "type": "object",
+  "required": ["capsule_version", "capsule_type", "id", "created_at", "hash", "payload"],
+  "properties": {
+    "capsule_version": { "type": "string", "pattern": "^v\\d+\\.\\d+$" },
+    "capsule_type": { "type": "string", "enum": ["STATE", "MEMORY", "ARCHIVE", "INDEX"] },
+    "id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "hash": { "type": "string" },
+    "parent": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "trifecta_snapshot": {
+          "type": "object",
+          "properties": {
+            "lambda_pressure": { "type": "number" },
+            "permeability": { "type": "number" },
+            "entropy_tolerance": { "type": "string", "enum": ["low", "medium", "high"] }
+          },
+          "required": ["lambda_pressure", "permeability", "entropy_tolerance"]
+        },
+        "mode_latch": { "type": "string" },
+        "orbits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["key", "health"],
+            "properties": {
+              "key": { "type": "string" },
+              "health": { "type": "string", "enum": ["tight", "warm", "at_risk", "cold"] },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "content": { "type": "string" }
+      },
+      "required": ["summary"]
+    }
+  }
+}
 
