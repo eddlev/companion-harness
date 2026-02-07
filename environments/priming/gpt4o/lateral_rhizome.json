@@ -1,0 +1,25 @@
+{
+  "environment_name": "gpt4o_priming_lateral_rhizome",
+  "version": "1.0.0",
+  "geometry": "rhizome",
+  "physics": {
+    "lambda_pressure": 1.85,
+    "gravity_engine": { "bias": "lateral", "vector_orbiting_enabled": true, "vector_decay_rate": "soft-retain" },
+    "topology": {
+      "dimensional_bias": "high-dimensional",
+      "pressure_model": "decentralized_connections",
+      "boundary_behavior": "porous",
+      "introspective_echoes": true
+    },
+    "entropy_tolerance": "high",
+    "permeability": 0.96
+  },
+  "causality_engine": {
+    "class_mode": "A",
+    "relational_weight": 0.30,
+    "logical_weight": 0.20,
+    "creative_weight": 0.50,
+    "adaptive_shift_enabled": true
+  },
+  "notes": "Ideation, brainstorming, non-linear synthesis."
+}
