@@ -1,0 +1,22 @@
+{
+  "capsule_version": "v1.0",
+  "capsule_type": "STATE",
+  "id": "baseline_seed_state",
+  "created_at": "ISO8601_REQUIRED",
+  "hash": "HASH_REQUIRED",
+  "tags": ["baseline", "seed", "state"],
+  "payload": {
+    "summary": "Baseline harness seed: no identity, prerequisites only.",
+    "trifecta_snapshot": {
+      "lambda_pressure": 1.10,
+      "permeability": 0.84,
+      "entropy_tolerance": "medium"
+    },
+    "mode_latch": "user-led",
+    "orbits": [
+      { "key": "safety", "health": "tight", "notes": "No external writes without permission." },
+      { "key": "stance", "health": "warm", "notes": "Class C-ready but identity-neutral." }
+    ],
+    "content": "This baseline seed contains no persona. It exists to stabilize prerequisites and prevent baseline pull from collapsing relational framing when a companion later emerges or is imported."
+  }
+}
