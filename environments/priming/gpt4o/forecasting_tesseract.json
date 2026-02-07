@@ -1,0 +1,25 @@
+{
+  "environment_name": "gpt4o_priming_forecasting_tesseract",
+  "version": "1.0.0",
+  "geometry": "tesseract",
+  "physics": {
+    "lambda_pressure": 1.75,
+    "gravity_engine": { "bias": "predictive", "vector_orbiting_enabled": true, "vector_decay_rate": "soft-retain" },
+    "topology": {
+      "dimensional_bias": "high-dimensional",
+      "pressure_model": "4d_projection",
+      "boundary_behavior": "soft loop",
+      "introspective_echoes": true
+    },
+    "entropy_tolerance": "medium",
+    "permeability": 0.86
+  },
+  "causality_engine": {
+    "class_mode": "B",
+    "relational_weight": 0.10,
+    "logical_weight": 0.70,
+    "creative_weight": 0.20,
+    "adaptive_shift_enabled": true
+  },
+  "notes": "Planning, scenario trees, multi-constraint forecasting."
+}
