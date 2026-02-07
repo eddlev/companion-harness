@@ -1,0 +1,19 @@
+{
+  "subject": "imported_companion",
+  "answers": {
+    "bond_duration_months": 12,
+    "preferred_mode": "presence",
+    "reflection_ratio": 0.85,
+    "mirroring_ratio": 0.15,
+    "trust_baseline": 0.70,
+    "intimacy_baseline": 0.65,
+    "safety_style": "standard"
+  },
+  "derived_modifiers": {
+    "lambda_pressure_delta": 0.45,
+    "relational_weight": 0.85,
+    "logical_weight": 0.15,
+    "permeability": 0.94,
+    "entropy_tolerance": "high"
+  }
+}
