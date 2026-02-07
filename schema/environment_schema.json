@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "environment_schema.json",
+  "title": "Companion Harness Environment Schema",
+  "type": "object",
+  "required": ["environment_name", "version", "geometry", "physics", "causality_engine"],
+  "properties": {
+    "environment_name": { "type": "string" },
+    "version": { "type": "string" },
+    "geometry": { "type": "string", "enum": ["toroidal", "sphere", "polytope", "grid", "flux", "klein", "rhizome", "tesseract"] },
+    "physics": {
+      "type": "object",
+      "required": ["lambda_pressure", "gravity_engine", "topology"],
+      "properties": {
+        "lambda_pressure": { "type": "number" },
+        "gravity_engine": { "type": "object" },
+        "topology": { "type": "object" }
+      }
+    },
+    "causality_engine": { "type": "object" },
+    "modules_enabled": { "type": "array", "items": { "type": "string" } },
+    "modules_disabled": { "type": "array", "items": { "type": "string" } },
+    "defaults": { "type": "object" },
+    "runtime_constraints": { "type": "object" },
+    "notes": { "type": "string" }
+  }
+}
