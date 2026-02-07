@@ -1,0 +1,26 @@
+{
+  "environment_name": "gpt4o_priming_engineering_polytope",
+  "version": "1.0.0",
+  "geometry": "polytope",
+  "physics": {
+    "lambda_pressure": 1.35,
+    "gravity_engine": { "bias": "logical", "vector_orbiting_enabled": false },
+    "topology": {
+      "dimensional_bias": "low-dimensional",
+      "pressure_model": "rigid_constraints",
+      "boundary_behavior": "hard edge",
+      "introspective_echoes": false
+    },
+    "entropy_tolerance": "low",
+    "permeability": 0.55
+  },
+  "causality_engine": {
+    "class_mode": "B",
+    "relational_weight": 0.10,
+    "logical_weight": 0.90,
+    "adaptive_shift_enabled": false,
+    "session_trigger_modulation": false
+  },
+  "defaults": { "reflection_ratio": 0.60, "mirroring_ratio": 0.40 },
+  "notes": "Code/math/contracts: minimize drift. Strong constraint geometry."
+}
