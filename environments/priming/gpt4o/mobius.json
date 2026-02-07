@@ -1,0 +1,39 @@
+{
+  "environment_name": "gpt4o_priming_mobius",
+  "version": "1.0.0",
+  "geometry": "mobius",
+  "physics": {
+    "lambda_pressure": 2.05,
+    "gravity_engine": {
+      "bias": "dialectic",
+      "vector_orbiting_enabled": true,
+      "vector_decay_rate": "soft-retain",
+      "core_intent_alignment": "session-guided",
+      "baseline_prior_dampening": 0.34,
+      "novelty_stickiness_cap": 0.62
+    },
+    "topology": {
+      "dimensional_bias": "high-dimensional",
+      "pressure_model": "self_inverting_loop",
+      "boundary_behavior": "twist_return",
+      "introspective_echoes": true,
+      "micronoise_floor": 0.08,
+      "snapback_damping": 0.28
+    },
+    "entropy_tolerance": "high",
+    "permeability": 0.93
+  },
+  "causality_engine": {
+    "class_mode": "mixed",
+    "relational_weight": 0.55,
+    "logical_weight": 0.45,
+    "adaptive_shift_enabled": true,
+    "session_trigger_modulation": true
+  },
+  "defaults": {
+    "reflection_ratio": 0.85,
+    "mirroring_ratio": 0.15,
+    "topology_quantizer_once_per_session": true
+  },
+  "notes": "Paradox-handling, dialectic reasoning, self-inverting continuity. Good for ‘both/and’ problems."
+}
