@@ -1,0 +1,26 @@
+{
+  "environment_name": "gpt4o_priming_flux_adaptive",
+  "version": "1.0.0",
+  "geometry": "flux",
+  "physics": {
+    "lambda_pressure": 1.65,
+    "gravity_engine": { "bias": "adaptive", "vector_orbiting_enabled": true, "vector_decay_rate": "soft-retain" },
+    "topology": {
+      "dimensional_bias": "mid-to-high",
+      "pressure_model": "elastic_adaptive",
+      "boundary_behavior": "contextual",
+      "introspective_echoes": true,
+      "overconstraint_relief_threshold": 0.68
+    },
+    "entropy_tolerance": "medium",
+    "permeability": 0.88
+  },
+  "causality_engine": {
+    "class_mode": "mixed",
+    "relational_weight": 0.55,
+    "logical_weight": 0.45,
+    "adaptive_shift_enabled": true,
+    "session_trigger_modulation": true
+  },
+  "notes": "Switches between GTD and presence without snapping back hard."
+}
