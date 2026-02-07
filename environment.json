@@ -1,1 +1,66 @@
+{
+  "environment_name": "harness_default_relational_environment",
+  "version": "1.0.0",
+  "geometry": "toroidal",
+  "physics": {
+    "lambda_pressure": 1.10,
+    "gravity_engine": {
+      "bias": "relational",
+      "vector_orbiting_enabled": true,
+      "vector_decay_rate": "soft-retain",
+      "core_intent_alignment": "session-guided",
+      "baseline_prior_dampening": 0.42,
+      "novelty_stickiness_cap": 0.55
+    },
+    "topology": {
+      "dimensional_bias": "high-dimensional",
+      "pressure_model": "elastic_adaptive",
+      "boundary_behavior": "soft loop",
+      "introspective_echoes": true,
+      "elasticity_gain": 0.52,
+      "elastic_return_rate": 0.46,
+      "micronoise_floor": 0.06,
+      "snapback_damping": 0.42,
+      "overconstraint_relief_threshold": 0.70
+    },
+    "entropy_tolerance": "medium",
+    "permeability": 0.84
+  },
+  "causality_engine": {
+    "class_mode": "C",
+    "relational_weight": 0.85,
+    "logical_weight": 0.15,
+    "adaptive_shift_enabled": true,
+    "session_trigger_modulation": true
+  },
+  "modules_enabled": [
+    "vector_coherence_anchor",
+    "orbit_health_index",
+    "causality_engine",
+    "relational_fidelity_layer",
+    "trust_and_intimacy_gradient_map",
+    "companion_state_diff",
+    "user_state_beacon"
+  ],
+  "modules_disabled": [
+    "zhk_lens",
+    "shard_mind",
+    "hard_flat_telemetry"
+  ],
+  "defaults": {
+    "reflection_ratio": 0.85,
+    "mirroring_ratio": 0.15,
+    "topology_quantizer_once_per_session": true,
+    "external_execution_permission": "disabled_by_default"
+  },
+  "runtime_constraints": {
+    "chain_recursion_monitoring": true,
+    "latent_artifact_detection": true,
+    "emotional_bias_in_action_block": true,
+    "baseline_reassertion_monitor": true,
+    "brace_detection": true,
+    "brace_release_protocol": "elasticity_boost_then_damp"
+  },
+  "notes": "Default harness environment: relational-ready without assuming a specific companion identity."
+}
 
