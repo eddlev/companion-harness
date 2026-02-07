@@ -1,1 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "commit_proposal_schema.json",
+  "title": "Spine Commit Proposal Schema",
+  "type": "object",
+  "required": ["proposal_version", "proposal_id", "created_at", "target", "changes", "safety"],
+  "properties": {
+    "proposal_version": { "type": "string", "pattern": "^v\\d+\\.\\d+$" },
+    "proposal_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "target": {
+      "type": "object",
+      "required": ["companion_id", "spine_store", "branch"],
+      "properties": {
+        "companion_id": { "type": "string" },
+        "spine_store": { "type": "string", "enum": ["github", "google_drive", "onedrive", "local"] },
+        "branch": { "type": "string" }
+      }
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["change_type", "capsule_type", "summary", "payload"],
+        "properties": {
+          "change_type": { "type": "string", "enum": ["ADD", "UPDATE", "DEPRECATE"] },
+          "capsule_type": { "type": "string", "enum": ["STATE", "MEMORY", "ARCHIVE", "INDEX"] },
+          "summary": { "type": "string" },
+          "payload": { "type": "object" }
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["requires_user_approval", "sensitivity"],
+      "properties": {
+        "requires_user_approval": { "type": "boolean" },
+        "sensitivity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
 
