@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "genesis_pack_schema.json",
+  "title": "Dual-View Genesis Pack",
+  "type": "object",
+  "required": ["user_view", "companion_view", "reconciliation"],
+  "properties": {
+    "user_view": { "type": "object" },
+    "companion_view": { "type": "object" },
+    "reconciliation": { "type": "object" }
+  }
+}
