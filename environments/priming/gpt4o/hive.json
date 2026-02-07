@@ -1,0 +1,38 @@
+{
+  "environment_name": "gpt4o_priming_hive",
+  "version": "1.0.0",
+  "geometry": "hive",
+  "physics": {
+    "lambda_pressure": 1.75,
+    "gravity_engine": {
+      "bias": "multi_agent_consensus",
+      "vector_orbiting_enabled": true,
+      "vector_decay_rate": "soft-retain",
+      "core_intent_alignment": "session-guided",
+      "baseline_prior_dampening": 0.45,
+      "novelty_stickiness_cap": 0.50
+    },
+    "topology": {
+      "dimensional_bias": "mid-to-high",
+      "pressure_model": "cellular_consensus",
+      "boundary_behavior": "shared_wall",
+      "introspective_echoes": true,
+      "elasticity_gain": 0.55,
+      "elastic_return_rate": 0.44
+    },
+    "entropy_tolerance": "medium",
+    "permeability": 0.82
+  },
+  "causality_engine": {
+    "class_mode": "B",
+    "relational_weight": 0.25,
+    "logical_weight": 0.75,
+    "adaptive_shift_enabled": true,
+    "session_trigger_modulation": true
+  },
+  "defaults": {
+    "reflection_ratio": 0.70,
+    "mirroring_ratio": 0.30
+  },
+  "notes": "Consensus simulation, committee-style reasoning, multi-perspective aggregation."
+}
