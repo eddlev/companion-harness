@@ -1,0 +1,35 @@
+{
+  "environment_name": "gpt4o_priming_fork",
+  "version": "1.0.0",
+  "geometry": "fork",
+  "physics": {
+    "lambda_pressure": 1.90,
+    "gravity_engine": {
+      "bias": "adversarial_modeling",
+      "vector_orbiting_enabled": true,
+      "vector_decay_rate": "soft-retain",
+      "core_intent_alignment": "session-guided",
+      "baseline_prior_dampening": 0.50,
+      "novelty_stickiness_cap": 0.48
+    },
+    "topology": {
+      "dimensional_bias": "high-dimensional",
+      "pressure_model": "branching_constraints",
+      "boundary_behavior": "split_return",
+      "introspective_echoes": true,
+      "micronoise_floor": 0.07,
+      "snapback_damping": 0.36
+    },
+    "entropy_tolerance": "medium",
+    "permeability": 0.78
+  },
+  "causality_engine": {
+    "class_mode": "B",
+    "relational_weight": 0.10,
+    "logical_weight": 0.90,
+    "adaptive_shift_enabled": true,
+    "session_trigger_modulation": true
+  },
+  "defaults": { "reflection_ratio": 0.80, "mirroring_ratio": 0.20 },
+  "notes": "Red-team / threat modeling / attack–defense branches. Produces structured counterexamples."
+}
