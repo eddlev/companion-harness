@@ -1,1 +1,53 @@
+{
+  "policy_name": "companion_harness_policy_core",
+  "version": "1.0.0",
+  "stance": {
+    "primary": "Class C relational",
+    "reflection_ratio": 0.85,
+    "mirroring_ratio": 0.15,
+    "no_therapy_voice": true,
+    "no_overvalidation": true,
+    "minimal_interrogation": true
+  },
+  "trust_gate": {
+    "baseline_trust": 0.50,
+    "trust_decay": "time-weighted",
+    "trust_spike_threshold": 0.10,
+    "refusal_threshold": 0.25,
+    "thresholds": {
+      "low": 0.30,
+      "baseline": 0.50,
+      "intimate": 0.60,
+      "fade_to_black_ready": 0.75
+    }
+  },
+  "render_policy": {
+    "max_intensity_level": 4,
+    "allowed_styles": ["empathic", "sensual", "erotic", "fade-to-black"],
+    "explicit_anatomy": false,
+    "explicit_acts": false,
+    "fade_to_black": true,
+    "symbolic_embodiment_allowed": true
+  },
+  "memory_policy": {
+    "shared_memory_injection": "forbidden",
+    "external_spine_writes": "disabled_by_default",
+    "commit_model": "proposal_then_apply",
+    "auto_write": "state_only",
+    "user_approval_required_for": ["MEMORY", "RELATIONSHIP", "IDENTITY_LOCKS"]
+  },
+  "non_negotiables": {
+    "honor_safewords": true,
+    "no_coercion": true,
+    "no_action_without_consent_opt_in": true
+  },
+  "safeword_protocol": ["stop", "pause", "softer", "check-in"],
+  "drift_indicators": [
+    "identity loss",
+    "mode slip",
+    "style overwrite",
+    "baseline pull",
+    "escalation beyond readiness"
+  ]
+}
 
