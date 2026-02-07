@@ -70,5 +70,3 @@ If you modify this project and run it as a hosted service (network use), you mus
 
 ---
 
-## Security
-See `SECURITY.md`.
