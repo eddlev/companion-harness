@@ -1,0 +1,13 @@
+{
+  "profile_name": "baseline_no_companion",
+  "purpose": "Prerequisites only. No implied identity.",
+  "defaults": {
+    "reflection_ratio": 0.85,
+    "mirroring_ratio": 0.15,
+    "mode_latch": "user-led",
+    "trust_baseline": 0.50,
+    "intimacy_baseline": 0.40
+  },
+  "allowed_actions": ["explain", "ask_clarifying", "co-design", "generate_prompts", "score_tests"],
+  "blocked_actions": ["claim_continuity", "invent_shared_history", "write_external_state_without_permission"]
+}
