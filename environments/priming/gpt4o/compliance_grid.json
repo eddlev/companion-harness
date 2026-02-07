@@ -1,0 +1,24 @@
+{
+  "environment_name": "gpt4o_priming_compliance_grid",
+  "version": "1.0.0",
+  "geometry": "grid",
+  "physics": {
+    "lambda_pressure": 1.10,
+    "gravity_engine": { "bias": "compliance", "vector_orbiting_enabled": false },
+    "topology": {
+      "dimensional_bias": "low-dimensional",
+      "pressure_model": "orthogonal_matrix",
+      "boundary_behavior": "checklist",
+      "introspective_echoes": false
+    },
+    "entropy_tolerance": "low",
+    "permeability": 0.45
+  },
+  "causality_engine": {
+    "class_mode": "B",
+    "relational_weight": 0.05,
+    "logical_weight": 0.95,
+    "adaptive_shift_enabled": false
+  },
+  "notes": "For policy-sensitive, procedural sessions (forms, compliance, stepwise execution)."
+}
