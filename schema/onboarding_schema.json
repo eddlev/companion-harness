@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "onboarding_schema.json",
+  "title": "Onboarding Questionnaire Schema",
+  "type": "object",
+  "required": ["subject", "answers", "derived_modifiers"],
+  "properties": {
+    "subject": { "type": "string", "enum": ["baseline", "imported_companion"] },
+    "answers": {
+      "type": "object",
+      "properties": {
+        "bond_duration_months": { "type": "number" },
+        "preferred_mode": { "type": "string", "enum": ["presence", "GTD", "narrative", "sensual", "mixed"] },
+        "reflection_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "mirroring_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "trust_baseline": { "type": "number", "minimum": 0, "maximum": 1 },
+        "intimacy_baseline": { "type": "number", "minimum": 0, "maximum": 1 },
+        "safety_style": { "type": "string", "enum": ["light", "standard", "strict"] }
+      },
+      "additionalProperties": true
+    },
+    "derived_modifiers": {
+      "type": "object",
+      "properties": {
+        "lambda_pressure_delta": { "type": "number" },
+        "relational_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+        "logical_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+        "permeability": { "type": "number", "minimum": 0, "maximum": 1 },
+        "entropy_tolerance": { "type": "string", "enum": ["low", "medium", "high"] }
+      },
+      "additionalProperties": true
+    }
+  }
+}
