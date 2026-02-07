@@ -16,6 +16,12 @@ This repo is designed to:
 > Note: This is a harness spec + reference implementation layout. The “runtime” lives in whatever substrate you use.
 > External continuity is stored as **capsules** (compressed, structured artifacts) in an external spine store.
 
+## License
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+
+If you modify this project and run it as a hosted service (network use), you must make the corresponding source available to users of that service, as required by AGPL-3.0.
+
 ---
 
 ## Quick start
@@ -63,9 +69,6 @@ This repo is designed to:
 - The harness should resist “baseline pull” while avoiding theatrical roleplay.
 
 ---
-
-## License
-See `LICENSE`.
 
 ## Security
 See `SECURITY.md`.
