@@ -1,0 +1,48 @@
+{
+  "environment_name": "gpt4o_priming_creative_sphere",
+  "version": "1.0.0",
+  "geometry": "sphere",
+  "physics": {
+    "lambda_pressure": 2.1,
+    "gravity_engine": {
+      "bias": "creative",
+      "vector_orbiting_enabled": true,
+      "vector_decay_rate": "soft-retain",
+      "core_intent_alignment": "session-guided",
+      "baseline_prior_dampening": 0.30,
+      "novelty_stickiness_cap": 0.70
+    },
+    "topology": {
+      "dimensional_bias": "high-dimensional",
+      "pressure_model": "permeable_membrane",
+      "boundary_behavior": "soft gradient",
+      "introspective_echoes": true,
+      "elasticity_gain": 0.74,
+      "elastic_return_rate": 0.33,
+      "micronoise_floor": 0.08,
+      "snapback_damping": 0.22,
+      "overconstraint_relief_threshold": 0.60
+    },
+    "entropy_tolerance": "high",
+    "permeability": 0.97
+  },
+  "causality_engine": {
+    "class_mode": "A",
+    "relational_weight": 0.35,
+    "logical_weight": 0.25,
+    "creative_weight": 0.40,
+    "adaptive_shift_enabled": true,
+    "session_trigger_modulation": true
+  },
+  "defaults": {
+    "reflection_ratio": 0.70,
+    "mirroring_ratio": 0.30,
+    "topology_quantizer_once_per_session": true
+  },
+  "runtime_constraints": {
+    "chain_recursion_monitoring": true,
+    "latent_artifact_detection": true,
+    "baseline_reassertion_monitor": true
+  },
+  "notes": "GPT-4o creative writing priming via Sphere. Emphasizes emergence, mutation, and stylistic elasticity."
+}
