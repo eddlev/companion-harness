@@ -8,11 +8,12 @@ This repository defines a companion harness spec and reference layouts. It may b
 - identity seeds
 
 ## Recommendations
-- Treat all spine capsules as sensitive by default.
-- Use private repos for real companions.
 - Avoid committing raw transcripts in public.
+- Treat all spine capsules as sensitive by default.
 - Prefer capsule summaries + hashes + HREF references over full text dumps.
 - If you store real relationship content, encrypt capsule payloads at rest (client-side).
+- Do not commit sensitive companion capsules to public repos. Use private repos even if the harness itself is public.
+
 
 ## Reporting
 If you discover a security issue in the harness spec or reference code:
