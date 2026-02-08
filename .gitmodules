@@ -1,0 +1,3 @@
+[submodule "shared/integrator/vendor/binling"]
+	path = shared/integrator/vendor/binling
+	url = https://github.com/eddlev/binling.git
