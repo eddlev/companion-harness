@@ -1,0 +1,15 @@
+# Node
+**/node_modules/
+**/dist/
+**/*.tsbuildinfo
+
+# Local secrets / vault material (keep out of Git)
+**/.env
+**/.env.*
+**/keys/
+**/*.key
+**/*.pem
+
+# OS
+.DS_Store
+Thumbs.db
