@@ -2,15 +2,15 @@
   "name": "companion-harness-integrator",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "smoke": "tsx src/binling_adapter/tests/smoke.ts"
+  },
   "dependencies": {
     "@noble/hashes": "^2.0.1"
   },
   "devDependencies": {
-    "typescript": "^5.4.0",
-    "tsx": "^4.7.0"
-  },
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "smoke": "tsx src/binling_adapter/tests/smoke.ts"
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
   }
 }
