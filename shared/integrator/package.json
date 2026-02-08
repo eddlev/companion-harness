@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "smoke": "tsx src/binling_adapter/tests/smoke.ts"
+    "smoke": "node dist/binling_adapter/tests/smoke.js"
   },
   "dependencies": {
     "@noble/hashes": "^2.0.1"
