@@ -26,6 +26,15 @@ If you modify this project and run it as a hosted service (network use), you mus
 
 ## Quick start
 
+> This repo uses a git submodule for BinLing:
+> `shared/integrator/vendor/binling`.
+>
+> Clone with submodules:
+> - `git clone --recurse-submodules https://github.com/eddlev/companion-harness.git`
+>
+> If you already cloned without submodules:
+> - `git submodule update --init --recursive`
+
 ### A) Baseline (no companion)
 1. Pick an environment (optional):
    - `environments/priming/gpt4o/relational_torus.json` (Class C / relational)
