@@ -1,5 +1,5 @@
 {
-  "name": "integrator",
+  "name": "companion-harness-integrator",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "@noble/hashes": "^2.0.1"
   },
   "devDependencies": {
+    "@types/node": "^24.6.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

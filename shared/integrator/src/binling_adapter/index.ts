@@ -6,11 +6,11 @@ import {
   CanonicalizeOptions,
   HashOptions,
   HrefV1,
-} from "./types";
+} from "./types.js";
 
-import { canonicalizeToBytes } from "./canonicalize";
-import { hashCanonicalBytes, toCapsuleHash, toPolicyHash } from "./hash";
-import { hrefEncodeV1, hrefParseV1 } from "./href";
+import { canonicalizeToBytes } from "./canonicalize.js";
+import { hashCanonicalBytes, toCapsuleHash, toPolicyHash } from "./hash.js";
+import { hrefEncodeV1, hrefParseV1 } from "./href.js";
 
 /**
  * Public adapter instance. Keep this surface area small.
@@ -43,5 +43,5 @@ export const binlingAdapter: BinlingAdapter = {
 export { toPolicyHash, toCapsuleHash };
 
 // Re-export types for convenience
-export * from "./types";
+export * from "./types.js";
 

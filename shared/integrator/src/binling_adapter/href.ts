@@ -1,6 +1,6 @@
 // shared/integrator/src/binling_adapter/href.ts
 
-import { HrefV1, HPMode, Mode, OHIState } from "./types";
+import { HrefV1, HPMode, Mode, OHIState } from "./types.js";
 
 /**
  * HREF v1 format (single line):
@@ -88,7 +88,7 @@ export function hrefParseV1(input: string): HrefV1 | null {
 
   const hot = hotRaw
     ? hotRaw.split(",").map((x) => x.trim()).filter(Boolean)
-    : undefined;
+    : null;
 
   const href: HrefV1 = {
     version: "v1",
@@ -96,8 +96,9 @@ export function hrefParseV1(input: string): HrefV1 | null {
     pc,
     cap,
     head,
-    hot,
   };
+  
+  if (hot && hot.length) href.hot = hot;
 
   return href;
 }
@@ -110,13 +111,25 @@ function parseHead(headRaw: string | null): HrefV1["head"] {
   const bits = headRaw.split(/\s+/).filter(Boolean);
 
   for (const b of bits) {
-    // λ / π / ε
-    if (b.startsWith("λ")) head.lambda = parseNum(b.slice(1));
-    else if (b.startsWith("π")) head.permeability = parseNum(b.slice(1));
-    else if (b.startsWith("ε")) head.entropy = parseNum(b.slice(1));
-    else if (b.startsWith("HP=")) head.HP = parseHP(b.slice(3));
-    else if (b.startsWith("mode=")) head.mode = parseMode(b.slice(5));
-    else if (b.startsWith("OHI=")) head.ohi = parseOhi(b.slice(4));
+    if (b.startsWith("λ")) {
+      const v = parseNum(b.slice(1));
+      if (v !== undefined) head.lambda = v;
+    } else if (b.startsWith("π")) {
+      const v = parseNum(b.slice(1));
+      if (v !== undefined) head.permeability = v;
+    } else if (b.startsWith("ε")) {
+      const v = parseNum(b.slice(1));
+      if (v !== undefined) head.entropy = v;
+    } else if (b.startsWith("HP=")) {
+      const hp = parseHP(b.slice(3));
+      if (hp !== undefined) head.HP = hp;
+    } else if (b.startsWith("mode=")) {
+      const m = parseMode(b.slice(5));
+      if (m !== undefined) head.mode = m;
+    } else if (b.startsWith("OHI=")) {
+      const ohi = parseOhi(b.slice(4));
+      if (ohi !== undefined) head.ohi = ohi;
+    }
   }
 
   return head;
@@ -126,8 +139,14 @@ function parseOhi(s: string): { state: OHIState; value?: number } | undefined {
   // warm(0.71) or warm
   const m = /^([a-zA-Z_]+)(?:\(([^)]+)\))?$/.exec(s);
   if (!m) return undefined;
+
   const state = parseOhiState(m[1]!);
-  const value = m[2] ? parseNum(m[2]) : undefined;
+
+  if (!m[2]) return { state };
+
+  const value = parseNum(m[2]);
+  if (value === undefined) return { state };
+
   return { state, value };
 }
 

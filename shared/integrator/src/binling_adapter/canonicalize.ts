@@ -1,6 +1,6 @@
 // shared/integrator/src/binling_adapter/canonicalize.ts
 
-import { CanonicalBytes, CanonicalizeOptions } from "./types";
+import { CanonicalBytes, CanonicalizeOptions } from "./types.js";
 
 /**
  * CJSON v1 (JCS-like) canonicalization.

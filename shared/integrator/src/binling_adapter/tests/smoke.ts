@@ -1,4 +1,4 @@
-import { binlingAdapter, toPolicyHash } from "../index";
+import { binlingAdapter, toPolicyHash } from "../index.js";
 
 const policy = { b: 2, a: 1, s: "e\u0301" }; // decomposed "é"
 const { hex, canonicalJson } = binlingAdapter.hashValue(policy);

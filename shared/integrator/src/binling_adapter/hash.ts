@@ -1,9 +1,9 @@
 // shared/integrator/src/binling_adapter/hash.ts
 
-import { createHash } from "crypto";
+import { createHash } from "node:crypto";
 import { blake3 } from "@noble/hashes/blake3.js";
 import { bytesToHex } from "@noble/hashes/utils.js";
-import { CanonicalBytes, HashAlgorithm, HashOptions } from "./types";
+import { CanonicalBytes, HashAlgorithm, HashOptions } from "./types.js";
 
 /**
  * Hash canonical bytes.
