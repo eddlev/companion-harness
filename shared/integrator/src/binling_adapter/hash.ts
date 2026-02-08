@@ -2,7 +2,7 @@
 
 import { createHash } from "crypto";
 import { blake3 } from "@noble/hashes/blake3.js";
-import { bytesToHex } from "@noble/hashes/utils";
+import { bytesToHex } from "@noble/hashes/utils.js";
 import { CanonicalBytes, HashAlgorithm, HashOptions } from "./types";
 
 /**
