@@ -1,0 +1,35 @@
+name: integrator-ci
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  integrator:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: shared/integrator/package-lock.json
+
+      - name: Install
+        working-directory: shared/integrator
+        run: npm ci
+
+      - name: Build
+        working-directory: shared/integrator
+        run: npm run build
+
+      - name: Smoke
+        working-directory: shared/integrator
+        run: npm run smoke
