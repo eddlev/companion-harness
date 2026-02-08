@@ -5,21 +5,21 @@ import path from "node:path";
 import { validateCapsule, validateCommitProposal } from "./schema.js";
 
 function usage(): never {
-  // Keep it minimal and production-friendly.
   throw new Error(
     "Usage:\n" +
-      "  node dist/validation/cli.js <capsule|commit> <path-to-json> [schemaDir]\n\n" +
-      "Examples:\n" +
-      "  node dist/validation/cli.js capsule ./some_capsule.json\n" +
-      "  node dist/validation/cli.js commit  ./some_commit.json  ../../schema\n"
+      "  node dist/validation/cli.js <capsule|proposal> <path-to-json> [schemaDir]\n"
   );
 }
 
-const kind = process.argv[2];
+const kindRaw = process.argv[2];
 const filePathArg = process.argv[3];
 const schemaDirArg = process.argv[4];
 
-if (!kind || !filePathArg) usage();
+if (!kindRaw || !filePathArg) usage();
+
+// Accept proposal as an alias for the commit-proposal schema.
+const kind = kindRaw === "proposal" ? "commit" : kindRaw;
+
 if (kind !== "capsule" && kind !== "commit") usage();
 
 const abs = path.resolve(process.cwd(), filePathArg);
