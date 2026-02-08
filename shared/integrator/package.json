@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "smoke": "node --loader ts-node/esm src/binling_adapter/tests/smoke.ts"
+  }
+}
+
+{
   "dependencies": {
     "@noble/hashes": "^2.0.1"
   }
