@@ -43,20 +43,32 @@ function getAddFormatsFn(): (ajv: AjvInstance) => void {
   );
 }
 
-function addDraft202012MetaSchema(ajv: AjvInstance): void {
-  // Ensure Draft 2020-12 meta-schema is present for schemas declaring:
-  // "$schema": "https://json-schema.org/draft/2020-12/schema"
+function addDraft202012MetaSchemas(ajv: AjvInstance): void {
+  // Ensure Draft 2020-12 meta schemas are registered so schemas declaring:
+  //   "$schema": "https://json-schema.org/draft/2020-12/schema"
+  // compile without: "no schema with key or ref ..."
   const require = createRequire(import.meta.url);
 
-  // This file includes $id: "https://json-schema.org/draft/2020-12/schema"
-  const metaSchema2020 = require("ajv/dist/refs/json-schema-2020-12/schema.json") as AnySchema;
+  // Prefer the bundled set (contains all referenced meta schemas)
+  const bundle = require("ajv/dist/refs/json-schema-2020-12.json") as unknown;
 
-  // Register as meta-schema (Ajv will key it by its $id)
-  ajv.addMetaSchema(metaSchema2020);
+  if (Array.isArray(bundle)) {
+    for (const s of bundle as AnySchema[]) ajv.addMetaSchema(s);
+  } else {
+    ajv.addMetaSchema(bundle as AnySchema);
+  }
+
+  // Defensive: if the canonical key is still missing, add the root schema explicitly.
+  const rootKey = "https://json-schema.org/draft/2020-12/schema";
+  if (!ajv.getSchema(rootKey)) {
+    const root = require("ajv/dist/refs/json-schema-2020-12/schema.json") as AnySchema;
+    ajv.addMetaSchema(root, rootKey);
+  }
 }
 
 export function createAjv(): AjvInstance {
   const Ajv2020 = getAjv2020Constructor();
+  const addFormats = getAddFormatsFn();
 
   const ajv = new Ajv2020({
     allErrors: true,
@@ -64,9 +76,7 @@ export function createAjv(): AjvInstance {
     validateSchema: true,
   });
 
-  addDraft202012MetaSchema(ajv);
-
-  const addFormats = getAddFormatsFn();
+  addDraft202012MetaSchemas(ajv);
   addFormats(ajv);
 
   return ajv;
