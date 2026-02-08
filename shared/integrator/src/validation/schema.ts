@@ -3,13 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import AjvImport from "ajv";
+import Ajv2020Import from "ajv/dist/2020";
 import type { AnySchema, ValidateFunction } from "ajv";
 import addFormatsImport from "ajv-formats";
 
 export type SchemaId = "capsule" | "commit_proposal";
 
-type AjvInstance = import("ajv").default;
+type Ajv2020Ctor = typeof Ajv2020Import;
+type AjvInstance = InstanceType<Ajv2020Ctor>;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,24 +26,30 @@ const SCHEMA_FILES: Record<SchemaId, string> = {
 let _ajv: AjvInstance | null = null;
 let _compiled: Map<SchemaId, ValidateFunction> | null = null;
 
-function getAjvConstructor(): typeof AjvImport {
-  // Works whether Ajv is exported as default or as a module object.
-  return ((AjvImport as unknown as { default?: typeof AjvImport }).default ?? AjvImport) as typeof AjvImport;
+function getAjv2020Constructor(): Ajv2020Ctor {
+  // Works whether the module exports the class directly or under .default
+  return (
+    (Ajv2020Import as unknown as { default?: Ajv2020Ctor }).default ??
+    (Ajv2020Import as unknown as Ajv2020Ctor)
+  );
 }
 
 function getAddFormatsFn(): (ajv: AjvInstance) => void {
-  // Works whether ajv-formats is exported as default or as a module object.
-  return ((addFormatsImport as unknown as { default?: (ajv: AjvInstance) => void }).default ??
-    (addFormatsImport as unknown as (ajv: AjvInstance) => void)) as (ajv: AjvInstance) => void;
+  // Works whether ajv-formats is exported as default or as a module object
+  return (
+    (addFormatsImport as unknown as { default?: (ajv: AjvInstance) => void }).default ??
+    (addFormatsImport as unknown as (ajv: AjvInstance) => void)
+  );
 }
 
 export function createAjv(): AjvInstance {
-    const AjvCtor = getAjvConstructor() as unknown as new (opts: any) => AjvInstance;
-  const ajv = new AjvCtor({
+  const Ajv2020 = getAjv2020Constructor() as unknown as new (opts: any) => AjvInstance;
+
+  const ajv = new Ajv2020({
     allErrors: true,
     strict: true,
     validateSchema: true,
-  }) as AjvInstance;
+  });
 
   const addFormats = getAddFormatsFn();
   addFormats(ajv);
@@ -85,7 +92,9 @@ function compileAll(schemaDir: string): Map<SchemaId, ValidateFunction> {
   return out;
 }
 
-export function getValidators(schemaDir: string = DEFAULT_SCHEMA_DIR): {
+export function getValidators(
+  schemaDir: string = DEFAULT_SCHEMA_DIR
+): {
   validateCapsule: ValidateFunction;
   validateCommitProposal: ValidateFunction;
 } {
