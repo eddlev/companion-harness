@@ -1,12 +1,16 @@
 {
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "smoke": "node --loader ts-node/esm src/binling_adapter/tests/smoke.ts"
-  }
-}
-
-{
+  "name": "companion-harness-integrator",
+  "private": true,
+  "type": "module",
   "dependencies": {
     "@noble/hashes": "^2.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsx": "^4.7.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "smoke": "tsx src/binling_adapter/tests/smoke.ts"
   }
 }
