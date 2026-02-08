@@ -8,12 +8,13 @@ This repository defines a companion harness spec and reference layouts. It may b
 - identity seeds
 
 ## Recommendations
-- Avoid committing raw transcripts in public.
-- Treat all spine capsules as sensitive by default.
-- Prefer capsule summaries + hashes + HREF references over full text dumps.
-- If you store real relationship content, encrypt capsule payloads at rest (client-side).
-- Do not commit sensitive companion capsules to public repos. Use private repos even if the harness itself is public.
-
+- Do not commit unencrypted companion MEMORY capsules to GitHub.
+- Treat Drive/OneDrive vault as “dumb blob storage”: capsules must be encrypted before upload.
+- Keys must be stored locally by default (not in GitHub).
+- Only metadata (hashes, timestamps, safe summaries) should be written into GitHub ledgers.
+- Use private repos for companion folders containing any personal information.
+- Use per-companion vault folders and per-companion keys.
+- Rotate keys if you suspect compromise; use restore pointers to roll back state.
 
 ## Reporting
 If you discover a security issue in the harness spec or reference code:
