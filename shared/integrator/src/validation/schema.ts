@@ -44,31 +44,33 @@ function getAddFormatsFn(): (ajv: AjvInstance) => void {
 }
 
 function addDraft202012MetaSchema(ajv: AjvInstance): void {
-  // Force-register the draft 2020-12 meta schema so `$schema: .../draft/2020-12/schema` compiles.
+  // Ensure Draft 2020-12 meta-schema is present for schemas declaring:
+  // "$schema": "https://json-schema.org/draft/2020-12/schema"
   const require = createRequire(import.meta.url);
+
+  // This file includes $id: "https://json-schema.org/draft/2020-12/schema"
   const metaSchema2020 = require("ajv/dist/refs/json-schema-2020-12/schema.json") as AnySchema;
+
+  // Register as meta-schema (Ajv will key it by its $id)
   ajv.addMetaSchema(metaSchema2020);
 }
 
 export function createAjv(): AjvInstance {
+  const Ajv2020 = getAjv2020Constructor();
+
   const ajv = new Ajv2020({
     allErrors: true,
     strict: true,
     validateSchema: true,
   });
 
-  // Ensure Draft 2020-12 meta-schema is present for schemas that declare:
-  // "$schema": "https://json-schema.org/draft/2020-12/schema"
-  const require = createRequire(import.meta.url);
-  const draft202012 = require("ajv/dist/refs/json-schema-2020-12.json");
-  ajv.addMetaSchema(draft202012);
+  addDraft202012MetaSchema(ajv);
 
-  // ajv-formats is a function export
-  (addFormats as unknown as (a: AjvInstance) => void)(ajv);
+  const addFormats = getAddFormatsFn();
+  addFormats(ajv);
 
   return ajv;
 }
-
 
 function getAjv(): AjvInstance {
   if (_ajv) return _ajv;
