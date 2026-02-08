@@ -2,17 +2,13 @@
   "name": "companion-harness-integrator",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20 <25"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "smoke": "node dist/binling_adapter/tests/smoke.js"
   },
-  {
-  "private": true,
-  "type": "module",
-  "engines": {
-    "node": ">=20 <25"
-  }
-}
   "dependencies": {
     "@noble/hashes": "^2.0.1"
   },
