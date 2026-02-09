@@ -2,12 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Explicit ESM entrypoints (NodeNext-safe)
-import Ajv from "ajv/dist/ajv.js";
-import addFormats from "ajv-formats/dist/index.js";
-
-// Draft 2020-12 meta-schema (JSON with import assertion)
-import draft2020MetaSchema from "ajv/dist/refs/json-schema-2020-12/schema.json" assert { type: "json" };
+import { Ajv } from "ajv";
+import { addFormats } from "ajv-formats";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,11 +15,15 @@ const ajv = new Ajv({
   loadSchema: undefined, // forbid remote resolution
 });
 
-// Explicitly register Draft 2020-12
-ajv.addMetaSchema(draft2020MetaSchema);
-
-// Register standard formats
+// Register standard formats (date-time, uri, etc.)
 addFormats(ajv);
+
+// Explicitly enable Draft 2020-12 support
+// (Ajv ships the meta-schema internally; this activates it deterministically)
+ajv.opts.defaultMeta = "https://json-schema.org/draft/2020-12/schema";
+ajv.addMetaSchema(
+  require("ajv/dist/refs/json-schema-2020-12/schema.json")
+);
 
 function loadJsonSchema(schemaPath: string): unknown {
   const absPath = path.resolve(schemaPath);
@@ -50,7 +50,10 @@ function compileSchema(schemaPath: string) {
 /* PUBLIC API — REQUIRED BY cli.ts                                     */
 /* ------------------------------------------------------------------ */
 
-export function validateCapsule(schemaPath: string, capsulePath: string): void {
+export function validateCapsule(
+  schemaPath: string,
+  capsulePath: string
+): void {
   const validate = compileSchema(schemaPath);
   const data = loadJsonSchema(capsulePath);
 
@@ -64,7 +67,10 @@ export function validateCapsule(schemaPath: string, capsulePath: string): void {
   }
 }
 
-export function validateCommitProposal(schemaPath: string, proposalPath: string): void {
+export function validateCommitProposal(
+  schemaPath: string,
+  proposalPath: string
+): void {
   const validate = compileSchema(schemaPath);
   const data = loadJsonSchema(proposalPath);
 
