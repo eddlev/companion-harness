@@ -2,11 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import Ajv from "ajv";
-import addFormats from "ajv-formats";
+// Explicit ESM entrypoints (NodeNext-safe)
+import Ajv from "ajv/dist/ajv.js";
+import addFormats from "ajv-formats/dist/index.js";
 
-// Draft 2020-12 meta-schema bundled with Ajv
-import draft2020MetaSchema from "ajv/dist/refs/json-schema-2020-12/schema";
+// Draft 2020-12 meta-schema (JSON with import assertion)
+import draft2020MetaSchema from "ajv/dist/refs/json-schema-2020-12/schema.json" assert { type: "json" };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +22,7 @@ const ajv = new Ajv({
 // Explicitly register Draft 2020-12
 ajv.addMetaSchema(draft2020MetaSchema);
 
-// Register standard formats (date-time, uri, etc.)
+// Register standard formats
 addFormats(ajv);
 
 function loadJsonSchema(schemaPath: string): unknown {
