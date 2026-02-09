@@ -2,16 +2,27 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import Ajv2020 from "ajv/dist/2020";
+import Ajv from "ajv";
 import addFormats from "ajv-formats";
 
-// Explicit Draft 2020-12 meta-schema (NO remote fetching)
-import draft2020MetaSchema from "ajv/dist/refs/json-schema-2020-12/schema.json";
+// Draft 2020-12 meta-schema bundled with Ajv
+import draft2020MetaSchema from "ajv/dist/refs/json-schema-2020-12/schema";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export type CompiledSchema = ReturnType<Ajv2020["compile"]>;
+const ajv = new Ajv({
+  strict: true,
+  allErrors: true,
+  validateSchema: true,
+  loadSchema: undefined, // forbid remote resolution
+});
+
+// Explicitly register Draft 2020-12
+ajv.addMetaSchema(draft2020MetaSchema);
+
+// Register standard formats (date-time, uri, etc.)
+addFormats(ajv);
 
 function loadJsonSchema(schemaPath: string): unknown {
   const absPath = path.resolve(schemaPath);
@@ -29,20 +40,39 @@ function loadJsonSchema(schemaPath: string): unknown {
   }
 }
 
-export function compileSchema(schemaPath: string): CompiledSchema {
-  const ajv = new Ajv2020({
-    strict: true,
-    allErrors: true,
-    validateSchema: true,
-    loadSchema: undefined, // hard-disable remote resolution
-  });
-
-  // Explicitly register Draft 2020-12 meta-schema
-  ajv.addMetaSchema(draft2020MetaSchema);
-
-  addFormats(ajv);
-
+function compileSchema(schemaPath: string) {
   const schema = loadJsonSchema(schemaPath);
-
   return ajv.compile(schema);
+}
+
+/* ------------------------------------------------------------------ */
+/* PUBLIC API — REQUIRED BY cli.ts                                     */
+/* ------------------------------------------------------------------ */
+
+export function validateCapsule(schemaPath: string, capsulePath: string): void {
+  const validate = compileSchema(schemaPath);
+  const data = loadJsonSchema(capsulePath);
+
+  const valid = validate(data);
+  if (!valid) {
+    throw new Error(
+      `Capsule validation failed:\n${ajv.errorsText(validate.errors, {
+        separator: "\n",
+      })}`
+    );
+  }
+}
+
+export function validateCommitProposal(schemaPath: string, proposalPath: string): void {
+  const validate = compileSchema(schemaPath);
+  const data = loadJsonSchema(proposalPath);
+
+  const valid = validate(data);
+  if (!valid) {
+    throw new Error(
+      `Commit proposal validation failed:\n${ajv.errorsText(validate.errors, {
+        separator: "\n",
+      })}`
+    );
+  }
 }
