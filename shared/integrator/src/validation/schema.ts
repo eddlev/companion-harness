@@ -2,22 +2,26 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import Ajv, { type AnySchema } from "ajv";
-import addFormats from "ajv-formats";
+import * as AjvModule from "ajv/dist/ajv.js";
+import * as FormatsModule from "ajv-formats/dist/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ajv = new Ajv({
+// Ajv ESM default export is under .default at runtime
+const AjvConstructor = AjvModule.default;
+const addFormats = FormatsModule.default;
+
+const ajv = new AjvConstructor({
   strict: true,
   allErrors: true,
   validateSchema: true,
 });
 
-// Register standard formats (date-time, uri, etc.)
+// Register standard formats
 addFormats(ajv);
 
-// Explicitly activate Draft 2020-12
+// Explicitly activate Draft 2020-12 (local, no network)
 ajv.opts.defaultMeta = "https://json-schema.org/draft/2020-12/schema";
 ajv.addMetaSchema(
   JSON.parse(
@@ -48,7 +52,7 @@ function loadJsonFile(filePath: string): unknown {
 }
 
 function compileSchema(schemaPath: string) {
-  const schema = loadJsonFile(schemaPath) as AnySchema;
+  const schema = loadJsonFile(schemaPath) as any;
   return ajv.compile(schema);
 }
 
