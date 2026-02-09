@@ -2,15 +2,21 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+// Import ESM modules as opaque values
 import * as AjvModule from "ajv/dist/ajv.js";
 import * as FormatsModule from "ajv-formats/dist/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Ajv ESM default export is under .default at runtime
-const AjvConstructor = AjvModule.default;
-const addFormats = FormatsModule.default;
+/**
+ * ---- Typed boundary fix ----
+ * Ajv and ajv-formats publish ESM runtimes whose typings
+ * do not correctly describe their default exports under NodeNext.
+ * We assert the runtime shape explicitly here and keep the rest type-safe.
+ */
+const AjvConstructor = (AjvModule as unknown as { default: new (opts: any) => any }).default;
+const addFormats = (FormatsModule as unknown as { default: (ajv: any) => void }).default;
 
 const ajv = new AjvConstructor({
   strict: true,
