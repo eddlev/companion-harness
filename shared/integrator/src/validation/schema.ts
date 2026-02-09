@@ -1,156 +1,41 @@
-// shared/integrator/src/validation/schema.ts
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { createRequire } from "node:module";
-
-import Ajv2020Import from "ajv/dist/2020";
-import type { AnySchema, ValidateFunction } from "ajv";
-import addFormatsImport from "ajv-formats";
-
-export type SchemaId = "capsule" | "commit_proposal";
-
-type Ajv2020Ctor = typeof Ajv2020Import;
-type AjvInstance = InstanceType<Ajv2020Ctor>;
+import Ajv2020 from "ajv/dist/2020";
+import addFormats from "ajv-formats";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// shared/integrator/src/validation/schema.ts  ->  repoRoot/schema/*.json (4 levels up)
-const DEFAULT_SCHEMA_DIR = path.resolve(__dirname, "../../../../schema");
+export type CompiledSchema = ReturnType<Ajv2020["compile"]>;
 
-const SCHEMA_FILES: Record<SchemaId, string> = {
-  capsule: "capsule_schema.json",
-  commit_proposal: "commit_proposal_schema.json",
-};
+function loadJsonSchema(schemaPath: string): unknown {
+  const absPath = path.resolve(schemaPath);
 
-let _ajv: AjvInstance | null = null;
-let _compiled: Map<SchemaId, ValidateFunction> | null = null;
-
-function getAjv2020Constructor(): Ajv2020Ctor {
-  // Works whether the module exports the class directly or under .default
-  return (
-    (Ajv2020Import as unknown as { default?: Ajv2020Ctor }).default ??
-    (Ajv2020Import as unknown as Ajv2020Ctor)
-  );
-}
-
-function getAddFormatsFn(): (ajv: AjvInstance) => void {
-  // Works whether ajv-formats is exported as default or as a module object
-  return (
-    (addFormatsImport as unknown as { default?: (ajv: AjvInstance) => void }).default ??
-    (addFormatsImport as unknown as (ajv: AjvInstance) => void)
-  );
-}
-
-function addDraft202012MetaSchemas(ajv: AjvInstance): void {
-  // Ensure Draft 2020-12 meta schemas are registered so schemas declaring:
-  //   "$schema": "https://json-schema.org/draft/2020-12/schema"
-  // compile without: "no schema with key or ref ..."
-  const require = createRequire(import.meta.url);
-
-  // Prefer the bundled set (contains all referenced meta schemas)
-  const bundle = require("ajv/dist/refs/json-schema-2020-12.json") as unknown;
-
-  if (Array.isArray(bundle)) {
-    for (const s of bundle as AnySchema[]) ajv.addMetaSchema(s);
-  } else {
-    ajv.addMetaSchema(bundle as AnySchema);
+  if (!fs.existsSync(absPath)) {
+    throw new Error(`Schema file not found: ${absPath}`);
   }
 
-  // Defensive: if the canonical key is still missing, add the root schema explicitly.
-  const rootKey = "https://json-schema.org/draft/2020-12/schema";
-  if (!ajv.getSchema(rootKey)) {
-    const root = require("ajv/dist/refs/json-schema-2020-12/schema.json") as AnySchema;
-    ajv.addMetaSchema(root, rootKey);
+  const raw = fs.readFileSync(absPath, "utf-8");
+
+  try {
+    return JSON.parse(raw);
+  } catch (err) {
+    throw new Error(`Invalid JSON in schema file: ${absPath}`);
   }
 }
 
-export function createAjv(): AjvInstance {
-  const Ajv2020 = getAjv2020Constructor();
-  const addFormats = getAddFormatsFn();
-
+export function compileSchema(schemaPath: string): CompiledSchema {
   const ajv = new Ajv2020({
-    allErrors: true,
     strict: true,
+    allErrors: true,
     validateSchema: true,
+    loadSchema: undefined, // hard-disable remote resolution
   });
 
-  addDraft202012MetaSchemas(ajv);
   addFormats(ajv);
 
-  return ajv;
-}
+  const schema = loadJsonSchema(schemaPath);
 
-function getAjv(): AjvInstance {
-  if (_ajv) return _ajv;
-  _ajv = createAjv();
-  return _ajv;
-}
-
-function readSchemaFile(schemaDir: string, id: SchemaId): AnySchema {
-  const filename = SCHEMA_FILES[id];
-  const abs = path.resolve(schemaDir, filename);
-
-  if (!fs.existsSync(abs)) {
-    throw new Error(
-      `Schema file not found: ${abs}\n` +
-        `Expected schema directory: ${schemaDir}\n` +
-        `If your repo layout differs, pass a different schemaDir from the CLI.`
-    );
-  }
-
-  const raw = fs.readFileSync(abs, "utf8");
-  return JSON.parse(raw) as AnySchema;
-}
-
-function compileAll(schemaDir: string): Map<SchemaId, ValidateFunction> {
-  const ajv = getAjv();
-  const out = new Map<SchemaId, ValidateFunction>();
-
-  (Object.keys(SCHEMA_FILES) as SchemaId[]).forEach((id) => {
-    const schema = readSchemaFile(schemaDir, id);
-    const validate = ajv.compile(schema);
-    out.set(id, validate);
-  });
-
-  return out;
-}
-
-export function getValidators(
-  schemaDir: string = DEFAULT_SCHEMA_DIR
-): {
-  validateCapsule: ValidateFunction;
-  validateCommitProposal: ValidateFunction;
-} {
-  if (!_compiled) {
-    _compiled = compileAll(schemaDir);
-  }
-
-  const validateCapsule = _compiled.get("capsule");
-  const validateCommitProposal = _compiled.get("commit_proposal");
-
-  if (!validateCapsule || !validateCommitProposal) {
-    throw new Error("Internal error: schema validators missing after compile.");
-  }
-
-  return { validateCapsule, validateCommitProposal };
-}
-
-export function validateCapsule(value: unknown, schemaDir?: string): void {
-  const { validateCapsule } = getValidators(schemaDir);
-  const ok = validateCapsule(value);
-  if (!ok) {
-    const details = JSON.stringify(validateCapsule.errors ?? [], null, 2);
-    throw new Error(`capsule_schema validation failed:\n${details}`);
-  }
-}
-
-export function validateCommitProposal(value: unknown, schemaDir?: string): void {
-  const { validateCommitProposal } = getValidators(schemaDir);
-  const ok = validateCommitProposal(value);
-  if (!ok) {
-    const details = JSON.stringify(validateCommitProposal.errors ?? [], null, 2);
-    throw new Error(`commit_proposal_schema validation failed:\n${details}`);
-  }
+  return ajv.compile(schema);
 }
