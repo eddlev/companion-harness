@@ -2,44 +2,30 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Import ESM modules as opaque values
-import * as AjvModule from "ajv/dist/ajv.js";
+// Ajv 2020-12 dialect (preloaded meta-schemas)
+import * as Ajv2020Module from "ajv/dist/2020.js";
 import * as FormatsModule from "ajv-formats/dist/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * ---- Typed boundary fix ----
- * Ajv and ajv-formats publish ESM runtimes whose typings
- * do not correctly describe their default exports under NodeNext.
- * We assert the runtime shape explicitly here and keep the rest type-safe.
+ * Typed boundary fix for Ajv ESM + 2020-12 dialect
  */
-const AjvConstructor = (AjvModule as unknown as { default: new (opts: any) => any }).default;
-const addFormats = (FormatsModule as unknown as { default: (ajv: any) => void }).default;
+const Ajv2020 =
+  (Ajv2020Module as unknown as { default: new (opts: any) => any }).default;
+const addFormats =
+  (FormatsModule as unknown as { default: (ajv: any) => void }).default;
 
-const ajv = new AjvConstructor({
+const ajv = new Ajv2020({
   strict: true,
+  strictSchema: false, // required for 2020-12 ($dynamicAnchor etc.)
   allErrors: true,
   validateSchema: true,
 });
 
 // Register standard formats
 addFormats(ajv);
-
-// Explicitly activate Draft 2020-12 (local, no network)
-ajv.opts.defaultMeta = "https://json-schema.org/draft/2020-12/schema";
-ajv.addMetaSchema(
-  JSON.parse(
-    fs.readFileSync(
-      path.resolve(
-        path.dirname(require.resolve("ajv")),
-        "refs/json-schema-2020-12/schema.json"
-      ),
-      "utf-8"
-    )
-  )
-);
 
 function loadJsonFile(filePath: string): unknown {
   const absPath = path.resolve(filePath);
