@@ -1,42 +1,33 @@
-// shared/integrator/src/validation/cli.ts
-import fs from "node:fs";
-import path from "node:path";
+#!/usr/bin/env node
 
 import { validateCapsule, validateCommitProposal } from "./schema.js";
 
-function usage(): never {
-  throw new Error(
+const [, , command, schemaPath, targetPath] = process.argv;
+
+if (!command || !schemaPath || !targetPath) {
+  console.error(
     "Usage:\n" +
-      "  node dist/validation/cli.js <capsule|proposal> <path-to-json> [schemaDir]\n"
+      "  validate:capsule <schema.json> <capsule.json>\n" +
+      "  validate:commit  <schema.json> <proposal.json>"
   );
+  process.exit(1);
 }
 
-const kindRaw = process.argv[2];
-const filePathArg = process.argv[3];
-const schemaDirArg = process.argv[4];
+try {
+  switch (command) {
+    case "capsule":
+      validateCapsule(schemaPath, targetPath);
+      break;
 
-if (!kindRaw || !filePathArg) usage();
+    case "commit":
+      validateCommitProposal(schemaPath, targetPath);
+      break;
 
-// Accept proposal as an alias for the commit-proposal schema.
-const kind = kindRaw === "proposal" ? "commit" : kindRaw;
-
-if (kind !== "capsule" && kind !== "commit") usage();
-
-const abs = path.resolve(process.cwd(), filePathArg);
-if (!fs.existsSync(abs)) {
-  throw new Error(`File not found: ${abs}`);
+    default:
+      console.error(`Unknown command: ${command}`);
+      process.exit(1);
+  }
+} catch (err) {
+  console.error(err instanceof Error ? err.message : err);
+  process.exit(1);
 }
-
-const raw = fs.readFileSync(abs, "utf8");
-const json = JSON.parse(raw) as unknown;
-
-const schemaDir = schemaDirArg ? path.resolve(process.cwd(), schemaDirArg) : undefined;
-
-if (kind === "capsule") {
-  validateCapsule(json, schemaDir);
-} else {
-  validateCommitProposal(json, schemaDir);
-}
-
-// If we got here, validation passed.
-process.stdout.write("ok\n");
