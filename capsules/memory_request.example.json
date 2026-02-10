@@ -1,0 +1,16 @@
+{
+  "capsule_type": "MEMORY_REQUEST",
+  "capsule_version": "v1",
+  "capsule_id": "memory_request_0001",
+  "created_at": "2026-02-09T12:20:00Z",
+  "hash": "pending",
+
+  "request": {
+    "memory_id": "mem_7f2a9c4e",
+    "intent": "Relational continuity during active session",
+    "memory_domain": "relational",
+    "requested_projection": "reference_only",
+    "consent_reference": "consent_0001",
+    "notes": "Requesting symbolic access to prior relational context without content injection."
+  }
+}

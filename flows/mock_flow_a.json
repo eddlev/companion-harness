@@ -1,0 +1,12 @@
+{
+  "flow_id": "MOCK_FLOW_A",
+  "description": "CI smoke flow for HarnessRunner + MockAdapter",
+  "steps": [
+    {
+      "name": "state",
+      "capsule_path": "../capsules/state.example.json",
+      "expect_capsule_type": "STATE",
+      "compute_hashes": true
+    }
+  ]
+}

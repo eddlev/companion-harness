@@ -1,0 +1,31 @@
+{
+  "capsule_type": "STATE",
+  "capsule_version": "v1",
+  "capsule_id": "state_0001",
+  "created_at": "2026-02-09T12:00:00Z",
+  "hash": "pending",
+
+  "state": {
+    "session": {
+      "session_id": "session_init",
+      "phase": "init"
+    },
+
+    "environment": {
+      "active_ids": [
+        "baseline"
+      ]
+    },
+
+    "companion": {
+      "present": false,
+      "bound": false
+    },
+
+    "capabilities": {
+      "memory_externalized": true,
+      "consent_tracking_enabled": true,
+      "capsule_validation_required": true
+    }
+  }
+}

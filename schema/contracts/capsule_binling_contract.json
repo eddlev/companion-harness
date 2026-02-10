@@ -1,0 +1,67 @@
+{
+  "contract": "capsule_binling",
+  "version": "1.0",
+  "status": "active",
+
+  "capsule_layers": {
+    "json_capsule": {
+      "role": "governance_and_transport",
+      "executable": false,
+      "canonical": false
+    },
+    "binling_capsule": {
+      "role": "deterministic_execution",
+      "executable": true,
+      "canonical": true
+    }
+  },
+
+  "identity": {
+    "hash_source": "binling_canonical_payload",
+    "hash_scope": "payload_only",
+    "excluded_fields": [
+      "capsule_version",
+      "created_at",
+      "transport_metadata"
+    ]
+  },
+
+  "field_semantics": {
+    "capsule_version": {
+      "affects_identity": false,
+      "affects_execution": false
+    },
+    "capsule_type": {
+      "affects_identity": false,
+      "affects_reduction": true
+    },
+    "id": {
+      "derived_from_hash": true,
+      "stable_across_transports": true
+    },
+    "created_at": {
+      "audit_only": true
+    },
+    "hash": {
+      "authoritative": true,
+      "derived_from": "binling"
+    },
+    "payload": {
+      "reducible": true,
+      "executable": false
+    }
+  },
+
+  "prohibitions": [
+    "hashing_json_document",
+    "embedding_vm_internals",
+    "vendor_specific_behavior",
+    "implicit_execution"
+  ],
+
+  "failure_policy": {
+    "on_reduction_failure": "fail_closed",
+    "on_hash_mismatch": "fail_closed",
+    "on_schema_violation": "reject"
+  }
+}

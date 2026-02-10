@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion-harness.dev/schema/capsules/consent_assertion.schema.json",
+  "title": "CONSENT ASSERTION Capsule",
+  "description": "Explicit, auditable declaration of consent state for a defined scope within companion-harness.",
+  "type": "object",
+  "required": [
+    "capsule_type",
+    "capsule_version",
+    "capsule_id",
+    "created_at",
+    "consent"
+  ],
+  "additionalProperties": false,
+
+  "properties": {
+    "capsule_type": {
+      "const": "CONSENT_ASSERTION"
+    },
+
+    "capsule_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "Capsule schema version."
+    },
+
+    "capsule_id": {
+      "type": "string",
+      "description": "Opaque, unique capsule identifier."
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of consent assertion."
+    },
+
+    "hash": {
+      "type": "string",
+      "description": "Deterministic hash of the canonicalized capsule. Computed externally.",
+      "minLength": 1
+    },
+
+    "consent": {
+      "type": "object",
+      "required": [
+        "state",
+        "scope",
+        "asserted_by",
+        "assertion_method"
+      ],
+      "additionalProperties": false,
+
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "granted",
+            "denied",
+            "scoped",
+            "revoked"
+          ],
+          "description": "Explicit consent state."
+        },
+
+        "scope": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "Explicit scope(s) to which this consent applies."
+        },
+
+        "asserted_by": {
+          "type": "string",
+          "description": "Authority asserting consent (e.g. user, guardian, admin)."
+        },
+
+        "assertion_method": {
+          "type": "string",
+          "description": "How consent was asserted (e.g. explicit statement, questionnaire, written acknowledgment)."
+        },
+
+        "notes": {
+          "type": "string",
+          "description": "Optional human-readable notes clarifying the consent context."
+        },
+
+        "supersedes": {
+          "type": "string",
+          "description": "Optional capsule_id of a prior CONSENT ASSERTION this one supersedes."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion-harness.dev/schema/capsules/policy_revocation.schema.json",
+  "title": "POLICY REVOCATION Capsule",
+  "description": "Explicit withdrawal of a previously asserted policy, with declared authority and rationale.",
+  "type": "object",
+  "required": [
+    "capsule_type",
+    "capsule_version",
+    "capsule_id",
+    "created_at",
+    "revocation"
+  ],
+  "additionalProperties": false,
+
+  "properties": {
+    "capsule_type": {
+      "const": "POLICY_REVOCATION"
+    },
+
+    "capsule_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "Capsule schema version."
+    },
+
+    "capsule_id": {
+      "type": "string",
+      "description": "Opaque, unique capsule identifier."
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of the policy revocation."
+    },
+
+    "hash": {
+      "type": "string",
+      "description": "Deterministic hash of the canonicalized capsule. Computed externally.",
+      "minLength": 1
+    },
+
+    "revocation": {
+      "type": "object",
+      "required": [
+        "revoked_policy_id",
+        "revoked_by",
+        "rationale"
+      ],
+      "additionalProperties": false,
+
+      "properties": {
+        "revoked_policy_id": {
+          "type": "string",
+          "description": "capsule_id of the POLICY ASSERTION being revoked."
+        },
+
+        "revoked_by": {
+          "type": "string",
+          "description": "Entity revoking the policy (e.g. user, system, administrator, import, companion)."
+        },
+
+        "authority_basis": {
+          "type": "string",
+          "description": "Capsule ID of a CONSENT ASSERTION delegating authority to revoke this policy. Required when revoked_by is 'companion'."
+        },
+
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Explanation for why the policy is being revoked."
+        },
+
+        "notes": {
+          "type": "string",
+          "description": "Optional clarifying notes regarding the revocation."
+        }
+      },
+
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "revoked_by": {
+                "const": "companion"
+              }
+            }
+          },
+          "then": {
+            "required": ["authority_basis"],
+            "properties": {
+              "authority_basis": {
+                "type": "string",
+                "description": "Capsule ID of a CONSENT ASSERTION that delegates authority to revoke policies."
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

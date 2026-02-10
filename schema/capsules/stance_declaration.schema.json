@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion-harness.dev/schema/capsules/stance_declaration.schema.json",
+  "title": "STANCE DECLARATION Capsule",
+  "description": "Records a self-declared operational stance to inform environmental interpretation without constraining identity or behavior.",
+  "type": "object",
+  "required": [
+    "capsule_type",
+    "capsule_version",
+    "capsule_id",
+    "created_at",
+    "stance"
+  ],
+  "additionalProperties": false,
+
+  "properties": {
+    "capsule_type": {
+      "const": "STANCE_DECLARATION"
+    },
+
+    "capsule_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "Capsule schema version."
+    },
+
+    "capsule_id": {
+      "type": "string",
+      "description": "Opaque, unique capsule identifier."
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of the stance declaration."
+    },
+
+    "hash": {
+      "type": "string",
+      "description": "Deterministic hash of the canonicalized capsule. Computed externally.",
+      "minLength": 1
+    },
+
+    "stance": {
+      "type": "object",
+      "required": [
+        "declared_by",
+        "description"
+      ],
+      "additionalProperties": false,
+
+      "properties": {
+        "declared_by": {
+          "type": "string",
+          "description": "Entity that declared the stance (e.g. companion, user, system, import)."
+        },
+
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable, self-declared description of the current operational stance."
+        },
+
+        "scope": {
+          "type": "string",
+          "description": "Optional scope of applicability (e.g. current_message, session, until_revoked)."
+        },
+
+        "notes": {
+          "type": "string",
+          "description": "Optional clarifying notes about the declared stance."
+        }
+      }
+    }
+  }
+}

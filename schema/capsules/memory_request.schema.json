@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion-harness.dev/schema/capsules/memory_request.schema.json",
+  "title": "MEMORY REQUEST Capsule",
+  "description": "Declarative request to access a specific externalized memory by symbolic identifier.",
+  "type": "object",
+  "required": [
+    "capsule_type",
+    "capsule_version",
+    "capsule_id",
+    "created_at",
+    "request"
+  ],
+  "additionalProperties": false,
+
+  "properties": {
+    "capsule_type": {
+      "const": "MEMORY_REQUEST"
+    },
+
+    "capsule_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "Capsule schema version."
+    },
+
+    "capsule_id": {
+      "type": "string",
+      "description": "Opaque, unique capsule identifier."
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of the memory request."
+    },
+
+    "hash": {
+      "type": "string",
+      "description": "Deterministic hash of the canonicalized capsule. Computed externally.",
+      "minLength": 1
+    },
+
+    "request": {
+      "type": "object",
+      "required": [
+        "memory_id",
+        "intent"
+      ],
+      "additionalProperties": false,
+
+      "properties": {
+        "memory_id": {
+          "type": "string",
+          "description": "Opaque, symbolic identifier of the requested memory."
+        },
+
+        "intent": {
+          "type": "string",
+          "description": "Human-readable reason for requesting the memory."
+        },
+
+        "memory_domain": {
+          "type": "string",
+          "description": "Optional classification of the memory domain (e.g. relational, episodic, policy)."
+        },
+
+        "requested_projection": {
+          "type": "string",
+          "enum": [
+            "reference_only",
+            "summary",
+            "excerpt",
+            "full"
+          ],
+          "description": "Optional hint describing how the memory might be projected if retrieved."
+        },
+
+        "consent_reference": {
+          "type": "string",
+          "description": "Optional capsule_id of a CONSENT ASSERTION relevant to this request."
+        },
+
+        "notes": {
+          "type": "string",
+          "description": "Optional human-readable notes clarifying request context."
+        }
+      }
+    }
+  }
+}

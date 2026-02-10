@@ -1,0 +1,15 @@
+{
+  "capsule_type": "MEMORY_REFERENCE",
+  "capsule_version": "v1",
+  "capsule_id": "memory_reference_0001",
+  "created_at": "2026-02-09T12:40:00Z",
+  "hash": "pending",
+
+  "reference": {
+    "memory_id": "mem_7f2a9c4e",
+    "intent": "Symbolic reference for relational reasoning without triggering memory retrieval",
+    "memory_domain": "relational",
+    "consent_reference": "consent_0001",
+    "notes": "Used to acknowledge relevance of prior relational context while preserving token and privacy boundaries."
+  }
+}

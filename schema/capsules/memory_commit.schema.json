@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion-harness.dev/schema/capsules/memory_commit.schema.json",
+  "title": "MEMORY COMMIT Capsule",
+  "description": "Declarative proposal to write a new memory into externalized storage, subject to review and consent.",
+  "type": "object",
+  "required": [
+    "capsule_type",
+    "capsule_version",
+    "capsule_id",
+    "created_at",
+    "commit"
+  ],
+  "additionalProperties": false,
+
+  "properties": {
+    "capsule_type": {
+      "const": "MEMORY_COMMIT"
+    },
+
+    "capsule_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "Capsule schema version."
+    },
+
+    "capsule_id": {
+      "type": "string",
+      "description": "Opaque, unique capsule identifier."
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of the memory commit proposal."
+    },
+
+    "hash": {
+      "type": "string",
+      "description": "Deterministic hash of the canonicalized capsule. Computed externally.",
+      "minLength": 1
+    },
+
+    "commit": {
+      "type": "object",
+      "required": [
+        "proposed_memory_id",
+        "memory_domain",
+        "content",
+        "source",
+        "rationale"
+      ],
+      "additionalProperties": false,
+
+      "properties": {
+        "proposed_memory_id": {
+          "type": "string",
+          "description": "Opaque identifier proposed for the new memory."
+        },
+
+        "memory_domain": {
+          "type": "string",
+          "description": "Classification of the memory domain (e.g. relational, episodic, policy, preference)."
+        },
+
+        "content": {
+          "type": "string",
+          "maxLength": 4096,
+          "description": "Proposed memory content. Declarative, human-readable, and bounded in size."
+        },
+
+        "source": {
+          "type": "string",
+          "description": "Origin of the proposed memory (e.g. conversation, questionnaire, import, reflection)."
+        },
+
+        "rationale": {
+          "type": "string",
+          "description": "Explanation of why this memory should be stored."
+        },
+
+        "consent_reference": {
+          "type": "string",
+          "description": "Optional capsule_id of a CONSENT ASSERTION governing this memory write."
+        },
+
+        "related_request": {
+          "type": "string",
+          "description": "Optional capsule_id of a related MEMORY REQUEST for contextual linkage."
+        },
+
+        "notes": {
+          "type": "string",
+          "description": "Optional human-readable notes for reviewers."
+        }
+      }
+    }
+  }
+}
