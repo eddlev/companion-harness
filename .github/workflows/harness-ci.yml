@@ -1,0 +1,41 @@
+name: Companion Harness CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  harness-flow-a:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: shared/integrator/package-lock.json
+
+      - name: Install integrator dependencies
+        working-directory: shared/integrator
+        run: npm ci
+
+      - name: Build integrator
+        working-directory: shared/integrator
+        run: npm run build
+
+      - name: Run Flow A (Mock Adapter)
+        working-directory: shared/integrator
+        run: |
+          node dist/harness/cli.js run ../../flows/mock_flow_a.json --adapter mock --out flow_a_result.json
+
+      - name: Upload Flow A result
+        uses: actions/upload-artifact@v4
+        with:
+          name: flow-a-result
+          path: shared/integrator/flow_a_result.json
