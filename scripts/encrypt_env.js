@@ -1,4 +1,3 @@
-// scripts/encrypt_env.js
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const readline = require('node:readline');
@@ -28,6 +27,6 @@ rl.question('Enter a strong Master Passphrase to encrypt your .env: ', (passphra
   fs.writeFileSync(encPath, output);
 
   console.log(`\n[SUCCESS] .env encrypted to ${encPath}`);
-  console.log('You may now safely delete the original .env file.');
+  console.log('IMPORTANT: You must now delete the original .env file.');
   rl.close();
 });
