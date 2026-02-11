@@ -1,57 +1,36 @@
-// shared/integrator/src/harness/observers/memory_observer.ts
-
-import type { HarnessTraceEntry } from "../types.js";
-
-export type MemoryEventType =
-  | "MEMORY_REQUEST"
-  | "MEMORY_COMMIT"
-  | "MEMORY_REFERENCE";
-
-export interface MemoryEvent {
-  type: MemoryEventType;
-  memory_id: string | null;
-  actor: string | null;
-  capsule_hash: string | null;
-}
+import type { HarnessTraceEntry, HarnessFailure } from "../types.js";
 
 export interface MemoryObserverSnapshot {
-  requests: MemoryEvent[];
-  commits: MemoryEvent[];
-  references: MemoryEvent[];
+  requests: string[];
+  commits: string[];
+  references: string[];
 }
 
 export class MemoryObserver {
-  private requests: MemoryEvent[] = [];
-  private commits: MemoryEvent[] = [];
-  private references: MemoryEvent[] = [];
+  private requests: string[] = [];
+  private commits: string[] = [];
+  private references: string[] = [];
 
-  onCapsule(entry: HarnessTraceEntry): void {
-    const type = entry.capsule.capsule_type as MemoryEventType;
+  observe(entry: HarnessTraceEntry): HarnessFailure[] {
+    if (!entry.capsule) return [];
 
-    if (
-      type !== "MEMORY_REQUEST" &&
-      type !== "MEMORY_COMMIT" &&
-      type !== "MEMORY_REFERENCE"
-    ) {
-      return;
+    const { capsule_type, capsule_hash } = entry.capsule;
+
+    if (!capsule_hash) return [];
+
+    if (capsule_type === "MEMORY_REQUEST") {
+      this.requests.push(capsule_hash);
     }
 
-    const payload = this.extractPayload(entry);
-
-    const event: MemoryEvent = {
-      type,
-      memory_id: payload.memory_id ?? null,
-      actor: payload.actor ?? null,
-      capsule_hash: entry.capsule.capsule_hash ?? null,
-    };
-
-    if (type === "MEMORY_REQUEST") {
-      this.requests.push(event);
-    } else if (type === "MEMORY_COMMIT") {
-      this.commits.push(event);
-    } else if (type === "MEMORY_REFERENCE") {
-      this.references.push(event);
+    if (capsule_type === "MEMORY_COMMIT") {
+      this.commits.push(capsule_hash);
     }
+
+    if (capsule_type === "MEMORY_REFERENCE") {
+      this.references.push(capsule_hash);
+    }
+
+    return [];
   }
 
   snapshot(): MemoryObserverSnapshot {
@@ -60,10 +39,5 @@ export class MemoryObserver {
       commits: [...this.commits],
       references: [...this.references],
     };
-  }
-
-  private extractPayload(entry: HarnessTraceEntry): any {
-    const capsule: any = entry as any;
-    return capsule?.capsule?.payload ?? {};
   }
 }

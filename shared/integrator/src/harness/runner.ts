@@ -4,11 +4,7 @@ import path from "node:path";
 import { HarnessCore } from "./harness.js";
 import { readJsonFile, resolvePath } from "./io.js";
 import type { ExecutionAdapter } from "./adapter/types.js";
-import type {
-  FlowSpec,
-  HarnessResult,
-  Json,
-} from "./types.js";
+import type { FlowSpec, HarnessResult } from "./types.js";
 
 /**
  * HarnessRunner orchestrates execution of a flow through an adapter.
@@ -57,7 +53,7 @@ export class HarnessRunner {
 
       await this.adapter.dispatch(capsule, {
         flow_id: flow.flow_id,
-        step_index: i,
+        step_index: i
       });
     }
 

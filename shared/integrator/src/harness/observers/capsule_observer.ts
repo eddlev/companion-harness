@@ -1,6 +1,4 @@
-// shared/integrator/src/harness/observers/capsule_observer.ts
-
-import type { HarnessTraceEntry } from "../types.js";
+import type { HarnessTraceEntry, HarnessFailure } from "../types.js";
 
 export interface CapsuleObserverSnapshot {
   total_capsules: number;
@@ -11,21 +9,24 @@ export interface CapsuleObserverSnapshot {
 export class CapsuleObserver {
   private total = 0;
   private byType: Record<string, number> = {};
-  private orderedTypes: string[] = [];
+  private ordered: string[] = [];
 
-  onCapsule(entry: HarnessTraceEntry): void {
+  observe(entry: HarnessTraceEntry): HarnessFailure[] {
+    if (!entry.capsule) return [];
+
     const type = entry.capsule.capsule_type;
-
-    this.total += 1;
+    this.total++;
     this.byType[type] = (this.byType[type] ?? 0) + 1;
-    this.orderedTypes.push(type);
+    this.ordered.push(type);
+
+    return [];
   }
 
   snapshot(): CapsuleObserverSnapshot {
     return {
       total_capsules: this.total,
       by_type: { ...this.byType },
-      ordered_types: [...this.orderedTypes],
+      ordered_types: [...this.ordered],
     };
   }
 }

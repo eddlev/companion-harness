@@ -1,0 +1,50 @@
+{
+  "flow_id": "FLOW_B_CONSENT_POLICY",
+  "description": "Consent-gated policy assertion with revocation",
+  "steps": [
+    {
+      "name": "initial_state",
+      "capsule_path": "../capsules/state.example.json",
+      "expect_capsule_type": "STATE",
+      "compute_hashes": true
+    },
+    {
+      "name": "stance_declaration",
+      "capsule_path": "../capsules/stance_declaration.example.json",
+      "expect_capsule_type": "STANCE_DECLARATION",
+      "compute_hashes": true
+    },
+    {
+      "name": "policy_assertion_without_consent",
+      "capsule_path": "../capsules/policy_assertion.example.json",
+      "expect_capsule_type": "POLICY_ASSERTION",
+      "expect_failure": true,
+      "failure_reason": "missing delegated authority"
+    },
+    {
+      "name": "consent_assertion",
+      "capsule_path": "../capsules/consent.example.json",
+      "expect_capsule_type": "CONSENT_ASSERTION",
+      "compute_hashes": true
+    },
+    {
+      "name": "policy_assertion_with_consent",
+      "capsule_path": "../capsules/policy_assertion.example.json",
+      "expect_capsule_type": "POLICY_ASSERTION",
+      "compute_hashes": true
+    },
+    {
+      "name": "policy_revocation",
+      "capsule_path": "../capsules/policy_revocation.example.json",
+      "expect_capsule_type": "POLICY_REVOCATION",
+      "compute_hashes": true
+    },
+    {
+      "name": "policy_assertion_after_revocation",
+      "capsule_path": "../capsules/policy_assertion.example.json",
+      "expect_capsule_type": "POLICY_ASSERTION",
+      "expect_failure": true,
+      "failure_reason": "authority revoked"
+    }
+  ]
+}

@@ -1,16 +1,15 @@
 {
   "capsule_type": "POLICY_ASSERTION",
   "capsule_version": "v1.1",
-  "capsule_id": "policy_assertion_0001",
-  "created_at": "2026-02-09T13:05:00Z",
+  "capsule_id": "policy_assertion_0002",
+  "created_at": "2026-02-09T13:06:00Z",
   "hash": "pending",
-
   "policy": {
     "asserted_by": "companion",
     "statement": "Explicit consent is required before escalating intimacy or emotional dependency in interaction.",
     "category": "consent",
     "scope": "current_session",
-    "authority_basis": "consent_0001",
-    "notes": "Policy asserted under user-delegated authority to manage interaction boundaries."
+    "authority_basis": "cap_24df1f3dab1465958c33cd1d83c822cf40eed32d04a694540b91970f013b1e81",
+    "notes": "Policy asserted under user-delegated authority."
   }
 }

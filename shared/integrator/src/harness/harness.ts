@@ -1,173 +1,96 @@
-// shared/integrator/src/harness/harness.ts
-
 import path from "node:path";
-import { binlingAdapter, toCapsuleHash } from "../binling_adapter/index.js";
-import { extractCapsuleType } from "./extract.js";
 import { readJsonFile, resolvePath } from "./io.js";
+
+import type {
+  FlowSpec,
+  FlowStep,
+  HarnessFailure,
+  HarnessResult,
+  HarnessTraceEntry,
+} from "./types.js";
+
 import { CapsuleObserver } from "./observers/capsule_observer.js";
 import { ConsentObserver } from "./observers/consent_observer.js";
 import { PolicyObserver } from "./observers/policy_observer.js";
 import { MemoryObserver } from "./observers/memory_observer.js";
 
-import type {
-  FlowSpec,
-  HarnessFailure,
-  HarnessResult,
-  HarnessTraceEntry,
-  Json,
-} from "./types.js";
-
-function nowIso(): string {
-  return new Date().toISOString();
-}
-
-function assertFlowSpec(x: Json, flowPath: string): FlowSpec {
-  if (typeof x !== "object" || x === null || Array.isArray(x)) {
-    throw new Error(`Flow spec must be a JSON object: ${flowPath}`);
-  }
-
-  const flow_id = (x as any).flow_id;
-  const steps = (x as any).steps;
-
-  if (typeof flow_id !== "string" || !flow_id.trim()) {
-    throw new Error(`Flow spec missing required string "flow_id": ${flowPath}`);
-  }
-  if (!Array.isArray(steps) || steps.length === 0) {
-    throw new Error(`Flow spec missing non-empty array "steps": ${flowPath}`);
-  }
-
-  for (let i = 0; i < steps.length; i++) {
-    const s = steps[i];
-    if (typeof s !== "object" || s === null || Array.isArray(s)) {
-      throw new Error(`Flow step ${i} must be an object: ${flowPath}`);
-    }
-    if (typeof s.name !== "string" || !s.name.trim()) {
-      throw new Error(`Flow step ${i} missing required string "name": ${flowPath}`);
-    }
-    if (typeof s.capsule_path !== "string" || !s.capsule_path.trim()) {
-      throw new Error(`Flow step ${i} missing required string "capsule_path": ${flowPath}`);
-    }
-    if (s.expect_capsule_type !== undefined && typeof s.expect_capsule_type !== "string") {
-      throw new Error(
-        `Flow step ${i} "expect_capsule_type" must be a string if provided: ${flowPath}`
-      );
-    }
-    if (s.compute_hashes !== undefined && typeof s.compute_hashes !== "boolean") {
-      throw new Error(`Flow step ${i} "compute_hashes" must be a boolean if provided: ${flowPath}`);
-    }
-  }
-
-  return x as unknown as FlowSpec;
-}
-
 export class HarnessCore {
+  private capsuleObserver = new CapsuleObserver();
+  private consentObserver = new ConsentObserver();
+  private policyObserver = new PolicyObserver();
+  private memoryObserver = new MemoryObserver();
+
   runFlowFromFile(flowSpecPath: string): HarnessResult {
-    const started_at = nowIso();
+    const started_at = new Date().toISOString();
     const failures: HarnessFailure[] = [];
     const trace: HarnessTraceEntry[] = [];
-
-    // Auto-registered observers (Mode A)
-    const capsuleObserver = new CapsuleObserver();
-	const consentObserver = new ConsentObserver();
-	const policyObserver = new PolicyObserver();
-	const memoryObserver = new MemoryObserver();
-
 
     const flowAbs = path.resolve(flowSpecPath);
     const flowDir = path.dirname(flowAbs);
 
-    let flow: FlowSpec;
-    try {
-      const raw = readJsonFile(flowAbs);
-      flow = assertFlowSpec(raw, flowAbs);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
+    const raw = readJsonFile(flowAbs);
+
+    if (typeof raw !== "object" || raw === null || Array.isArray(raw)) {
       return {
         flow_id: "UNKNOWN",
         ok: false,
         started_at,
-        finished_at: nowIso(),
+        finished_at: new Date().toISOString(),
         failures: [
           {
             step_index: -1,
-            step_name: "FLOW_LOAD",
-            code: "FLOW_LOAD_FAILED",
-            message: msg,
+            step_name: "__flow__",
+            code: "INVALID_FLOW",
+            message: "Flow spec must be a JSON object",
           },
         ],
         trace: [],
-        observers: {
-          capsule: capsuleObserver.snapshot(),
-        },
+        observers: this.snapshotObservers(),
       };
     }
 
-    for (let i = 0; i < flow.steps.length; i++) {
-      const step = flow.steps[i]!;
-      const stepName = step.name;
+    // Explicit cast via unknown is intentional here
+    const flow = raw as unknown as FlowSpec;
 
-      try {
-        const capsuleAbs = resolvePath(flowDir, step.capsule_path);
-        const capsule = readJsonFile(capsuleAbs);
-        const capsule_type = extractCapsuleType(capsule);
+    for (let stepIndex = 0; stepIndex < flow.steps.length; stepIndex++) {
+      const step: FlowStep = flow.steps[stepIndex]!;
 
-        if (step.expect_capsule_type && capsule_type !== step.expect_capsule_type) {
-          throw new Error(
-            `Capsule type mismatch: expected "${step.expect_capsule_type}", got "${capsule_type}"`
-          );
-        }
+      const capsuleAbs = resolvePath(flowDir, step.capsule_path);
+      const capsuleJson = readJsonFile(capsuleAbs);
 
-        const compute_hashes = step.compute_hashes !== false;
-
-        let canonical_json: string | undefined;
-        let hash_hex: string | undefined;
-        let capsule_hash: string | undefined;
-
-        if (compute_hashes) {
-          const hv = binlingAdapter.hashValue(capsule);
-          canonical_json = hv.canonicalJson;
-          hash_hex = hv.hex;
-          capsule_hash = toCapsuleHash(hv.hex);
-        }
-
-        const capsuleMeta: any = {
-          capsule_type,
-          capsule_path: capsuleAbs,
-        };
-
-        if (canonical_json !== undefined) {
-          capsuleMeta.canonical_json = canonical_json;
-        }
-        if (hash_hex !== undefined) {
-          capsuleMeta.hash_hex = hash_hex;
-        }
-        if (capsule_hash !== undefined) {
-          capsuleMeta.capsule_hash = capsule_hash;
-        }
-
-        trace.push({
-          step_index: i,
-          step_name: stepName,
-          capsule: capsuleMeta,
-        });
-
-        // Notify observers only for successful steps
-        capsuleObserver.onCapsule(trace[trace.length - 1]!);
-		consentObserver.onCapsule(trace[trace.length - 1]!);
-		policyObserver.onCapsule(trace[trace.length - 1]!);
-		memoryObserver.onCapsule(trace[trace.length - 1]!);
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
+      if (typeof capsuleJson !== "object" || capsuleJson === null) {
         failures.push({
-          step_index: i,
-          step_name: stepName,
-          code: "STEP_FAILED",
-          message: msg,
+          step_index: stepIndex,
+          step_name: step.name,
+          code: "INVALID_CAPSULE",
+          message: "Capsule JSON must be an object",
         });
+        continue;
       }
+
+      const capsuleType = (capsuleJson as any).capsule_type;
+
+      const entry: HarnessTraceEntry = {
+        step_index: stepIndex,
+        step_name: step.name,
+        capsule: {
+          capsule_type: String(capsuleType),
+          capsule_path: capsuleAbs,
+          canonical_json: JSON.stringify(capsuleJson),
+        },
+      };
+
+      trace.push(entry);
+
+      // 🔒 Single-entry observer contract
+      failures.push(...this.capsuleObserver.observe(entry));
+      failures.push(...this.consentObserver.observe(entry));
+      failures.push(...this.policyObserver.observe(entry));
+      failures.push(...this.memoryObserver.observe(entry));
     }
 
-    const finished_at = nowIso();
+    const finished_at = new Date().toISOString();
+
     return {
       flow_id: flow.flow_id,
       ok: failures.length === 0,
@@ -175,12 +98,16 @@ export class HarnessCore {
       finished_at,
       failures,
       trace,
-      observers: {
-        capsule: capsuleObserver.snapshot(),
-		consent: consentObserver.snapshot(),
-		policy: policyObserver.snapshot(),
-		memory: memoryObserver.snapshot(),
-      },
+      observers: this.snapshotObservers(),
+    };
+  }
+
+  private snapshotObservers() {
+    return {
+      capsule: this.capsuleObserver.snapshot(),
+      consent: this.consentObserver.snapshot(),
+      policy: this.policyObserver.snapshot(),
+      memory: this.memoryObserver.snapshot(),
     };
   }
 }

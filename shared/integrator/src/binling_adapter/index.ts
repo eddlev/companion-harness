@@ -1,47 +1,17 @@
 // shared/integrator/src/binling_adapter/index.ts
 
-import {
-  BinlingAdapter,
-  CanonicalBytes,
-  CanonicalizeOptions,
-  HashOptions,
-  HrefV1,
-} from "./types.js";
-
-import { canonicalizeToBytes } from "./canonicalize.js";
-import { hashCanonicalBytes, toCapsuleHash, toPolicyHash } from "./hash.js";
-import { hrefEncodeV1, hrefParseV1 } from "./href.js";
+import type { ExecutionAdapter, AdapterResponse } from "../harness/adapter/types.js";
+import type { Json } from "../harness/types.js";
 
 /**
- * Public adapter instance. Keep this surface area small.
- * Everything else in the harness should talk to this object, not to BinLing directly.
+ * Mock adapter.
+ * Always accepts capsules without execution.
  */
-export const binlingAdapter: BinlingAdapter = {
-  canonicalize(value: unknown, opts?: CanonicalizeOptions): CanonicalBytes {
-    return canonicalizeToBytes(value, opts);
-  },
-
-  hashCanonical(canonical: CanonicalBytes, opts?: HashOptions) {
-    return hashCanonicalBytes(canonical, opts);
-  },
-
-  hashValue(value: unknown, opts?: { canonicalize?: CanonicalizeOptions; hash?: HashOptions }) {
-    const canonical = canonicalizeToBytes(value, opts?.canonicalize);
-    const h = hashCanonicalBytes(canonical, opts?.hash);
-    return { ...h, canonicalJson: canonical.canonicalJson };
-  },
-
-  hrefEncode(href: HrefV1): string {
-    return hrefEncodeV1(href);
-  },
-
-  hrefParse(input: string): HrefV1 | null {
-    return hrefParseV1(input);
-  },
-};
-
-export { toPolicyHash, toCapsuleHash };
-
-// Re-export types for convenience
-export * from "./types.js";
-
+export class BinlingAdapter implements ExecutionAdapter {
+  async dispatch(
+    _capsule: Json,
+    _context?: { flow_id?: string; step_index?: number }
+  ): Promise<AdapterResponse> {
+    return { accepted: true };
+  }
+}

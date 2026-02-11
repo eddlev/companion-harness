@@ -1,28 +1,16 @@
-import { binlingAdapter, toPolicyHash } from "../index.js";
+// shared/integrator/src/binling_adapter/tests/smoke.ts
 
-const policy = { b: 2, a: 1, s: "e\u0301" }; // decomposed "é"
-const { hex, canonicalJson } = binlingAdapter.hashValue(policy);
+import { BinlingAdapter } from "../index.js";
 
-console.log("canonical:", canonicalJson);
-console.log("policy_hash:", toPolicyHash(hex));
+async function run() {
+  const adapter = new BinlingAdapter();
 
-const href = binlingAdapter.hrefEncode({
-  version: "v1",
-  comp: "Stranger",
-  pc: "pc_deadbeef",
-  cap: "cap_cafebabe",
-  head: {
-    lambda: 1.59,
-    permeability: 0.86,
-    entropy: 0.74,
-    HP: "lite",
-    mode: "presence",
-    ohi: { state: "warm", value: 0.71 },
-  },
-  hot: ["identity", "mode", "affect"],
-});
+  const res = await adapter.dispatch(
+    { test: "capsule" },
+    { flow_id: "SMOKE", step_index: 0 }
+  );
 
-console.log("href:", href);
+  console.log("adapter response:", res);
+}
 
-const parsed = binlingAdapter.hrefParse(href);
-console.log("parsed:", JSON.stringify(parsed, null, 2));
+run().catch(console.error);

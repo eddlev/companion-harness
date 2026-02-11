@@ -1,69 +1,117 @@
 // shared/integrator/src/harness/observers/policy_observer.ts
 
-import type { HarnessTraceEntry } from "../types.js";
+import type {
+  HarnessTraceEntry,
+  HarnessFailure,
+} from "../types.js";
 
-export interface PolicyRecord {
-  policy_id: string | null;
-  asserted_by: string | null;
-  authority_basis: string | null;
-  capsule_hash: string | null;
-}
-
-export interface PolicyObserverSnapshot {
-  active_policies: PolicyRecord[];
-  revoked_policies: PolicyRecord[];
+interface ActivePolicy {
+  capsule_hash: string;
+  authority_basis: string;
 }
 
 export class PolicyObserver {
-  private active: PolicyRecord[] = [];
-  private revoked: PolicyRecord[] = [];
+  private activePolicies = new Map<string, ActivePolicy>();
+  private activeConsents = new Set<string>();
+  private revokedPolicies: string[] = [];
 
-  onCapsule(entry: HarnessTraceEntry): void {
-    const type = entry.capsule.capsule_type;
+  observe(entry: HarnessTraceEntry): HarnessFailure[] {
+    const failures: HarnessFailure[] = [];
+    const capsule = entry.capsule;
+
+    if (!capsule || !capsule.canonical_json) {
+      return failures;
+    }
+
+    const payload = JSON.parse(capsule.canonical_json);
+    const type = capsule.capsule_type;
+
+    if (type === "CONSENT_ASSERTION") {
+      if (capsule.capsule_hash) {
+        this.activeConsents.add(capsule.capsule_hash);
+      }
+      return failures;
+    }
 
     if (type === "POLICY_ASSERTION") {
-      const payload = this.extractPayload(entry);
+      const authority = payload.policy?.authority_basis;
 
-      const record: PolicyRecord = {
-        policy_id: payload.policy_id ?? null,
-        asserted_by: payload.asserted_by ?? null,
-        authority_basis: payload.authority_basis ?? null,
-        capsule_hash: entry.capsule.capsule_hash ?? null,
-      };
+      if (!authority) {
+        failures.push({
+          step_index: entry.step_index,
+          step_name: entry.step_name,
+          code: "MISSING_AUTHORITY",
+          message: "policy assertion requires delegated authority",
+        });
+        return failures;
+      }
 
-      this.active.push(record);
+      if (!this.activeConsents.has(authority)) {
+        failures.push({
+          step_index: entry.step_index,
+          step_name: entry.step_name,
+          code: "INVALID_AUTHORITY",
+          message: `authority ${authority} does not match any active consent`,
+        });
+        return failures;
+      }
+
+      if (capsule.capsule_hash) {
+        this.activePolicies.set(payload.capsule_id, {
+          capsule_hash: capsule.capsule_hash,
+          authority_basis: authority,
+        });
+      }
     }
 
     if (type === "POLICY_REVOCATION") {
-      const payload = this.extractPayload(entry);
+      const revokedId = payload.revocation?.revoked_policy_id;
+      const authority = payload.revocation?.authority_basis;
 
-      const revokedId = payload.policy_id ?? null;
-
-      const remaining: PolicyRecord[] = [];
-      for (const p of this.active) {
-        if (revokedId !== null && p.policy_id === revokedId) {
-          this.revoked.push({
-            ...p,
-            capsule_hash: entry.capsule.capsule_hash ?? null,
-          });
-        } else {
-          remaining.push(p);
-        }
+      if (!revokedId || !authority) {
+        failures.push({
+          step_index: entry.step_index,
+          step_name: entry.step_name,
+          code: "MISSING_AUTHORITY",
+          message: "policy revocation requires authority and policy id",
+        });
+        return failures;
       }
 
-      this.active = remaining;
+      if (!this.activeConsents.has(authority)) {
+        failures.push({
+          step_index: entry.step_index,
+          step_name: entry.step_name,
+          code: "INVALID_AUTHORITY",
+          message: `authority ${authority} does not match any active consent`,
+        });
+        return failures;
+      }
+
+      if (!this.activePolicies.has(revokedId)) {
+        failures.push({
+          step_index: entry.step_index,
+          step_name: entry.step_name,
+          code: "UNKNOWN_POLICY",
+          message: "cannot revoke unknown or inactive policy",
+        });
+        return failures;
+      }
+
+      this.activePolicies.delete(revokedId);
+      this.revokedPolicies.push(revokedId);
     }
+
+    return failures;
   }
 
-  snapshot(): PolicyObserverSnapshot {
+  snapshot() {
     return {
-      active_policies: [...this.active],
-      revoked_policies: [...this.revoked],
+      active_policies: Array.from(this.activePolicies.values()).map(
+        (p) => p.capsule_hash
+      ),
+      revoked_policies: this.revokedPolicies,
+      active_consents: Array.from(this.activeConsents),
     };
-  }
-
-  private extractPayload(entry: HarnessTraceEntry): any {
-    const capsule: any = entry as any;
-    return capsule?.capsule?.payload ?? {};
   }
 }
