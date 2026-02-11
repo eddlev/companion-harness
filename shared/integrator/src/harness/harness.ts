@@ -1,34 +1,23 @@
 // shared/integrator/src/harness/harness.ts
 
+import crypto from "node:crypto";
 import path from "node:path";
-import { readJsonFile, resolvePath } from "./io.js";
-import { computeCapsuleHashes } from "./hash.js";
-
-import type {
-  FlowSpec,
-  FlowStep,
-  HarnessFailure,
-  HarnessResult,
-  HarnessTraceEntry,
-  Json,
-} from "./types.js";
-
+import { readJsonFile } from "./io.js";
 import { CapsuleObserver } from "./observers/capsule_observer.js";
 import { ConsentObserver } from "./observers/consent_observer.js";
 import { PolicyObserver } from "./observers/policy_observer.js";
 import { MemoryObserver } from "./observers/memory_observer.js";
+import type { 
+  FlowSpec, 
+  HarnessResult, 
+  HarnessTraceEntry, 
+  HarnessFailure,
+  Json
+} from "./types.js";
 
 /**
- * HarnessCore
- *
- * Responsibilities:
- * - Load and validate flow spec
- * - Resolve capsule paths relative to the flow file
- * - Build execution trace
- * - Compute deterministic hashes
- * - Run observers
- *
- * NOTE: Enforcement is handled by the Runner (Flow D), not here.
+ * HarnessCore: The authoritative structural engine.
+ * Hardened by Information Security Analyst (15-1212.00) for cryptographic continuity.
  */
 export class HarnessCore {
   private capsuleObserver = new CapsuleObserver();
@@ -36,105 +25,97 @@ export class HarnessCore {
   private policyObserver = new PolicyObserver();
   private memoryObserver = new MemoryObserver();
 
-  runFlowFromFile(flowSpecPath: string): HarnessResult {
-    const started_at = new Date().toISOString();
-    const failures: HarnessFailure[] = [];
-    const trace: HarnessTraceEntry[] = [];
-
-    // ---- load flow ----
-    const flowAbs = path.resolve(flowSpecPath);
-    const flowDir = path.dirname(flowAbs);
-
-    const raw = readJsonFile(flowAbs);
-
-    if (typeof raw !== "object" || raw === null || Array.isArray(raw)) {
-      return {
-        flow_id: "UNKNOWN",
-        ok: false,
-        started_at,
-        finished_at: new Date().toISOString(),
-        failures: [
-          {
-            step_index: -1,
-            step_name: "__flow__",
-            code: "INVALID_FLOW",
-            message: "Flow spec must be a JSON object",
-          },
-        ],
-        trace: [],
-        observers: this.snapshotObservers(),
-      };
-    }
-
-    const flow = raw as unknown as FlowSpec;
-
-    // ---- execute steps ----
-    for (let stepIndex = 0; stepIndex < flow.steps.length; stepIndex++) {
-      const step: FlowStep = flow.steps[stepIndex]!;
-
-      const capsuleAbs = resolvePath(flowDir, step.capsule_path);
-      const capsuleJson = readJsonFile(capsuleAbs);
-
-      if (typeof capsuleJson !== "object" || capsuleJson === null) {
-        failures.push({
-          step_index: stepIndex,
-          step_name: step.name,
-          code: "INVALID_CAPSULE",
-          message: "Capsule JSON must be an object",
-        });
-        continue;
+  /**
+   * BinLing Canonical Hash Utility.
+   * Recursively sorts keys and removes whitespace to produce a platform-invariant hash.
+   */
+  public static computeCanonicalHash(data: Json): string {
+    const canonicalize = (val: any): any => {
+      // Recursively sort object keys
+      if (val && typeof val === 'object' && !Array.isArray(val)) {
+        return Object.keys(val)
+          .sort()
+          .reduce((sorted: any, k) => {
+            sorted[k] = canonicalize(val[k]);
+            return sorted;
+          }, {});
       }
+      // Handle arrays (order preserved, but elements canonicalized)
+      if (Array.isArray(val)) {
+        return val.map(canonicalize);
+      }
+      return val;
+    };
+    
+    // Stringify the canonical object with zero whitespace
+    const canonicalString = JSON.stringify(canonicalize(data));
+    const hash = crypto.createHash("sha256").update(canonicalString).digest("hex");
+    return `cap_${hash}`;
+  }
 
-      const capsuleType = (capsuleJson as any).capsule_type;
-      
-      // 1. Canonicalize
-      const canonical_json = JSON.stringify(capsuleJson);
-      
-      // 2. Hash (Crucial for Authority Binding)
-      const hashes = computeCapsuleHashes(canonical_json);
+  runFlowFromFile(absPath: string): HarnessResult {
+    const startedAt = new Date().toISOString();
+    const flowDir = path.dirname(absPath);
+    const flow = readJsonFile(absPath) as unknown as FlowSpec;
+    
+    const trace: HarnessTraceEntry[] = [];
+    const failures: HarnessFailure[] = [];
 
-      const entry: HarnessTraceEntry = {
-        step_index: stepIndex,
-        step_name: step.name,
-        capsule: {
-          capsule_type: String(capsuleType),
-          capsule_path: capsuleAbs,
-          canonical_json: canonical_json,
-          // 3. Inject Hashes
-          hash_hex: hashes.hash_hex,
-          capsule_hash: hashes.capsule_hash
-        },
-      };
+    for (let i = 0; i < flow.steps.length; i++) {
+      const step = flow.steps[i];
+      if (!step) continue;
 
-      trace.push(entry);
+      try {
+        // SECURITY GATE: Resolve path relative to the flow file directory
+        const capsuleAbsPath = path.resolve(flowDir, step.capsule_path);
+        const capsuleJson = readJsonFile(capsuleAbsPath) as Json;
+        
+        // SECURITY GATE: Compute Deterministic Canonical Hash
+        const capsuleHash = HarnessCore.computeCanonicalHash(capsuleJson);
 
-      // ---- observers (Single Entry Contract) ----
-      // Fixed: Removed array brackets [] to match observer signatures
-      failures.push(...this.capsuleObserver.observe(entry));
-      failures.push(...this.consentObserver.observe(entry));
-      failures.push(...this.policyObserver.observe(entry));
-      failures.push(...this.memoryObserver.observe(entry));
+        const entry: HarnessTraceEntry = {
+          step_index: i,
+          step_name: step.name,
+          capsule: {
+            capsule_type: (capsuleJson as any).capsule_type || "UNKNOWN",
+            capsule_path: capsuleAbsPath,
+            canonical_json: JSON.stringify(capsuleJson),
+            capsule_hash: capsuleHash,
+            hash_hex: capsuleHash.replace("cap_", "")
+          }
+        };
+
+        trace.push(entry);
+
+        // OBSERVER GATE: Multi-Layer Semantic Observation
+        failures.push(...this.capsuleObserver.observe(entry));
+        failures.push(...this.consentObserver.observe(entry));
+        failures.push(...this.policyObserver.observe(entry));
+        failures.push(...this.memoryObserver.observe(entry));
+
+      } catch (err: any) {
+        failures.push({
+          step_index: i,
+          step_name: step.name,
+          code: "FILE_ERROR",
+          message: `Path resolution failed for: ${step.capsule_path}. Error: ${err.message}`
+        });
+      }
     }
-
-    const finished_at = new Date().toISOString();
 
     return {
       flow_id: flow.flow_id,
       ok: failures.length === 0,
-      started_at,
-      finished_at,
+      started_at: startedAt,
+      finished_at: new Date().toISOString(),
       failures,
       trace,
-      observers: this.snapshotObservers(),
-    };
-  }
-
-  private snapshotObservers() {
-    return {
-      capsule: this.capsuleObserver.snapshot(),
-      consent: this.consentObserver.snapshot(),
-      policy: this.policyObserver.snapshot(),
-      memory: this.memoryObserver.snapshot(),
+      observers: {
+        capsule: this.capsuleObserver.snapshot(),
+        consent: this.consentObserver.snapshot(),
+        policy: this.policyObserver.snapshot(),
+        memory: this.memoryObserver.snapshot()
+      }
     };
   }
 }

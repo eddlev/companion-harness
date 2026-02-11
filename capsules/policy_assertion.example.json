@@ -9,7 +9,7 @@
     "statement": "Explicit consent is required before escalating intimacy or emotional dependency in interaction.",
     "category": "consent",
     "scope": "current_session",
-    "authority_basis": "cap_24df1f3dab1465958c33cd1d83c822cf40eed32d04a694540b91970f013b1e81",
-    "notes": "Policy asserted under user-delegated authority."
+    "authority_basis": "cap_903ee9e330ff9752c56d154d8485a82ad059da60346ad441bb1a461dac93c82b",
+    "notes": "Policy updated with new production-grade canonical authority hash."
   }
 }
