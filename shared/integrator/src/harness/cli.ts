@@ -1,93 +1,72 @@
-#!/usr/bin/env node
 // shared/integrator/src/harness/cli.ts
 
-import path from "node:path";
-import { HarnessCore } from "./harness.js";
-import { writeJsonFile } from "./io.js";
 import { HarnessRunner } from "./runner.js";
-import { MockAdapter } from "./adapter/mock_adapter.js";
+import { MockAdapter } from "./observers/mock_adapter.js";
+import { GitHubStorageProvider } from "./storage/github_provider.js";
+import { PromptGenerator } from "./boot/prompt_generator.js";
+import { decryptEnv } from "./security_utils.js";
+import * as readline from "node:readline/promises";
+import path from "node:path";
 
-function usage(): void {
-  console.error(
-    "Usage:\n" +
-      "  harness run <flow_spec.json> [--out <result.json>] [--adapter mock]\n"
-  );
-}
+async function main() {
+  const args = process.argv.slice(2);
+  const command = args[0];
 
-type AdapterName = "mock" | null;
-
-const [, , cmd, flowSpecPath, ...rest] = process.argv;
-
-if (!cmd || !flowSpecPath) {
-  usage();
-  process.exit(1);
-}
-
-// At this point, flowSpecPath is guaranteed to be a string
-const flowPath: string = flowSpecPath;
-
-if (cmd !== "run") {
-  console.error(`Unknown command: ${cmd}`);
-  usage();
-  process.exit(1);
-}
-
-let outPath: string | null = null;
-let adapterName: AdapterName = null;
-
-for (let i = 0; i < rest.length; i++) {
-  const a = rest[i]!;
-  if (a === "--out") {
-    const v = rest[i + 1];
-    if (!v) {
-      console.error("Missing value for --out");
+  if (command === "run") {
+    const flowPath = args[1];
+    if (!flowPath) {
+      console.error("Usage: node cli.js run <flow.json>");
       process.exit(1);
     }
-    outPath = v;
-    i++;
-  } else if (a === "--adapter") {
-    const v = rest[i + 1];
-    if (!v) {
-      console.error("Missing value for --adapter");
-      process.exit(1);
-    }
-    if (v !== "mock") {
-      console.error(`Unknown adapter: ${v}`);
-      usage();
-      process.exit(1);
-    }
-    adapterName = "mock";
-    i++;
-  } else {
-    console.error(`Unknown argument: ${a}`);
-    usage();
-    process.exit(1);
-  }
-}
-
-async function main(): Promise<void> {
-  let result;
-  if (adapterName === "mock") {
+    // Verified: MockAdapter now matches ExecutionAdapter interface
     const runner = new HarnessRunner(new MockAdapter());
-    result = await runner.runFlow(flowPath);
-  } else {
-    const core = new HarnessCore();
-    result = core.runFlowFromFile(flowPath);
-  }
-
-  if (outPath) {
-    const abs = path.resolve(outPath);
-    writeJsonFile(abs, result);
-    console.log(JSON.stringify({ ok: result.ok, flow_id: result.flow_id, out: abs }, null, 2));
-  } else {
+    const result = await runner.runFlow(flowPath);
     console.log(JSON.stringify(result, null, 2));
-  }
 
-  process.exit(result.ok ? 0 : 2);
+  } else if (command === "boot") {
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    
+    try {
+      console.log("\n[Security Analyst] Initializing Relational Spine...");
+      const passphrase = await rl.question("Enter Master Passphrase: ");
+      
+      const encPath = path.resolve(process.cwd(), ".env.enc");
+      const secrets = decryptEnv(encPath, passphrase);
+
+      if (!secrets.GITHUB_TOKEN || !secrets.GITHUB_OWNER || !secrets.GITHUB_REPO) {
+        throw new Error("Missing required GitHub credentials in encrypted .env file.");
+      }
+
+      const storage = new GitHubStorageProvider(
+        secrets.GITHUB_TOKEN,
+        secrets.GITHUB_OWNER,
+        secrets.GITHUB_REPO
+      );
+
+      const generator = new PromptGenerator();
+      console.log(`[Storage] Connected to: ${secrets.GITHUB_OWNER}/${secrets.GITHUB_REPO}`);
+
+      // Ensure identity/ and governance/ folders exist in eddlev/ext-mem
+      const state = await storage.getCapsule("identity/state.json");
+      const stance = await storage.getCapsule("identity/stance.json");
+      const consent = await storage.getCapsule("governance/consent.json");
+
+      const bootPrompt = generator.generateBootBlock([state, stance, consent]);
+
+      console.log("\n" + "=".repeat(60));
+      console.log("HOLOGRAPHIC BOOT PROMPT (Copy the block below)");
+      console.log("=".repeat(60) + "\n");
+      console.log(bootPrompt);
+      console.log("\n" + "=".repeat(60));
+
+    } catch (err: any) {
+      console.error(`\n[BOOT_FAILURE] ${err.message}`);
+    } finally {
+      rl.close();
+    }
+  } else {
+    console.log("Commands: \n  run <flow.json>  - Verify structural integrity\n  boot             - Generate Holographic Boot Prompt");
+  }
 }
 
-main().catch((err) => {
-  const msg = err instanceof Error ? err.message : String(err);
-  console.error(`Harness failed: ${msg}`);
-  process.exit(2);
-});
+main().catch(console.error);

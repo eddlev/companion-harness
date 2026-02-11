@@ -15,11 +15,12 @@
   },
   "dependencies": {
     "@noble/hashes": "^2.0.1",
+    "@octokit/rest": "^22.0.1",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
-    "@types/node": "^24.6.0",
+    "@types/node": "^24.10.13",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
