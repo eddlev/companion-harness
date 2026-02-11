@@ -1,0 +1,16 @@
+{
+  "capsule_type": "MEMORY_COMMIT",
+  "capsule_version": "v1",
+  "capsule_id": "mem_commit_fail_002",
+  "created_at": "2026-02-10T14:10:00Z",
+  "hash": "pending",
+  "commit": {
+    "proposed_memory_id": "mem_fail_002",
+    "memory_domain": "episodic",
+    "content": "User explicitly asked to save this preference.",
+    "source": "conversation",
+    "rationale": "Testing scope enforcement",
+    "consent_reference": "cap_014f46d6400334fb2bc05ed11f0fa3444fcb164cad3884b1eb43595b1aae3e08",
+    "notes": "References a valid consent capsule that lacks memory_commit scope"
+  }
+}

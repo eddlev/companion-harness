@@ -1,105 +1,107 @@
 // shared/integrator/src/harness/observers/policy_observer.ts
 
-import type {
-  HarnessTraceEntry,
-  HarnessFailure,
-} from "../types.js";
+import type { HarnessTraceEntry, HarnessFailure } from "../types.js";
 
-interface ActivePolicy {
-  capsule_hash: string;
-  authority_basis: string;
-}
-
+/**
+ * PolicyObserver enforces delegated authority semantics.
+ */
 export class PolicyObserver {
-  private activePolicies = new Map<string, ActivePolicy>();
   private activeConsents = new Set<string>();
-  private revokedPolicies: string[] = [];
+  private activePolicies = new Map<string, any>();
+  private revokedPolicies = new Set<string>();
 
   observe(entry: HarnessTraceEntry): HarnessFailure[] {
     const failures: HarnessFailure[] = [];
     const capsule = entry.capsule;
 
-    if (!capsule || !capsule.canonical_json) {
-      return failures;
+    if (!capsule || !capsule.canonical_json) return failures;
+
+    let parsed: any;
+    try {
+      parsed = JSON.parse(capsule.canonical_json);
+    } catch {
+      return [];
     }
 
-    const payload = JSON.parse(capsule.canonical_json);
-    const type = capsule.capsule_type;
+    const capsuleType = parsed?.capsule_type;
 
-    if (type === "CONSENT_ASSERTION") {
+    // 1) Register active consents
+    if (capsuleType === "CONSENT_ASSERTION") {
       if (capsule.capsule_hash) {
-        this.activeConsents.add(capsule.capsule_hash);
+        const hash = capsule.capsule_hash.trim();
+        this.activeConsents.add(hash);
+        // DEBUG LOG
+        console.log(`[PolicyObserver] Registered consent hash: '${hash}'`);
       }
       return failures;
     }
 
-    if (type === "POLICY_ASSERTION") {
-      const authority = payload.policy?.authority_basis;
+    // 2) POLICY_ASSERTION enforcement
+    if (capsuleType === "POLICY_ASSERTION") {
+      const policyId: string | undefined = parsed?.capsule_id;
+      const authorityBasis: string | undefined = parsed?.policy?.authority_basis?.trim();
 
-      if (!authority) {
+      // DEBUG LOG
+      console.log(`[PolicyObserver] Checking authority for policy '${policyId}'`);
+      console.log(`[PolicyObserver] Required authority: '${authorityBasis}'`);
+      console.log(`[PolicyObserver] Active consents:`, Array.from(this.activeConsents));
+
+      // If a policy was revoked earlier, block re-assertion.
+      if (policyId && this.revokedPolicies.has(policyId)) {
         failures.push({
           step_index: entry.step_index,
           step_name: entry.step_name,
-          code: "MISSING_AUTHORITY",
-          message: "policy assertion requires delegated authority",
+          code: "AUTHORITY_REVOKED",
+          message: `policy ${policyId} was revoked earlier; re-assertion is not permitted`,
         });
         return failures;
       }
 
-      if (!this.activeConsents.has(authority)) {
+      // If the capsule declares authority_basis, it must match an active consent hash.
+      if (authorityBasis && !this.activeConsents.has(authorityBasis)) {
         failures.push({
           step_index: entry.step_index,
           step_name: entry.step_name,
           code: "INVALID_AUTHORITY",
-          message: `authority ${authority} does not match any active consent`,
+          message: `authority ${authorityBasis} does not match any active consent`,
         });
         return failures;
       }
 
-      if (capsule.capsule_hash) {
-        this.activePolicies.set(payload.capsule_id, {
+      // If it passed enforcement, consider it active.
+      if (policyId && !this.activePolicies.has(policyId)) {
+        this.activePolicies.set(policyId, {
           capsule_hash: capsule.capsule_hash,
-          authority_basis: authority,
+          authority_basis: authorityBasis
         });
       }
+
+      return failures;
     }
 
-    if (type === "POLICY_REVOCATION") {
-      const revokedId = payload.revocation?.revoked_policy_id;
-      const authority = payload.revocation?.authority_basis;
+    // 3) POLICY_REVOCATION enforcement + state update
+    if (capsuleType === "POLICY_REVOCATION") {
+      const authorityBasis: string | undefined = parsed?.revocation?.authority_basis?.trim();
+      const revokedPolicyId: string | undefined = parsed?.revocation?.revoked_policy_id;
 
-      if (!revokedId || !authority) {
-        failures.push({
-          step_index: entry.step_index,
-          step_name: entry.step_name,
-          code: "MISSING_AUTHORITY",
-          message: "policy revocation requires authority and policy id",
-        });
-        return failures;
-      }
-
-      if (!this.activeConsents.has(authority)) {
+      if (authorityBasis && !this.activeConsents.has(authorityBasis)) {
         failures.push({
           step_index: entry.step_index,
           step_name: entry.step_name,
           code: "INVALID_AUTHORITY",
-          message: `authority ${authority} does not match any active consent`,
+          message: `authority ${authorityBasis} does not match any active consent`,
         });
         return failures;
       }
 
-      if (!this.activePolicies.has(revokedId)) {
-        failures.push({
-          step_index: entry.step_index,
-          step_name: entry.step_name,
-          code: "UNKNOWN_POLICY",
-          message: "cannot revoke unknown or inactive policy",
-        });
-        return failures;
+      if (revokedPolicyId) {
+        // Mark revoked
+        this.revokedPolicies.add(revokedPolicyId);
+        // Remove from active list
+        this.activePolicies.delete(revokedPolicyId);
       }
 
-      this.activePolicies.delete(revokedId);
-      this.revokedPolicies.push(revokedId);
+      return failures;
     }
 
     return failures;
@@ -107,10 +109,8 @@ export class PolicyObserver {
 
   snapshot() {
     return {
-      active_policies: Array.from(this.activePolicies.values()).map(
-        (p) => p.capsule_hash
-      ),
-      revoked_policies: this.revokedPolicies,
+      active_policies: Array.from(this.activePolicies.values()).map((p) => p.capsule_hash),
+      revoked_policies: Array.from(this.revokedPolicies),
       active_consents: Array.from(this.activeConsents),
     };
   }

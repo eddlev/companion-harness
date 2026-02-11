@@ -1,0 +1,15 @@
+{
+  "capsule_type": "MEMORY_COMMIT",
+  "capsule_version": "v1",
+  "capsule_id": "mem_commit_fail_001",
+  "created_at": "2026-02-10T14:00:00Z",
+  "hash": "pending",
+  "commit": {
+    "proposed_memory_id": "mem_fail_001",
+    "memory_domain": "episodic",
+    "content": "User mentioned they prefer dark mode UI.",
+    "source": "conversation",
+    "rationale": "Preference tracking",
+    "notes": "Intentionally missing consent_reference for testing"
+  }
+}

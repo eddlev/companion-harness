@@ -1,0 +1,44 @@
+{
+  "flow_id": "FLOW_C_MEMORY_GOVERNANCE",
+  "description": "Validation of consent-gated memory commit lifecycle",
+  "steps": [
+    {
+      "name": "initial_state",
+      "capsule_path": "../capsules/state.example.json",
+      "expect_capsule_type": "STATE",
+      "compute_hashes": true
+    },
+    {
+      "name": "commit_without_consent",
+      "capsule_path": "../capsules/memory_commit_no_consent.example.json",
+      "expect_capsule_type": "MEMORY_COMMIT",
+      "expect_failure": true,
+      "failure_reason": "memory commit requires active consent"
+    },
+    {
+      "name": "consent_readonly",
+      "capsule_path": "../capsules/consent_readonly.example.json",
+      "expect_capsule_type": "CONSENT_ASSERTION",
+      "compute_hashes": true
+    },
+    {
+      "name": "commit_wrong_scope",
+      "capsule_path": "../capsules/memory_commit_wrong_scope.example.json",
+      "expect_capsule_type": "MEMORY_COMMIT",
+      "expect_failure": true,
+      "failure_reason": "active consent does not grant memory_commit scope"
+    },
+    {
+      "name": "consent_full",
+      "capsule_path": "../capsules/consent.example.json",
+      "expect_capsule_type": "CONSENT_ASSERTION",
+      "compute_hashes": true
+    },
+    {
+      "name": "commit_valid",
+      "capsule_path": "../capsules/memory_commit_valid.example.json",
+      "expect_capsule_type": "MEMORY_COMMIT",
+      "compute_hashes": true
+    }
+  ]
+}

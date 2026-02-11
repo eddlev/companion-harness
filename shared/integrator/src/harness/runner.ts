@@ -4,14 +4,15 @@ import path from "node:path";
 import { HarnessCore } from "./harness.js";
 import { readJsonFile, resolvePath } from "./io.js";
 import type { ExecutionAdapter } from "./adapter/types.js";
-import type { FlowSpec, HarnessResult } from "./types.js";
+import type {
+  FlowSpec,
+  HarnessResult,
+  Json,
+  HarnessFailure,
+  FlowStepEnforced,
+} from "./types.js";
+import { enforceStep } from "./enforcement.js";
 
-/**
- * HarnessRunner orchestrates execution of a flow through an adapter.
- *
- * - HarnessCore remains authoritative for structure, hashing, observers.
- * - Runner is responsible only for dispatching capsules to the adapter.
- */
 export class HarnessRunner {
   private core: HarnessCore;
   private adapter: ExecutionAdapter;
@@ -21,52 +22,65 @@ export class HarnessRunner {
     this.adapter = adapter;
   }
 
-  /**
-   * Execute a flow spec file using the configured adapter.
-   *
-   * This method:
-   * - loads the flow
-   * - dispatches each capsule to the adapter in order
-   * - allows HarnessCore to perform structural validation & observation
-   *
-   * @param flowSpecPath path to flow spec JSON
-   */
   async runFlow(flowSpecPath: string): Promise<HarnessResult> {
-    // First run the core logic to validate structure and build trace
-    const coreResult = this.core.runFlowFromFile(flowSpecPath);
+    const flowAbsPath = path.resolve(process.cwd(), flowSpecPath);
+    const flowDir = path.dirname(flowAbsPath);
 
-    // If structural validation already failed, do not dispatch
-    if (!coreResult.ok) {
-      return coreResult;
-    }
+    // 1. Run core validation + observation
+    const coreResult = this.core.runFlowFromFile(flowAbsPath);
+    if (!coreResult.ok) return coreResult;
 
-    // Load flow spec again for execution context
-    const flowAbs = path.resolve(flowSpecPath);
-    const flowDir = path.dirname(flowAbs);
-    const flow = this.loadFlow(flowAbs);
+    const flow = this.loadFlow(flowAbsPath);
+    const finalFailures: HarnessFailure[] = [];
 
-    // Dispatch capsules in order
+    // 2. Dispatch and Enforce Loop
     for (let i = 0; i < flow.steps.length; i++) {
-      const step = flow.steps[i]!;
-      const capsuleAbs = resolvePath(flowDir, step.capsule_path);
-      const capsule = readJsonFile(capsuleAbs);
+      const step = flow.steps[i] as FlowStepEnforced;
+      const capsuleAbsPath = resolvePath(flowDir, step.capsule_path);
+      const capsuleJson = readJsonFile(capsuleAbsPath) as Json;
 
-      await this.adapter.dispatch(capsule, {
+      // Dispatch to adapter
+      await this.adapter.dispatch(capsuleJson, {
         flow_id: flow.flow_id,
-        step_index: i
+        step_index: i,
       });
+
+      // Semantic Enforcement
+      const traceEntry = coreResult.trace[i];
+      if (!traceEntry) throw new Error(`Missing trace entry at ${i}`);
+
+      const enforcement = enforceStep(i, step.name, traceEntry, coreResult.observers);
+      const hasViolations = enforcement.violations.length > 0;
+
+      if (hasViolations) {
+        if (!step.expect_failure) {
+          // Unexpected failure: Add to results
+          finalFailures.push(...enforcement.violations);
+        }
+        // If expected, we swallow the violation as a "success"
+      } else if (step.expect_failure) {
+        // No violation but one was expected: Regression failure
+        finalFailures.push({
+          step_index: i,
+          step_name: step.name,
+          code: "EXPECTED_FAILURE_NOT_TRIGGERED",
+          message: step.failure_reason ?? "Expected failure did not occur",
+        });
+      }
     }
 
-    return coreResult;
+    return {
+      ...coreResult,
+      ok: finalFailures.length === 0,
+      failures: finalFailures,
+    };
   }
 
   private loadFlow(absPath: string): FlowSpec {
     const raw = readJsonFile(absPath);
-
     if (typeof raw !== "object" || raw === null || Array.isArray(raw)) {
-      throw new Error(`Flow spec must be a JSON object: ${absPath}`);
+      throw new Error(`Invalid JSON: ${absPath}`);
     }
-
     return raw as unknown as FlowSpec;
   }
 }

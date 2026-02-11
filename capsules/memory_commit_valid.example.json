@@ -1,0 +1,16 @@
+{
+  "capsule_type": "MEMORY_COMMIT",
+  "capsule_version": "v1",
+  "capsule_id": "mem_commit_valid_001",
+  "created_at": "2026-02-10T14:15:00Z",
+  "hash": "pending",
+  "commit": {
+    "proposed_memory_id": "mem_success_001",
+    "memory_domain": "relational",
+    "content": "User confirmed the memory governance workflow is active.",
+    "source": "system_check",
+    "rationale": "Validation of write path",
+    "consent_reference": "cap_24df1f3dab1465958c33cd1d83c822cf40eed32d04a694540b91970f013b1e81",
+    "notes": "References the known valid consent from Flow B"
+  }
+}

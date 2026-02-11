@@ -1,0 +1,17 @@
+{
+  "capsule_type": "CONSENT_ASSERTION",
+  "capsule_version": "v1",
+  "capsule_id": "consent_readonly_001",
+  "created_at": "2026-02-10T14:05:00Z",
+  "hash": "pending",
+  "consent": {
+    "state": "granted",
+    "scope": [
+      "memory_reference",
+      "memory_request"
+    ],
+    "asserted_by": "user",
+    "assertion_method": "explicit_written_statement",
+    "notes": "Read-only access to memory."
+  }
+}

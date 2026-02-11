@@ -16,6 +16,8 @@ export interface FlowStep {
 export interface FlowStepEnforced extends FlowStep {
   expect_capsule_type?: string;
   compute_hashes?: boolean;
+  expect_failure?: boolean;
+  failure_reason?: string;
 }
 
 export interface FlowSpec {
@@ -23,16 +25,18 @@ export interface FlowSpec {
   steps: FlowStepEnforced[];
 }
 
+export interface CapsuleMeta {
+  capsule_type: string;
+  capsule_path: string;
+  canonical_json?: string;
+  hash_hex?: string;
+  capsule_hash?: string;
+}
+
 export interface HarnessTraceEntry {
   step_index: number;
   step_name: string;
-  capsule?: {
-    capsule_type: string;
-    capsule_path: string;
-    canonical_json?: string;
-    hash_hex?: string;
-    capsule_hash?: string;
-  };
+  capsule?: CapsuleMeta;
 }
 
 export interface HarnessFailure {
@@ -52,6 +56,12 @@ export interface ConsentSnapshot {
   state: "ASSERTED" | "REVOKED" | "UNKNOWN";
   assertion_capsule_hash: string | null;
   revocation_capsule_hash: string | null;
+  /**
+   * Map of active consent hashes to their allowed scopes.
+   * Key: capsule_hash
+   * Value: string[] (e.g. ["memory_commit", "relational_interaction"])
+   */
+  active_scopes: Record<string, string[]>;
 }
 
 export interface PolicySnapshot {
@@ -61,9 +71,9 @@ export interface PolicySnapshot {
 }
 
 export interface MemoryObserverSnapshot {
-  requests: Json[];
-  commits: Json[];
-  references: Json[];
+  requests: string[];
+  commits: string[];
+  references: string[];
 }
 
 export interface ObserversSnapshot {
