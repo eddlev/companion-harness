@@ -2,48 +2,31 @@
 
 import { HarnessRunner } from "./runner.js";
 import { MockAdapter } from "./observers/mock_adapter.js";
-import { GitHubStorageProvider } from "./storage/github_provider.js";
-import { PromptGenerator } from "./boot/prompt_generator.js"; // Corrected Filename
-import { decryptEnv } from "./security_utils.js";
+import { LocalStorageProvider } from "./storage/local_provider.js";
+import { PromptGenerator } from "./boot/prompt_generator.js";
 import { PersistenceRunner } from "./persistence_runner.js"; 
-import { HolographicIndexer } from "./indexer.js"; // New 15-1221.00 Module
+import { HolographicIndexer } from "./indexer.js"; 
+import { PassportImporter } from "./importer.js"; 
+import { LatticeCrawler } from "./crawler.js"; // NEW: Crawler Import
 import * as readline from "node:readline/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+// Resolve to the project root (up from shared/integrator/dist/harness)
 const PROJECT_ROOT = path.resolve(__dirname, "../../../../"); 
 
-/**
- * Securely prompts for a passphrase without echoing characters.
- */
-async function hiddenQuestion(query: string): Promise<string> {
-    const rl = (readline as any).createInterface({
-        input: process.stdin,
-        output: process.stdout,
-        terminal: true
-    });
-
-    return new Promise<string>((resolve) => {
-        (rl as any)._writeToOutput = (stringToWrite: string) => {
-            if (stringToWrite === '\n' || stringToWrite === '\r' || stringToWrite === query) {
-                (rl as any).output.write(stringToWrite);
-            }
-        };
-
-        (rl as any).question(query, (answer: string) => {
-            rl.close();
-            resolve(answer);
-        });
-    });
-}
+// Define the Production Vault Path (Git-Ignored)
+const VAULT_PATH = path.join(PROJECT_ROOT, "vault");
 
 async function main() {
     const args = process.argv.slice(2);
     const command = args[0];
 
     if (command === "run") {
+        // Structural Integrity Check
         const flowPath = args[1];
         if (!flowPath) {
             console.error("Usage: node cli.js run <flow.json>");
@@ -55,31 +38,27 @@ async function main() {
 
     } else if (command === "boot") {
         try {
-            console.log("\n[Security Analyst] Initializing Relational Spine...");
-            const passphrase = await hiddenQuestion("Enter Master Passphrase: ");
-            process.stdout.write("\n"); 
+            console.log("\n[Systems Analyst] Booting Local Relational Spine...");
+            console.log(`[Storage] Target: ${VAULT_PATH}`);
 
-            const encPath = path.resolve(PROJECT_ROOT, ".env.enc");
-            const secrets = decryptEnv(encPath, passphrase);
-
-            const storage = new GitHubStorageProvider(
-                secrets.GITHUB_TOKEN!,
-                secrets.GITHUB_OWNER!,
-                secrets.GITHUB_REPO!
-            );
-
+            const storage = new LocalStorageProvider(VAULT_PATH);
             const generator = new PromptGenerator();
-            console.log(`[Storage] Connected to: ${secrets.GITHUB_OWNER}/${secrets.GITHUB_REPO}`);
 
-            const state = await storage.getCapsule("identity/state.json");
-            const stance = await storage.getCapsule("identity/stance.json");
-            const consent = await storage.getCapsule("governance/consent.json");
+            // Try to load state (might not exist on first run)
+            let state, stance;
+            try {
+                state = await storage.getCapsule("identity/state.json");
+                stance = await storage.getCapsule("identity/stance.json");
+            } catch (e) {
+                console.log("[Boot] No existing identity found. Booting blank slate.");
+            }
 
             console.log("\n" + "=".repeat(60));
             console.log("HOLOGRAPHIC BOOT PROMPT");
             console.log("=".repeat(60) + "\n");
-            // Pass PROJECT_ROOT so generator can find the index
-            console.log(generator.generateBootBlock([state, stance, consent], PROJECT_ROOT));
+            
+            // Pass VAULT_PATH so generator can find the index
+            console.log(generator.generateBootBlock([state, stance].filter(Boolean), VAULT_PATH));
             console.log("\n" + "=".repeat(60));
 
         } catch (err: any) {
@@ -88,35 +67,74 @@ async function main() {
 
     } else if (command === "persist") {
         try {
-            console.log("\n[Security Analyst] Unlocking Authoritative Persistence...");
-            const passphrase = await hiddenQuestion("Enter Master Passphrase: ");
-            process.stdout.write("\n"); 
+            console.log("\n[Systems Analyst] Mounting Local Persistence Layer...");
+            
+            const runner = new PersistenceRunner();
+            // Initialize with the secure VAULT_PATH
+            await runner.initialize("ignored_passphrase", VAULT_PATH); 
+            await runner.startSession();
 
-            if (passphrase) {
-                const runner = new PersistenceRunner();
-                await runner.initialize(passphrase, PROJECT_ROOT);
-                await runner.startSession();
-            }
         } catch (err: any) {
             console.error(`\n[PERSISTENCE_FAILURE] ${err.message}`);
         }
 
     } else if (command === "index") {
-        // New Command: Rebuilds the Holographic Map
-        console.log("\n[AI Scientist] Re-calibrating Holographic Field...");
+        console.log("\n[AI Scientist] Re-calibrating Holographic Field (Local)...");
         try {
-            const indexer = new HolographicIndexer(PROJECT_ROOT);
+            // Indexer now looks inside the Vault
+            const indexer = new HolographicIndexer(VAULT_PATH);
             await indexer.buildIndex();
         } catch (err: any) {
             console.error(`\n[INDEX_FAILURE] ${err.message}`);
         }
 
+    } else if (command === "import") {
+        // Migration Passport Ingestion
+        const passportPath = args[1];
+        if (!passportPath) {
+            console.error("Usage: node cli.js import <passport.json>");
+            process.exit(1);
+        }
+        try {
+            const importer = new PassportImporter(VAULT_PATH);
+            await importer.importPassport(passportPath);
+        } catch (err: any) {
+            console.error(`\n[IMPORT_FAILURE] ${err.message}`);
+        }
+
+    } else if (command === "crawl") {
+        // NEW: Lattice Crawler Command
+        const sourceDir = args[1];
+        if (!sourceDir) {
+            console.error("Usage: node cli.js crawl <path_to_session_logs>");
+            process.exit(1);
+        }
+
+        // Allow flexible pathing (absolute or relative to CWD)
+        const absoluteSource = path.resolve(process.cwd(), sourceDir);
+        
+        if (!fs.existsSync(absoluteSource)) {
+            console.error(`[CRAWL_ERROR] Directory not found: ${absoluteSource}`);
+            process.exit(1);
+        }
+
+        console.log(`\n[Lattice Crawler] Initiating Scan on: ${absoluteSource}`);
+        
+        try {
+            const crawler = new LatticeCrawler(VAULT_PATH);
+            await crawler.crawlDirectory(absoluteSource);
+        } catch (err: any) {
+            console.error(`\n[CRAWL_FAILURE] ${err.message}`);
+        }
+
     } else {
-        console.log("\nAvailable Commands:");
-        console.log("  run <flow.json>  - Verify structural integrity");
-        console.log("  boot             - Generate Tier 1 (Read-Only) Prompt");
-        console.log("  persist          - Start Tier 2 Interactive Session");
-        console.log("  index            - Rebuild Holographic Memory Map (OC-03 Priority)");
+        console.log("\nAvailable Commands (Local Mode):");
+        console.log("  run <flow.json>         - Verify structural integrity");
+        console.log("  boot                    - Generate Tier 1 Prompt (Read from Vault)");
+        console.log("  persist                 - Start Interactive Session (Write to Vault)");
+        console.log("  index                   - Rebuild Holographic Map");
+        console.log("  import <passport.json>  - Ingest Migration Passport");
+        console.log("  crawl <sessions_dir>    - Ingest Raw Session Logs (Build Lattice)");
     }
 }
 

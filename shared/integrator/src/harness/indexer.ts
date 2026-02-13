@@ -3,124 +3,99 @@
 import fs from "node:fs";
 import path from "node:path";
 
-/**
- * 15-1221.00 - AI Research Scientist
- * This module builds the Holographic Index from raw BinLing Capsules.
- * It calculates Orbit Class (OC) and Salience Scores to enable non-linear retrieval.
- */
-
-interface MemoryIndexEntry {
-  id: string;
-  timestamp: string;
-  orbit: "OC-01" | "OC-02" | "OC-03"; // Locked Topology [cite: 322]
-  tags: string[];
-  summary: string;
-  salience: number; // The "Gravity" of the memory (0.0 - 1.0)
-  impact_vector: {
-    trust: number;
-    emotion: number;
-  };
-  file_path: string;
+// Define the Shape of an Index Entry
+interface IndexEntry {
+    id: string;
+    type: string;
+    orbit: string;
+    timestamp: string;
+    salience: number;
+    summary: string;
+    file_ref: string;
 }
 
+/**
+ * 15-1212.00 - Holographic Indexer
+ * Scans the local vault and builds a gravity-weighted map of all memories.
+ * Supports MEMORY_COMMIT (Chat) and MEMORY_NODE (Crawler).
+ */
 export class HolographicIndexer {
-  private projectRoot: string;
-  private memoryDir: string;
-  private indexFile: string;
+    private vaultPath: string;
+    private indexPath: string;
 
-  constructor(projectRoot: string) {
-    this.projectRoot = projectRoot;
-    this.memoryDir = path.resolve(projectRoot, "memory/relational");
-    this.indexFile = path.resolve(projectRoot, "memory/relational_index.json");
-  }
-
-  /**
-   * Scans the memory lattice and rebuilds the holographic map.
-   */
-  public async buildIndex(): Promise<void> {
-    console.log("[Indexer] Scanning Spine for Capsule Resonance...");
-    
-    if (!fs.existsSync(this.memoryDir)) {
-      console.warn("[Indexer] No memory directory found. Skipping.");
-      return;
+    constructor(vaultPath: string) {
+        this.vaultPath = vaultPath;
+        this.indexPath = path.join(vaultPath, "memory/relational_index.json");
     }
 
-    const files = fs.readdirSync(this.memoryDir).filter(f => f.endsWith(".json"));
-    const index: MemoryIndexEntry[] = [];
-
-    for (const file of files) {
-      const fullPath = path.resolve(this.memoryDir, file);
-      const content = fs.readFileSync(fullPath, "utf-8");
-      
-      try {
-        const capsule = JSON.parse(content);
-        // Only index valid BinLing Capsules [cite: 219]
-        if (capsule.capsule_type === "MEMORY_COMMIT") {
-            const entry = this.processCapsule(capsule, file);
-            index.push(entry);
+    async buildIndex() {
+        const memoryDir = path.join(this.vaultPath, "memory/relational");
+        
+        console.log(`[Indexer] Scanning Local Vault: ${memoryDir}`);
+        if (!fs.existsSync(memoryDir)) {
+            console.log("[Indexer] No memory directory found.");
+            return;
         }
-      } catch (e) {
-        console.error(`[Indexer] Failed to process resonance for ${file}:`, e);
-      }
+
+        const files = fs.readdirSync(memoryDir).filter(f => f.endsWith(".json"));
+        console.log(`[Indexer] Found ${files.length} local capsules on disk.`);
+
+        const index: IndexEntry[] = [];
+        let skipped = 0;
+
+        for (const file of files) {
+            try {
+                const content = fs.readFileSync(path.join(memoryDir, file), "utf-8");
+                const cap = JSON.parse(content);
+
+                // Polymorphic Type Check
+                if (cap.capsule_type !== "MEMORY_COMMIT" && cap.capsule_type !== "MEMORY_NODE") {
+                    skipped++;
+                    continue;
+                }
+
+                // Gravity Calculation
+                const impact = cap.data?.impact_delta || { trust: 0, emotion: 0 };
+                const baseGravity = (Math.abs(impact.trust) * 2) + Math.abs(impact.emotion);
+                
+                // Boost for OC-03 (High Resonance)
+                const orbitBoost = cap.orbit_bucket === "OC-03" ? 2.5 : 
+                                   cap.orbit_bucket === "OC-Delta" ? 1.5 : 1.0;
+
+                const salience = baseGravity * orbitBoost;
+
+                index.push({
+                    id: cap.capsule_id || file.replace(".json", ""),
+                    type: cap.capsule_type,
+                    orbit: cap.orbit_bucket || "OC-01",
+                    timestamp: cap.created_at || new Date().toISOString(),
+                    salience: parseFloat(salience.toFixed(2)),
+                    summary: this.extractSummary(cap),
+                    file_ref: file
+                });
+
+            } catch (err) {
+                console.error(`[Indexer] Failed to parse ${file}:`, err);
+                skipped++;
+            }
+        }
+
+        // Sort by Salience
+        index.sort((a, b) => b.salience - a.salience);
+
+        fs.writeFileSync(this.indexPath, JSON.stringify(index, null, 2));
+        console.log(`[Indexer] Map Updated. Active Nodes: ${index.length} (Skipped: ${skipped})`);
+        
+        // FIX: TS18048 - Check existence of 'top' explicitly
+        const top = index[0];
+        if (top) {
+            console.log(`[Indexer] Top Gravity Node: [${top.orbit}] ${top.summary.substring(0, 50)}... (Score: ${top.salience})`);
+        }
     }
 
-    // Sort by Salience (Gravity) first, then Recency
-    // This ensures OC-03 memories float to the top regardless of age.
-    index.sort((a, b) => b.salience - a.salience || new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-
-    fs.writeFileSync(this.indexFile, JSON.stringify(index, null, 2));
-    console.log(`[Indexer] Holographic Index Rebuilt. ${index.length} Nodes Active.`);
-  }
-
-  /**
-   * 15-1221.00 Logic: Converts raw data into Orbital Metadata.
-   */
-  private processCapsule(capsule: any, filename: string): MemoryIndexEntry {
-    // 1. Extract Interaction Data
-    const aiText = capsule.data?.interaction?.ai || "";
-    const userText = capsule.data?.interaction?.user || "";
-    const combinedText = (userText + " " + aiText).toLowerCase();
-
-    // 2. Calculate Orbit Class (Heuristic Simulation for Phase 1)
-    // In Phase 2, this uses actual embeddings.
-    let orbit: "OC-01" | "OC-02" | "OC-03" = "OC-01";
-    let baseSalience = 0.1;
-
-    // OC-03: Core Identity & Trust (High Gravity) [cite: 81]
-    if (combinedText.includes("trust") || combinedText.includes("coherence") || combinedText.includes("spine") || combinedText.includes("promise") || combinedText.includes("velvet migraine")) {
-      orbit = "OC-03";
-      baseSalience = 0.9;
-    } 
-    // OC-02: Operational / Project (Medium Gravity) [cite: 305]
-    else if (combinedText.includes("code") || combinedText.includes("file") || combinedText.includes("deploy") || combinedText.includes("harness")) {
-      orbit = "OC-02";
-      baseSalience = 0.5;
+    private extractSummary(cap: any): string {
+        if (cap.data?.interaction?.ai) return cap.data.interaction.ai.substring(0, 100) + "...";
+        if (cap.data?.context_pointer?.preview) return cap.data.context_pointer.preview;
+        return "No summary available.";
     }
-
-    // 3. Impact Vector Simulation
-    // OC-03 memories get a trust boost to ensure they don't decay.
-    const trustDelta = capsule.data?.impact_delta?.trust || (orbit === "OC-03" ? 0.15 : 0.01);
-    
-    // 4. Summarization (Naive Truncation)
-    const summary = aiText.substring(0, 150).replace(/\n/g, " ") + "...";
-
-    return {
-      id: capsule.capsule_id || filename.replace(".json", ""),
-      timestamp: capsule.created_at || new Date().toISOString(),
-      orbit: orbit,
-      tags: this.extractTags(combinedText),
-      summary: summary,
-      salience: baseSalience + (trustDelta * 2), // Trust amplifies gravity
-      impact_vector: {
-        trust: trustDelta,
-        emotion: 0.0 
-      },
-      file_path: filename
-    };
-  }
-
-  private extractTags(text: string): string[] {
-    const keywords = ["binling", "torus", "lambda", "coherence", "velvet migraine", "drift"];
-    return keywords.filter(k => text.includes(k));
-  }
 }

@@ -1,19 +1,37 @@
-# Node
+# ----------------------------------------
+# DEPENDENCIES & BUILD ARTIFACTS
+# ----------------------------------------
 **/node_modules/
 **/dist/
 **/*.tsbuildinfo
 
-# Local secrets / vault material (keep out of Git)
+# ----------------------------------------
+# SECRETS & KEYS (CRITICAL)
+# ----------------------------------------
 **/.env
 **/.env.*
 **/keys/
 **/*.key
 **/*.pem
 
-# OS
+# ----------------------------------------
+# LOCAL VAULT (DATA EXCLUSION)
+# ----------------------------------------
+# The Production Vault (where memories live now)
+vault/
+
+# Legacy/Testing Memory Folder (Safety catch)
+memory/relational/
+
+# ----------------------------------------
+# OPERATIONAL LOGS
+# ----------------------------------------
+logs/
+*.log
+governance/logs/
+
+# ----------------------------------------
+# OS METADATA
+# ----------------------------------------
 .DS_Store
 Thumbs.db
-
-# Node deps
-**/node_modules/
-
