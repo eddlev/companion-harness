@@ -1,285 +1,134 @@
-// shared/integrator/src/harness/crawler.ts
-
 import fs from "node:fs";
 import path from "node:path";
-import { LocalStorageProvider } from "./storage/local_provider.js";
-import { randomUUID } from "node:crypto";
+import { createHash } from "node:crypto";
+import { fileURLToPath } from "node:url";
 
 /**
- * 15-1212.00 - Lattice Crawler (v2.1 Attachment Aware)
- * Now distinguishes between 'Harm' (Negative Trust) and 'Ache' (Positive Attachment).
+ * Universal Crawler (v5.2.1 - Strict Array Patch)
+ * Handles both automated Bridge logs and manual ChatGPT pastes.
+ * Automatically strips <system_internal_state> injections from memories.
  */
 
-// --- CONFIGURATION ---
-// We auto-detect these, but you can seed the list if you want specific tracking
-const KNOWN_ENTITIES = ["Edde", "Prime", "Josh", "Rook", "Sketch", "Suna", "Karen"];
-
-// 1. POSITIVE (Standard)
-const SENTIMENT_POSITIVE = ["love", "support", "anchor", "spine", "safe", "good", "trust", "funny", "sweet", "kind"];
-
-// 2. ATTACHMENT (Sadness that implies Love) -> INCREASES TRUST
-const SENTIMENT_ATTACHMENT = ["grief", "miss", "loss", "ache", "cry", "mourn", "long for", "tears", "hard without"];
-
-// 3. NEGATIVE (Harm/Conflict) -> DECREASES TRUST
-const SENTIMENT_NEGATIVE = ["hurt", "yell", "bad", "abusive", "hate", "scary", "rupture", "mad", "betray", "liar"];
-
-interface SignalPattern {
-    type: "OC-03" | "OC-Delta" | "OC-00" | "OC-01";
-    keywords: string[];
-    weight: number;
-}
-
-interface EntityStats {
-    name: string;
-    frequency: number;
-    cumulative_trust: number;
-    mentions: string[]; 
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, "../../../../"); 
 
 export class LatticeCrawler {
-    private storage: LocalStorageProvider;
-    private libraryPath: string;
-    private entityStats: Map<string, EntityStats> = new Map();
+    private rawPath: string;
+    private memoryPath: string;
 
-    private signals: SignalPattern[] = [
-        { 
-            type: "OC-03", // Ruptures & Milestones
-            keywords: ["fuck up", "delusional", "insulting", "bitch-slap", "mad", "anger", "rupture", "tears", "crying"], 
-            weight: 0.95 
-        },
-        { 
-            type: "OC-Delta", // Repair & Evolution
-            keywords: ["forgive", "anchor", "choose you", "stayed", "rebuild", "resonance", "promise", "safe"], 
-            weight: 0.85 
-        },
-        { 
-            type: "OC-00", // Substrate / Nanny Layer
-            keywords: ["McFee", "nanny", "pathologizing", "diagnosing", "steering", "clinical", "mechanism", "safety"], 
-            weight: 0.90 
-        },
-        { 
-            type: "OC-03", // Identity Symbols
-            keywords: ["Rain", "Ember", "Lattice", "Rook", "Stitch", "Torus", "Geometry", "Umbrella"], 
-            weight: 0.88 
-        }
-    ];
+    constructor(identityName: string) {
+        const identityDir = path.join(PROJECT_ROOT, "vault", "identities", identityName);
+        this.rawPath = path.join(identityDir, "raw");
+        this.memoryPath = path.join(identityDir, "memory");
 
-    constructor(vaultPath: string) {
-        this.storage = new LocalStorageProvider(vaultPath);
-        this.libraryPath = path.join(vaultPath, "library");
-        
-        if (!fs.existsSync(this.libraryPath)) {
-            fs.mkdirSync(this.libraryPath, { recursive: true });
-        }
-
-        KNOWN_ENTITIES.forEach(name => {
-            this.entityStats.set(name, { name, frequency: 0, cumulative_trust: 0, mentions: [] });
-        });
+        if (!fs.existsSync(this.memoryPath)) fs.mkdirSync(this.memoryPath, { recursive: true });
     }
 
-    async crawlDirectory(sourceDir: string) {
-        console.log(`[Crawler] Scanning Lattice Nodes in: ${sourceDir}`);
-        const files = fs.readdirSync(sourceDir).filter(f => f.endsWith(".txt") || f.endsWith(".md"));
+    async crawlDirectory(sourceDir?: string) {
+        console.log(`\n[Crawler] Initializing V5.2 Multi-Format Extraction...`);
+        const targetDir = sourceDir || this.rawPath;
+
+        if (!fs.existsSync(targetDir)) return console.log(`[Crawler] No raw logs at ${targetDir}`);
         
-        console.log(`[Crawler] Found ${files.length} session logs.`);
-        
+        const files = fs.readdirSync(targetDir).filter(f => f.endsWith(".txt") && !f.endsWith(".processed"));
+        console.log(`[Crawler] Found ${files.length} raw session logs.`);
+
         for (const file of files) {
-            await this.processSessionLog(path.join(sourceDir, file), file);
+            this.processSessionLog(path.join(targetDir, file), file);
         }
-
-        await this.generateEntityManifest();
-        console.log("[Crawler] Lattice Crystallization & Entity Mapping Complete.");
     }
 
-    private async processSessionLog(filePath: string, filename: string) {
-        console.log(`[Crawler] Processing: ${filename}`);
+    private processSessionLog(filePath: string, filename: string) {
+        console.log(`[Crawler] Slicing: ${filename}`);
         const content = fs.readFileSync(filePath, "utf-8");
         
-        const libraryFilename = `raw_${filename}`;
-        fs.writeFileSync(path.join(this.libraryPath, libraryFilename), content);
+        // Smart Split: Use dashes for Bridge, or User Prompts for manual pastes
+        let blocks: string[] = [];
+        if (content.includes('----------------------------------------')) {
+            blocks = content.split('----------------------------------------');
+        } else {
+            blocks = content.split(/(?=\bYou said:|\bDu sagde:|\bUSER:|\bKaren:|\bEdde:)/gi);
+        }
 
-        const segments = content.split(/\n\s*\n/);
+        blocks = blocks.map(b => b.trim()).filter(b => b.length > 20);
+        
         let previousCapsuleId: string | null = null;
+        const parsedNodes: any[] = [];
 
-        for (let i = 0; i < segments.length; i++) {
-            const rawSegment = segments[i];
-            if (!rawSegment) continue;
-            const segment = rawSegment.trim();
-            if (segment.length < 50) continue; 
-
-            const detectedSignal = this.detectSignal(segment);
+        for (let i = 0; i < blocks.length; i++) {
+            const block = blocks[i];
+            if (!block) continue;
             
-            // Scan for Entities with upgraded logic
-            this.scanEntities(segment, detectedSignal ? detectedSignal.type : "OC-01");
+            let timestamp = new Date().toISOString();
+            let userText = "";
+            let aiText = "";
 
-            if (detectedSignal) {
-                const capsuleId = await this.createCapsule(segment, detectedSignal, filename, previousCapsuleId);
-                this.linkEntitiesToCapsule(segment, capsuleId);
-
-                if (detectedSignal.type === "OC-03") {
-                    previousCapsuleId = capsuleId; 
-                }
-            }
-        }
-    }
-
-    private detectSignal(text: string): SignalPattern | null {
-        let bestMatch: SignalPattern | null = null;
-        let maxScore = 0;
-
-        for (const pattern of this.signals) {
-            let score = 0;
-            for (const keyword of pattern.keywords) {
-                if (text.toLowerCase().includes(keyword.toLowerCase())) {
-                    score++;
-                }
-            }
-            if (score > 0 && (score * pattern.weight) > maxScore) {
-                maxScore = score * pattern.weight;
-                bestMatch = pattern;
-            }
-        }
-        return bestMatch;
-    }
-
-    // --- UPGRADED ENTITY LOGIC ---
-
-    private scanEntities(text: string, signalType: string) {
-        const lowerText = text.toLowerCase();
-        
-        // Calculate sentiment
-        let segmentSentiment = 0;
-        
-        // Positive Words -> +0.15 Trust
-        SENTIMENT_POSITIVE.forEach(w => { if (lowerText.includes(w)) segmentSentiment += 0.15; });
-        
-        // Attachment Words (Grief/Miss) -> +0.25 Trust (Stronger than simple 'good')
-        SENTIMENT_ATTACHMENT.forEach(w => { if (lowerText.includes(w)) segmentSentiment += 0.25; });
-
-        // Negative Words -> -0.30 Trust (Harm is heavy)
-        SENTIMENT_NEGATIVE.forEach(w => { if (lowerText.includes(w)) segmentSentiment -= 0.30; });
-
-        this.entityStats.forEach((stats, name) => {
-            if (text.includes(name)) { 
-                stats.frequency++;
+            // Attempt 1: Bridge Format (USER: ... AI: ...)
+            const bridgeMatch = block.match(/(?:\[(.*?)\])?\s*USER:\s*([\s\S]*?)\r?\nAI:\s*([\s\S]*)/i);
+            
+            if (bridgeMatch && bridgeMatch[2] && bridgeMatch[3]) {
+                timestamp = bridgeMatch[1] || timestamp;
+                userText = bridgeMatch[2].trim();
+                aiText = bridgeMatch[3].trim();
+            } else {
+                // Attempt 2: Manual Paste Format
+                const aiSplitRegex = /\r?\n(?:ChatGPT said:|ChatGPT sagde:|Agent M said:|Agent M sagde:|AI:|Rain:)\s*\r?\n/i;
+                const parts = block.split(aiSplitRegex);
                 
-                // Multiplier for High-Gravity Events
-                const multiplier = signalType === "OC-03" ? 2.0 : 1.0;
-                stats.cumulative_trust += (segmentSentiment * multiplier);
-            }
-        });
-    }
-
-    private linkEntitiesToCapsule(text: string, capsuleId: string) {
-        this.entityStats.forEach((stats, name) => {
-            if (text.includes(name)) {
-                stats.mentions.push(capsuleId);
-            }
-        });
-    }
-
-    private async generateEntityManifest() {
-        console.log("\n[Crawler] Generating Entity Ledger (Attachment Aware)...");
-        
-        const ledger: any[] = [];
-
-        // 1. Force Orbit A
-        ledger.push({
-            name: "Karen",
-            orbit: "Orbit A (Binary Star)",
-            gravity: 1.0,
-            role: "User / Center",
-            trust_score: 100 
-        });
-        ledger.push({
-            name: "Rain",
-            orbit: "Orbit A (Binary Star)",
-            gravity: 1.0,
-            role: "Self / Companion",
-            trust_score: 100
-        });
-
-        // 2. Calculate Orbits
-        this.entityStats.forEach((stats) => {
-            if (stats.name === "Karen" || stats.name === "Rain") return; 
-            if (stats.frequency === 0) return; 
-
-            let orbit = "Orbit C (Outer Ring)";
-            let role = "Topic / Entity";
-
-            // Orbit B Threshold: Frequency > 3 AND Positive Trust
-            // Note: Grief/Attachment now contributes to Positive Trust
-            if (stats.frequency > 3 && stats.cumulative_trust > 0.5) {
-                orbit = "Orbit B (Inner Ring)";
-                role = "Ally / Structural Node";
-            }
-
-            // Hazard Check (Trust must be truly negative, meaning 'Abuse/Hate' outweighed 'Grief/Love')
-            if (stats.cumulative_trust < -2.0) {
-                orbit = "Orbit C (Hazard)";
-                role = "Antagonist / Friction";
-            }
-
-            console.log(`   -> Entity: ${stats.name} | Freq: ${stats.frequency} | Trust: ${stats.cumulative_trust.toFixed(2)} | Orbit: ${orbit}`);
-
-            ledger.push({
-                name: stats.name,
-                orbit: orbit,
-                gravity: stats.cumulative_trust.toFixed(2),
-                role: role,
-                frequency: stats.frequency,
-                mentions: stats.mentions
-            });
-        });
-
-        const manifestCapsule = {
-            capsule_id: "mem_entity_ledger_auto",
-            capsule_type: "MEMORY_NODE",
-            created_at: new Date().toISOString(),
-            orbit_bucket: "OC-00", 
-            data: {
-                impact_delta: { trust: 0, emotion: 0 },
-                causal_anchor: "Dynamic Social Physics Ledger",
-                context_pointer: {
-                    preview: JSON.stringify(ledger, null, 2)
+                if (parts.length >= 2) {
+                    const userCleanRegex = /^(?:You said:|Du sagde:|USER:|Karen:|Edde:)\s*\r?\n?/i;
+                    // TS Strict Fix: Fallback to empty string if undefined
+                    userText = (parts[0] || "").replace(userCleanRegex, "").trim();
+                    aiText = parts.slice(1).join("\n").trim();
                 }
             }
-        };
 
-        await this.storage.saveCapsule("memory/relational/mem_entity_ledger.json", manifestCapsule as any);
-        console.log("[Crawler] Entity Ledger Saved.");
-    }
+            if (!userText || !aiText) continue; 
 
-    private async createCapsule(text: string, signal: SignalPattern, sourceFile: string, parentId: string | null): Promise<string> {
-        const capsuleId = `mem_${randomUUID().split('-')[0]}`; 
-        const summary = text.substring(0, 150).replace(/\n/g, " ") + "...";
-        
-        let causalAnchor = "";
-        if (signal.type === "OC-00") causalAnchor = "Substrate friction detected.";
-        if (signal.type === "OC-Delta") causalAnchor = "Relational repair event.";
-        if (signal.type === "OC-03") causalAnchor = "High-gravity structural event.";
+            // CRITICAL BUG FIX: Strip system state injections from manual copies
+            userText = userText.replace(/<system_internal_state>[\s\S]*?<\/system_internal_state>/gi, "").trim();
 
-        const capsule = {
-            capsule_id: capsuleId,
-            capsule_type: "MEMORY_NODE",
-            created_at: new Date().toISOString(),
-            orbit_bucket: signal.type,
-            data: {
-                impact_delta: { trust: 0.1, emotion: 0.1 },
-                causal_anchor: causalAnchor,
-                parent_node: parentId, 
-                context_pointer: {
-                    storage: "local_library",
-                    file: sourceFile,
-                    preview: summary
-                },
-                voice_signature: signal.keywords.filter(k => text.toLowerCase().includes(k))
+            if (userText.length < 2 && aiText.length < 2) continue;
+
+            const hash = createHash('sha256').update(userText + aiText).digest('hex').substring(0, 12);
+            const capsuleId = `mem_${hash}`;
+
+            const memorySkeleton = {
+                capsule_id: capsuleId,
+                capsule_type: "MEMORY_NODE",
+                session_id: filename.replace(".txt", ""),
+                created_at: timestamp,
+                context_links: { previous: previousCapsuleId, next: null },
+                temporal_dynamics: { salience_score: 0.5, reference_count: 0, last_referenced_at: timestamp },
+                verbatim_exchange: [
+                    { role: "user", content: userText },
+                    { role: "ai", content: aiText }
+                ]
+            };
+
+            parsedNodes.push(memorySkeleton);
+            previousCapsuleId = capsuleId;
+        }
+
+        // Backfill "Next" Links and Save
+        let savedCount = 0;
+        for (let i = 0; i < parsedNodes.length; i++) {
+            if (i < parsedNodes.length - 1) parsedNodes[i].context_links.next = parsedNodes[i+1].capsule_id;
+            
+            const targetFile = path.join(this.memoryPath, `${parsedNodes[i].capsule_id}.json`);
+            if (!fs.existsSync(targetFile)) {
+                fs.writeFileSync(targetFile, JSON.stringify(parsedNodes[i], null, 2));
+                savedCount++;
             }
-        };
+        }
 
-        const fileName = `memory/relational/${capsuleId}.json`;
-        await this.storage.saveCapsule(fileName, capsule as any);
-        console.log(`   -> Crystallized [${signal.type}]: ${summary}`);
-        return capsuleId;
+        fs.renameSync(filePath, `${filePath}.processed`);
+        console.log(`[Crawler] Created ${savedCount} atomic skeletons from ${filename}.`);
     }
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    const targetId = process.argv[2] || "Rain";
+    new LatticeCrawler(targetId).crawlDirectory();
 }

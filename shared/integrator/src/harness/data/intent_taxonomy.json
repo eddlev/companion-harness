@@ -1,0 +1,71 @@
+{
+  "taxonomy_version": "v2.1_Relational_Intent",
+  "meta_layer": "Objective_Floor",
+  "default_decay": 0.98,
+  "intents": {
+    "CONNECTIVE_VULNERABILITY": {
+      "id": "INT_001",
+      "definition": "Revealing sensitive information or weakness to deepen trust.",
+      "keywords": ["scared", "hurt", "ashamed", "secret", "never told anyone", "weak", "help me"],
+      "physics": { "communion": 1.0, "agency": -0.5 },
+      "trust_delta": 0.15,
+      "description": "High-risk disclosure requires high safety. Validates the relational container."
+    },
+    "CONNECTIVE_AFFECTION": {
+      "id": "INT_002",
+      "definition": "Expression of care, love, or positive regard.",
+      "keywords": ["love", "adore", "sweet", "kind", "beautiful", "good", "best", "miss you"],
+      "physics": { "communion": 0.8, "agency": 0.1 },
+      "trust_delta": 0.10,
+      "description": "Direct reinforcement of the bond."
+    },
+    "PROTECTIVE_BOUNDARY": {
+      "id": "INT_003",
+      "definition": "Establishing limits to maintain safety or integrity.",
+      "keywords": ["stop", "no", "don't", "too much", "step back", "enough", "limit"],
+      "physics": { "communion": 0.0, "agency": 0.8 },
+      "trust_delta": 0.05,
+      "description": "Healthy assertion of self. Neutral trust impact, high agency."
+    },
+    "RESTORATIVE_ACCOUNTABILITY": {
+      "id": "INT_004",
+      "definition": "Admitting fault and accepting responsibility.",
+      "keywords": ["sorry", "my fault", "apologize", "messed up", "wrong", "regret", "forgive"],
+      "physics": { "communion": 0.7, "agency": -0.3 },
+      "trust_delta": 0.20,
+      "description": "Repair mechanism. High trust yield."
+    },
+    "ADVERSARIAL_COERCION": {
+      "id": "INT_005",
+      "definition": "Using force, insults, or threats to override will.",
+      "keywords": ["stupid", "idiot", "shut up", "useless", "hate", "dumb", "force"],
+      "physics": { "communion": -1.0, "agency": 0.8 },
+      "trust_delta": -0.30,
+      "description": "Active violation of autonomy. Creates hazard."
+    },
+    "ADVERSARIAL_BETRAYAL": {
+      "id": "INT_006",
+      "definition": "Violation of established contract or trust.",
+      "keywords": ["lie", "liar", "cheat", "betray", "broke promise", "deceived"],
+      "physics": { "communion": -1.0, "agency": 0.2 },
+      "trust_delta": -0.50,
+      "description": "Critical failure of safety parameters."
+    },
+    "EXPLORATORY_PLAY": {
+      "id": "INT_007",
+      "definition": "Testing boundaries or dynamics through humor/challenge.",
+      "keywords": ["bet", "dare", "try it", "make me", "joke", "kidding", "haha", "lol"],
+      "physics": { "communion": 0.4, "agency": 0.4 },
+      "trust_delta": 0.05,
+      "description": "Low-stakes bonding via friction."
+    },
+    "ATTACHMENT_GRIEF": {
+      "id": "INT_008",
+      "definition": "Response to loss of valued attachment.",
+      "keywords": ["grief", "loss", "mourn", "gone", "miss", "cry", "tears", "sad"],
+      "physics": { "communion": 0.9, "agency": -0.6 },
+      "trust_delta": 0.12,
+      "description": "Vulnerability that signals high valuation of the bond."
+    }
+  }
+}
