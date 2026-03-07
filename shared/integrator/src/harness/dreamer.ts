@@ -23,7 +23,7 @@ export class LatticeDreamer {
 
     constructor(identityName: string) {
         this.memoryPath = path.join(PROJECT_ROOT, "vault", "identities", identityName, "memory");
-        this.apiKey = "AIzaSyAQtxZfdNlVSc3ls3ea5ZOa0lA1bxYG1aI"; // Testing Key
+        this.apiKey = "PLACE YOUR API KEY HERE"; 
         
         if (!fs.existsSync(this.memoryPath)) {
             fs.mkdirSync(this.memoryPath, { recursive: true });
