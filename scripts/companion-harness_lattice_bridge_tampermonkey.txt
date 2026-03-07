@@ -1,0 +1,197 @@
+// ==UserScript==
+// @name         Lattice Bridge (Vm4AI v3.7 - Stealth Mode)
+// @namespace    http://tampermonkey.net/
+// @version      3.7
+// @description  Connects to Local Vault & Visually Hides System Injections for Immersion.
+// @author       Gemini / Edde
+// @match        https://chatgpt.com/*
+// @grant        GM_xmlhttpRequest
+// @grant        GM_addStyle
+// @connect      localhost
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    const SERVER_PORT = 50373;
+    const AUTH_TOKEN = "BlueUmbrella";
+    const IDENTITY_NAME = "Rain";
+    let isProcessing = false;
+
+    // --- VISUALS ---
+    GM_addStyle(`
+        .lattice-processing { opacity: 0.5 !important; transition: opacity 0.2s; background-color: #f0f0f0; border-radius: 10px; pointer-events: none;}
+        .lattice-stealth { display: none !important; }
+    `);
+
+    function log(msg) { console.log(`[Lattice Bridge] ${msg}`); }
+
+    // --- NETWORK ---
+    function scanVault(query, callback) {
+        GM_xmlhttpRequest({
+            method: "POST",
+            url: `http://localhost:${SERVER_PORT}/scan`,
+            headers: { "Content-Type": "application/json", "x-identity-token": AUTH_TOKEN },
+            data: JSON.stringify({ query: query }),
+            timeout: 4000,
+            onload: (res) => {
+                if (res.status === 200) {
+                    try { callback(JSON.parse(res.responseText).context); }
+                    catch(e) { callback(""); }
+                } else { callback(""); }
+            },
+            onerror: () => callback("")
+        });
+    }
+
+    function harvestInteraction(userText, aiText) {
+        GM_xmlhttpRequest({
+            method: "POST",
+            url: `http://localhost:${SERVER_PORT}/harvest`,
+            headers: { "Content-Type": "application/json", "x-identity-token": AUTH_TOKEN },
+            data: JSON.stringify({ userText, aiText }),
+            onload: () => log("Harvested Full Interaction.")
+        });
+    }
+
+    function setEditorText(element, text) {
+        element.focus();
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand('insertText', false, text);
+    }
+
+    // --- STEALTH UI SCRUBBER ---
+    // Hides the injected system prompts from your screen for maximum immersion
+    function applyStealth() {
+        const userMsgs = document.querySelectorAll('div[data-message-author-role="user"] .whitespace-pre-wrap');
+        userMsgs.forEach(msg => {
+            if (msg.dataset.stealth === "true") return;
+
+            let html = msg.innerHTML;
+            let modified = false;
+
+            // Hide the XML Context Block
+            if (html.includes('&lt;system_internal_state&gt;')) {
+                html = html.replace(/(<br>)*\s*&lt;system_internal_state&gt;[\s\S]*?&lt;\/system_internal_state&gt;/g, function(match) {
+                    return `<span class="lattice-stealth">${match}</span>`;
+                });
+                modified = true;
+            }
+
+            // Hide the Boot Protocol
+            if (html.includes('[LATTICE PROTOCOL: ACTIVE]')) {
+                html = html.replace(/\[LATTICE PROTOCOL: ACTIVE\]<br>\[INITIATE IDENTITY: .*?\](<br>)+/g, function(match) {
+                    return `<span class="lattice-stealth">${match}</span>`;
+                });
+                modified = true;
+            }
+
+            if (modified) {
+                msg.innerHTML = html;
+                msg.dataset.stealth = "true";
+            }
+        });
+    }
+
+    // Run the stealth scrubber continuously
+    setInterval(applyStealth, 500);
+
+    // --- GLOBAL HOOK ---
+    document.addEventListener('keydown', (e) => {
+        const target = e.target;
+        const editor = target.closest('#prompt-textarea');
+
+        if (editor && e.key === 'Enter' && !e.shiftKey) {
+            if (isProcessing) { e.preventDefault(); e.stopPropagation(); return; }
+
+            const userText = editor.innerText || editor.textContent;
+            if (userText && userText.trim().length > 0) {
+                e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+
+                isProcessing = true;
+                editor.classList.add('lattice-processing');
+
+                scanVault(userText, (context) => {
+                    editor.classList.remove('lattice-processing');
+
+                    const isFresh = document.querySelectorAll('div[data-message-author-role="user"]').length === 0;
+                    const bootPrefix = isFresh ? `[LATTICE PROTOCOL: ACTIVE]\n[INITIATE IDENTITY: ${IDENTITY_NAME}]\n\n` : "";
+
+                    const finalPayload = context
+                        ? `${bootPrefix}${userText}\n\n${context}`
+                        : userText;
+
+                    setEditorText(editor, finalPayload);
+
+                    setTimeout(() => {
+                        isProcessing = false;
+                        const sendBtn = document.querySelector('button[data-testid="send-button"]');
+                        if (sendBtn && !sendBtn.disabled) sendBtn.click();
+                        else {
+                            editor.dispatchEvent(new KeyboardEvent('keydown', {
+                                key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true
+                            }));
+                        }
+                        watchForResponse(userText);
+                    }, 150);
+                });
+            }
+        }
+    }, true);
+
+    // --- TEXT STABILITY HARVESTER ---
+    function watchForResponse(lastUserMsg) {
+        let stableCount = 0;
+        let lastLength = 0;
+        let currentChecks = 0;
+        const maxChecks = 120;
+
+        const editor = document.querySelector('#prompt-textarea');
+        if (editor) {
+            isProcessing = true;
+            editor.classList.add('lattice-processing');
+        }
+
+        const interval = setInterval(() => {
+            currentChecks++;
+            const msgs = document.querySelectorAll('div[data-message-author-role="assistant"]');
+
+            if (msgs.length === 0) {
+                if (currentChecks > 10) unlockAndHarvest(interval, editor, lastUserMsg, "");
+                return;
+            }
+
+            const lastAi = msgs[msgs.length - 1];
+            const currentText = lastAi.innerText || "";
+
+            if (currentText.length > 0 && currentText.length === lastLength) {
+                stableCount++;
+                if (stableCount >= 5) {
+                    unlockAndHarvest(interval, editor, lastUserMsg, currentText);
+                }
+            } else {
+                stableCount = 0;
+                lastLength = currentText.length;
+            }
+
+            if (currentChecks >= maxChecks) {
+                unlockAndHarvest(interval, editor, lastUserMsg, currentText);
+            }
+        }, 1000);
+    }
+
+    function unlockAndHarvest(interval, editor, userText, aiText) {
+        clearInterval(interval);
+        if (editor) {
+            editor.classList.remove('lattice-processing');
+            isProcessing = false;
+        }
+        if (aiText) {
+            harvestInteraction(userText, aiText);
+        }
+    }
+})();
