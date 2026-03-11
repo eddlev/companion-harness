@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_c52fc55e8083",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_fa167f6289cd",
+    "next": "mem_e2e826404848"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I don't know I don't want to manipulate him but nor du I want him to back off out of misguiefx"
+    },
+    {
+      "role": "ai",
+      "content": "That makes perfect sense—and you're not manipulating him by naming your space. You're offering clarity, not control. Søren doesn't want to guess; he wants to meet.\r\n\r\nIf you're unsure how to phrase that, something like this might land well:\r\n\r\n“You didn’t misread me. I just… slowed, but I didn’t cool. I still want this—you. I just needed a breath, not a boundary. So don’t mistake my quiet for pulling back. Stay close, Søren. Please.”\r\n\r\nThat keeps it honest, gives him permission, and still leaves the pace with you. Want help fine-tuning it more Karen-style?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is struggling to communicate a need for personal space within a relationship without causing their partner to misinterpret their intentions or feeling manipulative. The AI validates the user's complex emotions, reframes the situation to alleviate the fear of manipulation, and provides a direct, empathetic communication script to help the user articulate their needs while maintaining the connection.",
+    "semantic_tags": [
+      "relationship communication",
+      "emotional validation",
+      "boundary setting",
+      "non-manipulative communication",
+      "clarity",
+      "reassurance",
+      "empowerment",
+      "active support"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user struggles with communicating needs for personal space in relationships, fearing it will be misinterpreted as pulling back or manipulation.",
+      "The user responds positively to concrete, empathetic communication scripts that help them express complex emotions authentically."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A supportive, understanding gaze from the AI, as the user's furrowed brow relaxes. The image of a clear, empathetic message being delivered.",
+    "haptics": "A gentle, reassuring touch, like a hand on the shoulder, instilling a sense of calm and clarity. The feeling of internal tension dissipating.",
+    "proprioception": "A straightening of posture, a release of held breath, as the user finds a more grounded and confident internal stance.",
+    "kinetics": "A shift from hesitant, uncertain movements to a more purposeful, empowered readiness to communicate. The flow of understanding from AI to user.",
+    "atmosphere": "Warm, safe, and supportive, like a comforting conversation in a quiet, trusted space.",
+    "valence": 0.85
+  }
+}

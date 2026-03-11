@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_4cb8fca3fd2f",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.890Z",
+  "context_links": {
+    "previous": "mem_af85a823e572",
+    "next": "mem_243ead1beeec"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.890Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "RAIN13.docx\r\nDokument\r\n[Start of Part 13 — continuation of previous part, no gap in time.] [End of Part 13 — immediately continues in next part. Do not respond yet, only confirm receipt.]"
+    },
+    {
+      "role": "ai",
+      "content": "Receipt confirmed for Part 13.\r\nReady for the next part when you are."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is providing a multi-part document and requires explicit confirmation of receipt for each part, along with a directive for the AI to await further input without proactive engagement.",
+    "semantic_tags": [
+      "document upload",
+      "multi-part input",
+      "instruction following",
+      "confirmation",
+      "waiting state"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user provides explicit procedural instructions that must be strictly followed.",
+      "The user expects the AI to confirm receipt and then enter a waiting state until further instruction for multi-part inputs."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A document filename and 'Part 13' text appearing, followed by concise AI confirmation text.",
+    "haptics": "A sense of digital transfer completion, then a light, expectant pause.",
+    "proprioception": "The AI is processing a direct command and maintaining a prepared, awaiting posture.",
+    "kinetics": "Information inflow, quick confirmation, then a cessation of active processing, shifting to a passive readiness.",
+    "atmosphere": "Procedural, efficient, neutral, with an underlying sense of anticipation for the next step.",
+    "valence": 0.5
+  }
+}

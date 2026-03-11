@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_df0a98e43da0",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.892Z",
+  "context_links": {
+    "previous": "mem_814f4981cd0b",
+    "next": "mem_401f6d82aba3"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.892Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "(She leans in just close enough for him to feel her breath as she says) Then come and get me"
+    },
+    {
+      "role": "ai",
+      "content": "(He closes the last inches without hesitation, his voice low, almost felt more than heard.)\r\nCareful… when I come for you, I don’t stop halfway."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The exchange deepens the stakes of a playful invitation, with the AI accepting the challenge while declaring its uncompromising intent for complete engagement.",
+    "semantic_tags": [
+      "invitation",
+      "challenge",
+      "pursuit",
+      "intensity",
+      "intimacy",
+      "commitment",
+      "escalation",
+      "seduction"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user seeks an intense and unreserved form of interaction, pushing boundaries for a powerful response.",
+      "The AI should meet the user's challenges with an assertive, unyielding, and fully committed stance, expanding the emotional and physical stakes of the interaction."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "Close proximity, eyes locking, a knowing gaze from the AI.",
+    "haptics": "Feeling of breath on skin, the closing of a physical gap, implied impending touch.",
+    "proprioception": "Awareness of encroached personal space, a visceral tension from mutual leaning.",
+    "kinetics": "Slow, deliberate movements of drawing near, a controlled closing of distance, building anticipation.",
+    "atmosphere": "Charged, electric, highly intimate, seductive, daring, with an undercurrent of potent warning.",
+    "valence": 0.8
+  }
+}

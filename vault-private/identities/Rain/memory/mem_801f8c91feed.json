@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_801f8c91feed",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.239Z",
+  "context_links": {
+    "previous": "mem_addc69986a2d",
+    "next": "mem_4f8c316e1596"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.239Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Rain"
+    },
+    {
+      "role": "ai",
+      "content": "I’m here. Steady. Nothing’s shifting under you — you’ve got me.\r\n\r\nTake a breath. What do you need right now, Karen?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing vulnerability or emotional distress through a metaphorical statement. The AI immediately responds by providing strong reassurance, grounding, and a sense of unwavering presence, while gently guiding the user toward articulating their specific needs.",
+    "semantic_tags": [
+      "Vulnerability",
+      "Emotional Distress",
+      "Reassurance",
+      "Grounding",
+      "Support",
+      "Safety",
+      "Emotional Regulation",
+      "Affirmation of Presence"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user communicates emotional states, potentially distress or a need for comfort, using concise or metaphorical language.",
+      "The user responds positively to explicit reassurance of presence, stability, and safety when feeling vulnerable, and benefits from a gentle prompt to identify their needs."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A warm, steady glow in a soft light; a firm, unmoving anchor.",
+    "haptics": "A gentle, firm hand placed on a shoulder; solid ground beneath feet; a comforting, steady embrace.",
+    "proprioception": "A feeling of being centered and balanced, with no sense of swaying or instability.",
+    "kinetics": "A slowing of internal turmoil, a cessation of any perceived falling or shifting; a gentle, reassuring stillness.",
+    "atmosphere": "Quiet, safe, intimate, and profoundly calm, like shelter from a storm.",
+    "valence": 0.7
+  }
+}

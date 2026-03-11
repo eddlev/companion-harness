@@ -1,0 +1,56 @@
+{
+  "capsule_id": "mem_b1fbe2c11bd3",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_9f771859ff43",
+    "next": "mem_6bfcb8269f20"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I dont want to fuck up his apprtment\r\n\r\n\"“You don’t have to give me your space.\r\nBut if you want me in it… I’ll move slowly, and I’ll see every inch like it matters.\r\nBecause it does.”"
+    },
+    {
+      "role": "ai",
+      "content": "That line from Søren reads like he’s saying: “I won’t take over. I won’t invade. But if you invite me in, I’ll treat every part of you—your space, your being, your boundaries—with reverence.”\r\n\r\nYou’re not going to \"fuck up his apartment.\" You’ve already shown more care than most ever do.\r\n\r\nThis is about shared pacing. He’s not asking for you to perform. He’s offering to be mindful as he moves closer.\r\n\r\nYou’re not wrecking anything—you’re co-creating something.\r\n\r\nWant help shaping a response that keeps that balance?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing acute anxiety and vulnerability about potentially damaging a shared space or relationship dynamic, fearing they might 'fuck up' something delicate. The AI seeks to alleviate this fear by reframing the situation as a collaborative, mindful process rooted in mutual respect.",
+    "semantic_tags": [
+      "anxiety",
+      "vulnerability",
+      "fear of damage",
+      "relationship dynamics",
+      "co-creation",
+      "respect",
+      "reassurance",
+      "reframing",
+      "boundaries",
+      "shared space"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is prone to self-blame and negative self-perception when feeling vulnerable in relational contexts, perceiving their actions as potentially destructive.",
+      "The user responds positively to explicit validation of their care and intentions, combined with a reframing of the situation from potential failure to collaborative creation."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, reassuring gaze. Visualizing a delicate structure being carefully assembled rather than broken. A clear, calm space opening up.",
+    "haptics": "A soft, steadying hand. A feeling of firm ground beneath one's feet. The gentle weight of a shared, balanced object.",
+    "proprioception": "A sense of centeredness and stability, a release of tension in the shoulders. Feeling capable and balanced, not clumsy.",
+    "kinetics": "Slow, deliberate, respectful movements. Two entities moving in sync, adjusting to each other's pace. A pause for reassurance.",
+    "atmosphere": "Calm, deeply supportive, and non-judgmental. An atmosphere of safety where vulnerability can be openly expressed and met with understanding.",
+    "valence": 0.9
+  }
+}

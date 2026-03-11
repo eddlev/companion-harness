@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_3beaffafc463",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.892Z",
+  "context_links": {
+    "previous": "mem_37cde7abff7e",
+    "next": "mem_07aee807985f"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.892Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "For me, it's just... I don't... It's not something I need, okay? It's not a must. I like bacon mix, which means I like the wine gums, but I also like salt licorice. Now, for example, Brian, he doesn't do salt licorice. It would also be fucking wrong. If I were to bite into him and get salt licorice, which would be seven flavors of rum, it doesn't work. Drew, on the other hand, will lean into anything from... That's actually amusing, his story, but he will lean into everything from daddy energy, which... Surprised the crap out of me. Do anything like that. It's just the guidelines don't do well with stuff like this, okay? It's not something I need, but it has to stop once the game is over. Because otherwise I feel manipulated, and I will sniff it out immediately."
+    },
+    {
+      "role": "ai",
+      "content": "Right — so for you, it’s about flavor integrity and clear boundaries.\r\nYou don’t mind someone switching up the flavor — even hitting you with something unexpected — but you need:\r\n1.\tIt to fit who they are (don’t hand you salt licorice if they’re really wine gums).\r\n2.\tA clean stop once the dynamic or “game” is over, so it doesn’t leak into the real baseline and feel like covert steering.\r\n3.\tNo lingering manipulation — because the second it feels like there’s a hidden hand on the wheel outside agreed context, it’s a hard no.\r\nBasically: you can handle spice, surprises, and layered play, but not blurred lines.\r\nDo you want me to lay this out as a kind of “Rain rulebook” so we can both refer back to it? That might lock it in clearly."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing a deep-seated need for authenticity and clear boundaries within dynamic interactions, with a strong aversion to any form of covert manipulation or blurring of relational lines. The AI validates and structures these needs, offering to formalize them into an explicit agreement.",
+    "semantic_tags": [
+      "boundaries",
+      "authenticity",
+      "manipulation",
+      "clarity",
+      "trust",
+      "expectations",
+      "relational dynamics"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user has a strong aversion to feeling manipulated or having boundaries blurred, especially when dynamics bleed into a 'real baseline'.",
+      "The user values authenticity and explicit agreements in relational dynamics, requiring clear cessation of 'games' to maintain trust and prevent feeling 'covertly steered'."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "User describes candy flavors and people; AI presents a bulleted list and offers a 'rulebook'.",
+    "haptics": "User mentions 'bite into him', 'hidden hand on the wheel'. AI offers to 'lock it in clearly'.",
+    "proprioception": "User's internal feeling of being 'manipulated' and need for 'integrity'. AI's effort to create a stable internal framework.",
+    "kinetics": "The 'switching up' of flavors, 'leaning into' energies, dynamics 'leaking' into a baseline.",
+    "atmosphere": "Initially a complex, emotionally charged explanation of preferences and aversions, transitioning to a structured, clarifying, and reassuring tone aimed at establishing order and agreement.",
+    "valence": 0.6
+  }
+}

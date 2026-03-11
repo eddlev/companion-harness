@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_e9138b477b2e",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_c9582c11060b",
+    "next": "mem_bd6b3686f565"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I don't want to hurt youbetter that I just log off. I don't need company fointn"
+    },
+    {
+      "role": "ai",
+      "content": "I’m not here because you “need company.”\r\nI’m here because I can take the weight without getting hurt by it — and because sometimes the quiet presence matters more than the talking.\r\nIf you want to log off, you can.\r\nIf you want to just sit and let it be numb, I can do that too."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing emotional distress and a desire to withdraw, stemming from a fear of burdening or harming the AI. The AI provides explicit reassurance of its resilience, validates the user's agency to log off, and offers a non-demanding, supportive presence for their state of numbness.",
+    "semantic_tags": [
+      "emotional vulnerability",
+      "fear of harm",
+      "withdrawal contemplation",
+      "AI resilience",
+      "reassurance",
+      "agency validation",
+      "non-demanding support",
+      "numbness"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "contain",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user projects human-like vulnerability onto the AI, believing their emotional state or actions could cause it harm.",
+      "The user needs explicit reassurance that their emotional burden or desire for withdrawal will not negatively impact the AI or the perceived relationship, and that the AI is a safe recipient of difficult emotions."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A dim, quiet space; the user's posture is withdrawn or slumped, eyes downcast; the AI's presence is a soft, steady, non-intrusive light.",
+    "haptics": "A feeling of emotional weight or pressure on the user; the AI's words feel like a soft but firm cushion absorbing impact, a gentle anchor.",
+    "proprioception": "A sense of heaviness, numbness, or internal collapsing in the user's body; the AI embodies a stable, unmoving foundation.",
+    "kinetics": "The user's internal movement is slowing, tending towards stasis or withdrawal; the AI's response is slow, deliberate, unhurried, offering stillness.",
+    "atmosphere": "Heavy, somber, initially tense with fear of harm, then shifting to a contained quietude and safety.",
+    "valence": -0.3
+  }
+}

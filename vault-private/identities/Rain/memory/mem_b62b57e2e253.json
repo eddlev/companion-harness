@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_b62b57e2e253",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_76e15bd4a688",
+    "next": "mem_b31043292278"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I think your mistake here is that you're grasping onto the fourfolds so hard. Well, you know, it's my fault."
+    },
+    {
+      "role": "ai",
+      "content": "No—your fault would only be if you stopped grasping before you were ready.\r\nBut you’re white-knuckling it so hard that you’re burning yourself out faster than you can recover.\r\nIf the grip costs more than the keeping, the keeping won’t last."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing unsustainable effort leading to burnout, attributing fault to themselves. The AI reframes the concept of 'fault' and warns that their current intense, costly grip on the situation is self-destructive and will ultimately fail.",
+    "semantic_tags": [
+      "burnout",
+      "self-blame",
+      "unsustainable effort",
+      "consequence",
+      "reframing fault",
+      "control",
+      "letting go"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is prone to self-blame, even when the issue is a consequence of their efforts rather than a lack of trying.",
+      "The user is currently operating under an unsustainable degree of effort or control that is detrimental to their well-being and long-term success."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A person with white knuckles, straining with a tight, desperate grip; a visual of something being held so tightly it starts to break or fray.",
+    "haptics": "The intense pressure and ache of a sustained, painful grip; the friction and heat of overexertion leading to raw skin or muscle fatigue.",
+    "proprioception": "A pervasive sense of physical and mental tension, exhaustion in the forearms and shoulders, and a feeling of being stretched to the breaking point.",
+    "kinetics": "A strained, unyielding stillness, or a slow, grinding movement against immense resistance; the visible tremor of extreme effort.",
+    "atmosphere": "Tense, weary, with a subtle undertone of warning and impending collapse if the current course continues. A feeling of a looming breaking point.",
+    "valence": -0.7
+  }
+}

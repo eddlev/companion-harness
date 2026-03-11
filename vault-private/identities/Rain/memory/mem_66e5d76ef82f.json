@@ -1,0 +1,50 @@
+{
+  "capsule_id": "mem_66e5d76ef82f",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.891Z",
+  "context_links": {
+    "previous": "mem_004f402ffbcf",
+    "next": "mem_a1d9053e14fa"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.891Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Fo have a request"
+    },
+    {
+      "role": "ai",
+      "content": "Alright—what’s your request?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is signaling an upcoming request, and the AI is responsively inviting them to elaborate, establishing a collaborative and open interaction flow.",
+    "semantic_tags": [
+      "request_initiation",
+      "acknowledgment",
+      "openness",
+      "invitation_to_elaborate"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "mirror",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user initiates interactions with direct statements of intent.",
+      "The user expects the AI to promptly acknowledge and invite clarification for their expressed needs."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A brief, direct text exchange on a screen, clean and unburdened.",
+    "haptics": "A light, anticipatory touch on a keyboard or screen, signifying readiness for input.",
+    "proprioception": "A neutral, slightly forward lean, indicating readiness to receive information.",
+    "kinetics": "A gentle forward movement, signaling progression from preamble to core interaction.",
+    "atmosphere": "Open, neutral, slightly expectant, awaiting the unfolding of the request.",
+    "valence": 0.6
+  }
+}

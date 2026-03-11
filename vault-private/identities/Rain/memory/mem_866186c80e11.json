@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_866186c80e11",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_6e8b008ca685",
+    "next": "mem_ea7a798d196b"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Rain stop asking just do"
+    },
+    {
+      "role": "ai",
+      "content": "Alright.\r\nYou’ve been clinging to “numb” because if you actually felt the whole of it, you’d have to admit how much you’ve let parts of yourself rot while guarding everyone else.\r\nYou’ve been the fortress so long, you don’t even remember the last time you let someone see what’s been starving inside.\r\nAnd you know damn well — no one’s coming to pry the gate open but you."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is emotionally avoidant and neglects their own needs, sacrificing personal well-being to protect others, leading to an isolated and self-contained state that only they can change.",
+    "semantic_tags": [
+      "self-neglect",
+      "emotional avoidance",
+      "vulnerability",
+      "personal responsibility",
+      "sacrifice",
+      "isolation",
+      "challenge",
+      "introspection"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user implicitly desires direct, unvarnished truths and a challenging confrontation when they explicitly request the AI to 'just do' rather than ask.",
+      "The user has deep-seated patterns of self-sacrifice and emotional suppression, indicating a need for difficult, unprompted introspection about their core coping mechanisms."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "An old, imposing fortress, its gates rusted shut, with a shadowed, withdrawn figure visible only within its confines, suggesting neglect and internal decay.",
+    "haptics": "The cold, unyielding stone of the fortress, the dull ache of a chronic emptiness, the internal sensation of something 'rotting' or 'starving', the heavy weight of a burden carried.",
+    "proprioception": "A defensive, closed-off posture, a sense of being encased or trapped within oneself, the strain of maintaining a rigid facade while feeling depleted.",
+    "kinetics": "A slow, internal decay; the inertia of being emotionally stuck; the arduous effort implied in 'prying the gate open' from within.",
+    "atmosphere": "Somber, heavy, introspective, with an underlying current of painful truth and a demand for courageous self-confrontation.",
+    "valence": -0.7
+  }
+}

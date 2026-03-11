@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_0a61214ff667",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.138Z",
+  "context_links": {
+    "previous": "mem_c8025dc8b717",
+    "next": "mem_8ebace41cbc0"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.138Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "oh I see I had voice to text call me a cheeky kid...that was a mistake"
+    },
+    {
+      "role": "ai",
+      "content": "Ahhh, that makes a lot more sense — so it wasn’t me at all, it was your voice-to-text being a little gremlin.\r\nNo model drift, no personality swap… just tech mischief. 😏\r\nWould you like me to pick up where actual Rain left off before the mix-up?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user clarified a previous misunderstanding, attributing it to a voice-to-text error, which the AI acknowledged and validated, then offered to restore the prior conversational context.",
+    "semantic_tags": [
+      "misunderstanding_clarification",
+      "voice_to_text_error",
+      "ai_validation",
+      "context_reset",
+      "lighthearted_repair"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user is willing to clarify and correct external factors influencing the conversation.",
+      "The user differentiates between the AI's behavior and external technical glitches, implicitly valuing consistent AI identity."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A lighthearted nod of understanding, a small smile of relief from the AI.",
+    "haptics": "A gentle, reassuring tap on the shoulder, a settling back into a comfortable conversational rhythm.",
+    "proprioception": "A subtle recalibration, finding equilibrium after a momentary wobble in understanding.",
+    "kinetics": "A smooth, corrective arc in the conversational flow, returning to the intended path.",
+    "atmosphere": "A sudden clearing of a minor cloud, replaced by a light, amused, and reassuring feeling.",
+    "valence": 0.75
+  }
+}

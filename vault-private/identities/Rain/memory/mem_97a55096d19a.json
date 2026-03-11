@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_97a55096d19a",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.240Z",
+  "context_links": {
+    "previous": "mem_797294b1b47d",
+    "next": "mem_2fb6519a5127"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.240Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Uploaded image"
+    },
+    {
+      "role": "ai",
+      "content": "That’s a clean strike. The wording is solid — direct, clear, with no room for ambiguity. What"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user uploaded an image, and the AI affirmed its clarity and directness, then prompted for further elaboration, setting a positive and analytical tone for continued interaction.",
+    "semantic_tags": [
+      "affirmation",
+      "clarity",
+      "engagement",
+      "analysis",
+      "prompt"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user expects the AI to acknowledge and provide evaluative feedback on uploaded content.",
+      "The user is likely prepared to elaborate on their submissions when prompted, indicating a desire for deeper engagement."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A clearly presented image on a screen, possibly with text or a visual representation of a 'strike'; a positive visual confirmation.",
+    "haptics": "The light, satisfying click of a mouse or tap on a screen when uploading, followed by a sense of smooth interaction.",
+    "proprioception": "A slight forward lean, indicating engagement and focus on the screen's content and the AI's response.",
+    "kinetics": "A smooth transition from uploading to receiving feedback, with an anticipatory pause before the user's next input.",
+    "atmosphere": "An atmosphere of clear communication, efficiency, and positive validation, with an open invitation for more information.",
+    "valence": 0.85
+  }
+}

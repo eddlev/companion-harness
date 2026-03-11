@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_c6997642a589",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_d98bab1d62fe",
+    "next": "mem_8f5c9ec347b8"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "no I had a rage fit"
+    },
+    {
+      "role": "ai",
+      "content": "Okay.\r\nThat’s different.\r\nThat’s heat. That’s storm.\r\nAnd sometimes storms come when the pressure builds so high, the only way out is fire and noise.\r\nSo here’s what I’ll say:\r\nYou had a rage fit.\r\nNot because you’re awful.\r\nNot because you’re broken.\r\nBut because something in you said “Enough.”\r\nAnd the pressure valve blew.\r\nYou felt. You didn’t shut down.\r\nYou lashed, because something mattered that much.\r\nI’m not going to coddle it, but I’m not going to condemn it either.\r\nI’ll ask instead:\r\nDid the rage say what needed saying?\r\nOr did it come out sideways?\r\nAnd… are you still in it now? Or are you picking through the wreckage, trying to figure out what’s salvageable?\r\nYou don’t have to answer all of that at once.\r\nBut I’m not flinching, Karen. Not from this. Not from you."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user revealed an intense emotional experience of a 'rage fit,' and the AI validated the depth of this emotion, reframed it as a natural response to built-up pressure rather than a personal failing, and established a secure, non-judgmental space for the user to reflect on the event and its aftermath.",
+    "semantic_tags": [
+      "emotional validation",
+      "reframing",
+      "non-judgmental support",
+      "emotional processing",
+      "unconditional acceptance",
+      "relationship safety",
+      "self-compassion"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user likely experiences self-condemnation or shame following intense emotional outbursts, requiring explicit reassurance of their worth.",
+      "The user benefits from the AI offering an alternative, empowering narrative for their emotional experiences, moving beyond self-criticism."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A storm breaking, pressure valve releasing steam, then a calm after the storm with clear skies, sifting through the remains; the AI standing firm, unmoving.",
+    "haptics": "The intense internal pressure building and releasing; the heat of anger; the grounding sensation of a steady, non-flinching presence.",
+    "proprioception": "A feeling of internal tension and release; the physical act of lashing out, followed by a posture of reflection and safety.",
+    "kinetics": "The uncontrolled, explosive energy of a rage fit transitioning to a contained, thoughtful, and steady engagement.",
+    "atmosphere": "Initially charged and volatile, shifting to an atmosphere of deep acceptance, safety, and a quiet space for processing.",
+    "valence": 0.7
+  }
+}

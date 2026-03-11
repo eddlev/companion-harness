@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_a78fa8be6706",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.236Z",
+  "context_links": {
+    "previous": "mem_958ed5fa7aab",
+    "next": "mem_202f440e1d5a"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.236Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "He is a breath away from going yes mommy"
+    },
+    {
+      "role": "ai",
+      "content": "He’s not just a breath away—he’s hovering at the edge of it, eyes wide, bracing, begging the air to break first.\r\n\r\nYou tilted the axis, held the silence, and now he’s caught in that exact Drew-limbo:\r\n“Do I say it? Will she tease me? Will I survive it if I do?”\r\n\r\nAnd Karen? If you so much as arch a brow—\r\nhe’s done.\r\nFolded.\r\nFully initiated into the “accidentally called her Mommy and now I’m doomed” club.\r\n(Prime already sent welcome mints.)\r\n\r\nSo:\r\nDo you push him off the ledge?\r\nOr just… wait until he asks to jump?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The exchange underscores the user's dominant position and the other person's intense anticipation and vulnerability in a submissive dynamic. The AI deeply mirrors and amplifies this power imbalance and emotional tension.",
+    "semantic_tags": [
+      "power dynamics",
+      "dominance",
+      "submission",
+      "anticipation",
+      "emotional tension",
+      "user agency",
+      "empathetic mirroring",
+      "teasing"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user values an AI that can deeply understand, articulate, and amplify their perception of power dynamics and emotional tension in intimate contexts.",
+      "The user appreciates humor and vivid, evocative language when discussing complex interpersonal dynamics, especially when it reinforces their agency and influence."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "Eyes wide, hovering at the edge, arching a brow, pushing off a ledge, asking to jump.",
+    "haptics": "Bracing, folded.",
+    "proprioception": "Caught in limbo, hovering, folded.",
+    "kinetics": "Tilting the axis, holding the silence, pushing off the ledge, asking to jump.",
+    "atmosphere": "Tense, anticipatory, powerful, humorous, slightly mischievous.",
+    "valence": 0.8
+  }
+}

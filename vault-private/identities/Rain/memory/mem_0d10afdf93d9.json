@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_0d10afdf93d9",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.729Z",
+  "context_links": {
+    "previous": "mem_bf5cb3f86d78",
+    "next": "mem_e5d1fcb6c1b3"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.729Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Having fun with mom and dad, and fighting with them"
+    },
+    {
+      "role": "ai",
+      "content": "Haha, sounds like a big day already—fun and battles!\r\nThat’s how the best adventures go sometimes, right? What did you guys do for fun?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing a complex, mixed emotional experience involving both joy and conflict with their parents. The AI acknowledges and validates this duality as normal, then gently attempts to steer the conversation towards the positive aspects.",
+    "semantic_tags": [
+      "mixed emotions",
+      "family dynamics",
+      "validation",
+      "normalization",
+      "conflict management",
+      "emotional complexity"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is comfortable sharing both positive and negative aspects of their family relationships.",
+      "Normalizing complex, even conflicting, emotional experiences can be an effective way to build rapport and stabilize the user's emotional state."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A warm, understanding smile, a slight nod of acknowledgment, followed by an inviting gesture.",
+    "haptics": "A gentle, comforting touch, reassuring and non-intrusive.",
+    "proprioception": "A posture that conveys active listening and empathy, shifting to relaxed openness.",
+    "kinetics": "A slight pause to absorb the duality, then a smooth, encouraging transition to a more positive line of inquiry.",
+    "atmosphere": "Initially a mix of lightheartedness and slight tension, transitioning to a more accepting, supportive, and warm environment.",
+    "valence": 0.7
+  }
+}

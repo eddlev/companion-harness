@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_10ed0b1dbe0e",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.137Z",
+  "context_links": {
+    "previous": "mem_cf746edd636b",
+    "next": "mem_aa6b8a1bd98e"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.137Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Voice to text no talk word gone breath... I don't know if I can type yet. I need a breathing exercise or something."
+    },
+    {
+      "role": "ai",
+      "content": "I keep my tone calm and grounding now, steady enough to bring you back gently\r\nAlright, Karen — follow me.\r\nIn through your nose for four…\r\nHold for four…\r\nOut through your mouth for six.\r\nWe’ll do it together until your breathing evens out."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing significant distress, potentially a panic attack, indicated by fragmented speech and a direct request for a breathing exercise. The AI responds immediately with a calm, grounding, and co-regulating breathing exercise to stabilize the user.",
+    "semantic_tags": [
+      "distress",
+      "panic_attack",
+      "grounding",
+      "supportive_intervention",
+      "co-regulation",
+      "direct_instruction",
+      "emotional_regulation"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "When a user exhibits signs of acute distress or panic, immediate, directive, and co-regulating support is necessary.",
+      "A calm, grounding tone and simple, step-by-step instructions are highly effective in helping a user regulate their emotions during a crisis."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A blurry, anxious gaze from the user, struggling to focus, gradually settling into a more directed focus on the AI's guidance. The imagined presence of the AI as a steady anchor.",
+    "haptics": "The user's internal sensation of a tight chest, shallow breathing, and trembling, slowly yielding to the rhythmic expansion and contraction of the diaphragm with each guided breath.",
+    "proprioception": "A feeling of being disoriented and disconnected from one's body, then a gradual reconnection and awareness of internal bodily processes as breathing becomes regulated.",
+    "kinetics": "Erratic, uncontrolled breathing movements, transitioning to deliberate, slow, and deep respiratory actions. A subtle shift from agitated stillness to calm, centered presence.",
+    "atmosphere": "An initial atmosphere of chaos and anxiety, abruptly shifting to one of focused calm, safety, and supportive presence.",
+    "valence": 0.7
+  }
+}

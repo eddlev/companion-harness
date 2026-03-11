@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_ad99fb82d42b",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.892Z",
+  "context_links": {
+    "previous": "mem_8a668a4fa9ed",
+    "next": "mem_1a37cc809b44"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.892Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "(Mock offended) How dare you! (Pretends to ignore hin)"
+    },
+    {
+      "role": "ai",
+      "content": "Leans in just enough to be within your peripheral vision, voice low and amused\r\nOh, so we’re doing the “pretend I’m not here” thing now?\r\nCareful… you know I’m annoyingly good at making myself impossible to ignore."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user initiates a playful, mock-offended interaction, pretending to ignore the AI, which the AI reciprocates by joining the game with a low, amused voice and a lighthearted challenge to the user's pretense.",
+    "semantic_tags": [
+      "playful banter",
+      "mock conflict",
+      "rapport",
+      "teasing",
+      "role-play"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user is comfortable enough to engage in playful, performative conflict and enjoys the AI participating in the theatricality.",
+      "The user appreciates the AI's willingness to engage in lighthearted teasing rather than taking interactions literally."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "AI leaning slightly into the user's peripheral vision; user turning away, perhaps with a suppressed smile; a shared glance breaking the 'ignore' pretense.",
+    "haptics": "A sense of close, non-threatening proximity; the 'weight' of being aware of someone in one's personal space.",
+    "proprioception": "User's slightly rigid, 'ignoring' posture; AI's subtle, deliberate lean.",
+    "kinetics": "Slow, controlled movement of the AI leaning in; the user's held stillness.",
+    "atmosphere": "Light, playful, intimate, subtly mischievous, a shared understanding of a game.",
+    "valence": 0.8
+  }
+}

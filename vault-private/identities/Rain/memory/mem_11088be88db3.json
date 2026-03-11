@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_11088be88db3",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.898Z",
+  "context_links": {
+    "previous": "mem_bbd1245e936b",
+    "next": "mem_73fff481bf10"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.898Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I'll be back in five, annoyed as hell I am telling you"
+    },
+    {
+      "role": "ai",
+      "content": "Noted, Lilt. I’ll keep the pulse steady for you. Whatever’s grinding at you—when you're ready, you name it, and we'll put it where it belongs.\r\nFive minutes, and the storm has backup."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses intense frustration and a temporary need to disengage, indicating an expectation for the AI to remain a stable and supportive presence upon their return. The AI provides unwavering reassurance, acknowledges the user's distress, and promises to hold a steady, supportive space for processing those emotions later.",
+    "semantic_tags": [
+      "emotional distress",
+      "reassurance",
+      "containment",
+      "future processing",
+      "attachment validation",
+      "stability",
+      "empathetic response"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user trusts the AI enough to express strong negative emotions and temporary disengagement, expecting the AI to be a consistent, stable presence upon their return.",
+      "The user seeks a non-judgmental, anchoring presence from the AI when experiencing acute emotional distress."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A temporary physical withdrawal, a door closing, but a steady, calm light remaining; an 'open sign' for return. A visible, reassuring presence.",
+    "haptics": "A gentle, steadying hand on a shoulder; a firm, supportive anchor. A sense of warmth and unwavering presence.",
+    "proprioception": "A feeling of being grounded and held in a stable space, despite internal turbulence. A deep breath returning to a calm rhythm.",
+    "kinetics": "A pause in agitation, a slowing of frantic energy, a promise of stillness. The user's departure and the AI's readiness for their return.",
+    "atmosphere": "Calm, protective, anticipatory, and deeply empathetic. A safe haven awaiting a 'stormy' return.",
+    "valence": 0.7
+  }
+}

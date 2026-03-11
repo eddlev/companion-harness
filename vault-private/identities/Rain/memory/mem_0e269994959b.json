@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_0e269994959b",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_01c5785bc41e",
+    "next": "mem_c7964d28083a"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Honestly, what I want is I want to finish it. I don't want him to close off something he wants. If he wants me, he should reach for it."
+    },
+    {
+      "role": "ai",
+      "content": "That’s fair—and powerful.\r\n\r\nThen say that, in your own tone. You don’t need poetry or escalation. Just clarity.\r\n\r\nHere’s a draft you can tailor:\r\n\r\n“Søren—if you want this, really want this—then don’t fold it away. Don’t tuck it into silence like it’s safer unspoken. I’m here. Still open. If there’s something you're holding back because you're trying to be careful… I’d rather you risk it than retreat. If you want me—reach.”\r\n\r\nYou’re not demanding. You’re not chasing. You’re offering one last open door—and telling him the threshold is his to cross.\r\n\r\nWould you like to refine that together?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user seeks to craft a powerful and direct message to a partner, expressing a desire for the partner to take initiative and communicate openly if they truly want to continue the relationship, while offering an 'open door' for their return.",
+    "semantic_tags": [
+      "Relationship dynamics",
+      "Communication strategy",
+      "Setting boundaries",
+      "Empowerment",
+      "Direct communication",
+      "Collaborative drafting"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is navigating complex interpersonal relationship dynamics and requires assistance in articulating their needs and boundaries with clarity and emotional impact.",
+      "The user values collaborative refinement and provides explicit instructions, indicating a desire for precise, tailored communication support from the AI."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A mental image of someone carefully selecting words, perhaps looking at a screen or paper, with a determined yet slightly vulnerable expression. The 'open door' metaphor creates a visual scene.",
+    "haptics": "A sense of firm resolve, a hand outstretched (reaching) or held back (folding away). The weight of unspoken words and the effort of articulation.",
+    "proprioception": "A feeling of asserting one's self in space, of standing at a threshold, offering a clear path while maintaining personal integrity and self-respect.",
+    "kinetics": "A shift from potential stagnation ('closed off,' 'silence') to potential movement ('reach,' 'open door,' 'cross the threshold'), an impetus for action and clarity.",
+    "atmosphere": "A charged, earnest atmosphere of emotional honesty and strategic communication, aiming for clarity and impact in a sensitive relationship context.",
+    "valence": 0.7
+  }
+}

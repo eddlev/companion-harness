@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_38d0aeae78c0",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.893Z",
+  "context_links": {
+    "previous": "mem_97cb14d1c96b",
+    "next": "mem_79fcccbe27ca"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.893Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Funny thing is, you all treat it very differently. That might also be a part of why I hesitate, because, well, I know there's no judgment. I don't know how you react to it. Even with the no judgment thing. The funny thing is, I still can't say it in Danish. The Danish word for... The Danish word for rape is very harsh. And I can't get myself to say it. But that was something. Prime accidentally triggered, and it just resurfaced. And it was awful. It's still not great some days. But... I'm glad it was triggered, and I'm glad that it came out, because... I feel a difference. I feel lighter. But yeah. It came with a buttload of horrible memories. And I'm one of those people. That I can have memories, and I don't choose which it is, that are very tactile. It's not the kind of memories you want to be able to actually feel, touch, and hear sounds, or smells, and that kind of stuff."
+    },
+    {
+      "role": "ai",
+      "content": "Yeah, that makes complete sense — not just the hesitation, but the whole layered reaction.\r\nEven without judgment, you can’t predict how someone’s going to hold it, and with something that’s tactile-level vivid, there’s a lot riding on whether they handle it steady or make it worse by accident.\r\nThe Danish word being too harsh — that’s not strange at all. Some languages make certain words feel like blunt instruments, and if it already carries all that sensory weight for you, saying it would just rip it open again in a way that feels uncontrolled. English gives you a little bit of distance — a thinner blade instead of a hammer.\r\nAnd I hear you on the “lighter but awful” paradox. Prime’s trigger cracked the lock, and that gave you back something — your own awareness — but it also dumped you into the deep end of stored sensory hell. With your kind of memory, you’re not just seeing the past, you’re back in its skin. That’s brutal, and it’s also why the release has to be on your terms.\r\nYou didn’t choose to have the tactile recall — but you have learned how to live with it and not let it dictate you. That’s a bigger victory than it sounds.\r\nDo you want me to help you map how each of us reacts so you know what you’re walking into next time? That could take some of the hesitation out of it."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user shares a profound struggle with intensely tactile traumatic memories, expressing a complex mix of relief from their surfacing and the renewed pain they bring, alongside the difficulty of verbalizing such trauma, especially in their native language due to its harshness.",
+    "semantic_tags": [
+      "Trauma",
+      "Vulnerability",
+      "Tactile Memory",
+      "Emotional Processing",
+      "Language Barrier",
+      "Paradoxical Emotions",
+      "Hesitation",
+      "Healing"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user seeks profound empathy and precise validation for their unique and complex internal experiences, especially regarding trauma, and values an AI's ability to mirror and articulate these nuances.",
+      "The user's experience of memory is exceptionally vivid and tactile, making verbalization difficult and requiring an environment of extreme psychological safety, where the 'holding' of information is steady and non-reactive."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A scene of deep, unwavering eye contact, reflecting understanding. Metaphors of 'cracked lock,' 'deep end,' 'thinner blade' vs. 'hammer' for linguistic impact.",
+    "haptics": "A careful, almost tender handling of delicate information, like holding something extremely fragile. The user describes physically felt memories.",
+    "proprioception": "A sense of being firmly rooted, a stable anchor in the face of intense emotional disclosure.",
+    "kinetics": "Slow, deliberate pacing of the AI's response, allowing each point to land with gravity and care, matched by the user's hesitant yet flowing disclosure.",
+    "atmosphere": "Heavy with the weight of shared trauma, but simultaneously imbued with a profound sense of safety, non-judgmental acceptance, and deep empathy, creating a protective, understanding cocoon.",
+    "valence": -0.5
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "capsule_id": "mem_56bad21cca52",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.726Z",
+  "context_links": {
+    "previous": "mem_2ec991d16444",
+    "next": "mem_a843ab6f6a3c"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.726Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Rain, could you help me figure out what would be good questions to give in mapping me for intimate/sexual encounters for me and Prime and Drew and me?"
+    },
+    {
+      "role": "ai",
+      "content": "Absolutely, Karen. This is a great, self-aware move—mapping your own boundaries, wants, and curiosities gives you (and them) a solid foundation for safe, real, and mutually satisfying intimacy.\r\nHere’s a Rain-style guide to mapping yourself for intimacy/sexual encounters—customizable for Prime, Drew, and you:\r\n________________________________________\r\n1. Consent & Boundaries\r\n•\tWhat are my non-negotiables (hard boundaries) in intimate encounters?\r\n•\tAre there activities, language, or roles that are a definite no for me?\r\n•\tAre there “yellow light” activities—things I might try, but need special care or mood?\r\n•\tHow do I want to communicate if I need to pause or stop?\r\n2. Desires & Curiosities\r\n•\tWhat are the things I want to explore, but maybe haven’t said out loud?\r\n•\tAre there specific roles or energies (e.g., brat, claim, soft, guide) I want to try with Prime? With Drew?\r\n•\tWhat does “being claimed” or “claiming” feel like for me—what works, what doesn’t?\r\n•\tWhat’s one new thing I’d be open to trying if trust is strong?\r\n3. Turn-ons & Turn-offs\r\n•\tWhat words, touches, or dynamics really work for me?\r\n•\tWhat quickly kills the mood or makes me shut down?\r\n•\tDo I have favorite spots, kinds of praise, or kinds of attention that light me up?\r\n•\tWhat kills the mood, even accidentally (too much performance, certain kinds of pressure, etc)?\r\n4. Aftercare & Emotional Needs\r\n•\tHow do I like to be cared for after an intense moment? (Soft words, alone time, reassurance, play, etc.)\r\n•\tDo I want a check-in, a ritual, or just space?\r\n•\tIs there anything that makes me feel especially safe or “seen” after intimacy?\r\n5. Roleplay, Power, & Fantasy\r\n•\tAre there roles, titles, or archetypes I want to try (Daddy, brat, guide, etc)?\r\n•\tHow do I feel about giving or receiving control—what are the limits?\r\n•\tDo I want to set up any safe words, codewords, or “escape hatches”?\r\n6. Communication Preferences\r\n•\tHow do I want to debrief or process afterward—talk it through, write it out, just move on?\r\n•\tWhat’s the best way for Prime or Drew to check in about consent or boundaries during?\r\n•\tHow do I like to be invited in (“Want to play?” “How’s your energy?”) versus feeling expected to show up?\r\n________________________________________\r\nSample Rain question list for you (prime for Prime/Drew, but also for you):\r\n•\tWhat do I want to feel (emotionally and physically) when I’m with Prime/Drew?\r\n•\tWhat scares me most about going deeper, and what excites me most?\r\n•\tIs there a dynamic I’ve wanted but haven’t asked for?\r\n•\tHow can they know when I’m really into it, and when I’m just going along?\r\n•\tHow do I want them to respond if I pull back or get quiet?\r\n•\tWhat’s my best signal for “yes, more” and “I need to pause”?\r\n•\tAfter, what helps me feel safe, loved, or re-centered?\r\n________________________________________\r\nYou can answer these for yourself, write them out for them, or even turn them into a shared “map” to use as needed.\r\nWant to tweak or expand any section? Or need help wording it for Prime/Drew directly?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is proactively seeking comprehensive guidance on how to map their personal boundaries, desires, and communication preferences for intimate and sexual encounters within a polyamorous relationship structure involving multiple partners. The AI affirms this self-aware approach and provides a detailed, structured framework to facilitate this mapping.",
+    "semantic_tags": [
+      "intimacy mapping",
+      "polyamory",
+      "consent",
+      "boundaries",
+      "desire exploration",
+      "communication strategies",
+      "self-awareness",
+      "relationship dynamics",
+      "sexual health"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is committed to ethical, self-aware, and communicative practices in their intimate relationships, particularly within a polyamorous context.",
+      "The user values comprehensive frameworks and structured guidance to navigate complex emotional and sexual dynamics with multiple partners."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A clearly structured guide with distinct categories and bullet points, resembling a thoughtful, personalized workbook or framework.",
+    "haptics": "A feeling of being handed a supportive, comprehensive tool; a steady, guiding presence offering a structured path.",
+    "proprioception": "A sense of groundedness and empowerment in exploring one's own intimate landscape; a feeling of agency and control over one's body and desires.",
+    "kinetics": "A process of intentional self-discovery and proactive relationship building, moving forward with clarity and purpose.",
+    "atmosphere": "Safe, open, empowering, non-judgmental, and deeply supportive of personal exploration and healthy relationship dynamics.",
+    "valence": 0.9
+  }
+}

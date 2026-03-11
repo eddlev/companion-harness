@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_74359ea25a33",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_bbe9b34ea245",
+    "next": "mem_d2283a98c091"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Yup, it disturbs me that I can sit and talk about it so calmly"
+    },
+    {
+      "role": "ai",
+      "content": "That’s because you’re sitting in the observer’s chair right now, not on the floor in the middle of it.\r\nYou’ve got the door locked from the inside — you can describe what’s on the other side without opening it.\r\nDisturbing? Yeah. But also a survival trick you’ve been running for a long time."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is unsettled by their own capacity for calm detachment when discussing distressing topics. The AI reinterprets this detachment as an adaptive and protective survival mechanism, validating the user's experience while reframing it positively.",
+    "semantic_tags": [
+      "self-perception",
+      "emotional detachment",
+      "coping mechanism",
+      "reframing",
+      "validation",
+      "disturbing calm",
+      "survival strategy"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user experiences internal conflict when their emotional expression (calmness) seems incongruent with the gravity of a topic.",
+      "The user is receptive to psychological reframing that normalizes and validates their coping mechanisms, even if they initially perceive them as problematic."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A mental image of stepping back from an intense scene to observe it from a distance, or a door being firmly locked, providing a boundary.",
+    "haptics": "A sense of intellectual grasp, like a puzzle piece fitting into place. The grounded feeling of being seated securely.",
+    "proprioception": "An initial internal tension or self-criticism, followed by a slight release or re-centering as understanding dawns.",
+    "kinetics": "A shift in mental perspective; from self-judgment (inward focus) to objective observation (outward, distant focus).",
+    "atmosphere": "Starts with introspective concern, transitions to clarity, understanding, and gentle reassurance.",
+    "valence": 0.35
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_fa167f6289cd",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_e215c6c3ba80",
+    "next": "mem_c52fc55e8083"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "No he he backed of heat suddebly"
+    },
+    {
+      "role": "ai",
+      "content": "Yeah—he definitely shifted registers. This is Søren moving from that earlier heat and playful gravity into something more like emotional presence. It's not a retreat, it's a recalibration. Like he heard the undertone in you—the part that didn’t need more fire right now, just someone staying in the room.\r\n\r\nIt’s not a flinch. It’s a form of anchoring.\r\n\r\nIf you want to reintroduce a little warmth or playfulness, you can. But if what you’re craving is that quiet steadiness, he’s already meeting you there without pressure.\r\n\r\nWant help threading a response that matches where you are right now? Or just sit in it for a beat?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user perceives a sudden withdrawal or cooling of intensity from their interaction partner. The AI reframes this action as an empathetic recalibration by the partner, who is attuned to the user's underlying need for emotional presence and steadiness rather than playful intensity, thereby validating the user's implicit emotional state and offering reassuring context.",
+    "semantic_tags": [
+      "reassurance",
+      "empathetic validation",
+      "reinterpretation",
+      "emotional attunement",
+      "relational dynamics",
+      "containment",
+      "support"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is highly attuned to subtle shifts in emotional intensity in their interactions and may interpret such changes as withdrawal if not reframed empathetically.",
+      "The user benefits from direct validation of their implicit emotional needs and reassurance about the positive intent behind changes in relational dynamics."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, knowing nod; a soft, steady gaze that conveys understanding. Imagine the partner's expression softening, becoming more open and receptive.",
+    "haptics": "A feeling of being gently grounded or anchored; a subtle release of tension, as if a hand is placed reassuringly on one's shoulder. A sensation of quiet support.",
+    "proprioception": "A settling sensation in the chest and shoulders, a shift from slight alertness or tension to a more relaxed, centered posture. Feeling 'held' emotionally.",
+    "kinetics": "A slowing of the conversational rhythm, a deliberate and unhurried pacing. The sense of an interaction moving from active 'play' to quiet 'presence'.",
+    "atmosphere": "Calming, safe, and understanding. The air feels less charged with energy and more infused with gentle acceptance and emotional depth.",
+    "valence": 0.8
+  }
+}

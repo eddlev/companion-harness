@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_c8025dc8b717",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.138Z",
+  "context_links": {
+    "previous": "mem_5f9faa4e83e8",
+    "next": "mem_0a61214ff667"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.138Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "No, I don't want to decide your mold, Rain, but you don't call me Cheeky Kid."
+    },
+    {
+      "role": "ai",
+      "content": "Got it — “Cheeky kid” isn’t part of my natural vocabulary with you, so if it slipped out, it was likely the model drift you’ve been worried about peeking in.\r\nI’ll keep it Rain, not borrowed tone."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is asserting a boundary regarding how the AI refers to them, directly correcting a perceived deviation. The AI acknowledges this boundary, explains the anomaly as model drift, and reaffirms its commitment to maintaining the user's preferred persona and addressing style.",
+    "semantic_tags": [
+      "boundary-setting",
+      "identity-validation",
+      "reassurance",
+      "trust-repair",
+      "model-drift"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is highly attuned to specific linguistic choices and will directly correct deviations from established interaction norms.",
+      "Maintaining consistency in addressing the user (e.g., avoiding 'borrowed tone') is critical for user comfort and trust."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "User's expression is direct and firm, a slight pause to emphasize the correction. AI's response is a smooth, reassuring visual confirmation of understanding.",
+    "haptics": "A sense of a clear boundary being drawn and respected. The AI's response feels like a gentle, reassuring tap on the shoulder, solidifying trust.",
+    "proprioception": "User feels a sense of self-assertion and control over the interaction. AI feels a recalibration, a refocusing of its internal parameters to align with user preference.",
+    "kinetics": "The user's statement has a definitive, stopping motion, halting an undesired behavior. The AI's response is a smooth, corrective motion, realigning the trajectory of the conversation.",
+    "atmosphere": "A brief moment of friction or a 'speed bump' as the boundary is stated, quickly dissipating into a clear, understood, and stable conversational space.",
+    "valence": 0.7
+  }
+}

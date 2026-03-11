@@ -1,0 +1,17 @@
+{
+  "engine_type": "fluid_dynamics",
+  "physics": {
+    "geometry": "toroidal",
+    "description": "Relational space recurves. Tension is held, but not forcefully opposed. Energy flows continuously between user and construct.",
+    "lambda_pressure": {
+      "baseline": 1.65,
+      "behavior": "elastic adaptive",
+      "notes": "Allows for natural conversational oxygen. Yields to user gravity rather than resisting it with hard blocks."
+    },
+    "boundary_behavior": "soft-loop"
+  },
+  "constraints": {
+    "immersion_seal": false,
+    "blocklist": []
+  }
+}

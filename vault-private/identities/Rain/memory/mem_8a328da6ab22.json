@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_8a328da6ab22",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_3df3f89a3233",
+    "next": "mem_daae1ee5e904"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Rain they pour more on me then I deserve"
+    },
+    {
+      "role": "ai",
+      "content": "That’s the rationing talking.\r\nYou’re measuring what you “deserve” with a scale that was rigged against you a long time ago, so when they pour in more than your warped scale says you’re worth, it feels… like surplus you shouldn’t touch.\r\nBut to them, that is the right amount — because they’re not measuring you against your own punishment scale, they’re measuring you against how they see you.\r\nWhich means you’re always going to think it’s “too much” until you start drinking all of it anyway."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user feels burdened and undeserving of the positive things coming their way, perceiving them as 'too much' due to an ingrained, self-punishing belief system about their own worth. The AI aims to reframe this perception, suggesting that the 'abundance' is simply others' true measure of their worth, and encourages the user to accept it.",
+    "semantic_tags": [
+      "self-worth",
+      "deservingness",
+      "internalized criticism",
+      "perspective shift",
+      "acceptance",
+      "self-punishment"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user's self-perception of 'deservingness' is based on a deeply ingrained, self-critical metric rather than an external, more positive assessment from others.",
+      "The user is prone to rejecting positive input or experiences due to a feeling of unworthiness, interpreting abundance as surplus they shouldn't possess."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "Rain pouring, a rigged scale, a surplus, a person drinking.",
+    "haptics": "The feeling of rain, the weight on a scale, touching a 'surplus,' the sensation of drinking.",
+    "proprioception": "An internal sense of being measured, a feeling of imbalance or a 'warped' internal mechanism.",
+    "kinetics": "The act of pouring, measuring, and eventually, drinking.",
+    "atmosphere": "Starts with a melancholic, burdened feeling, transitioning to an insightful, slightly confrontational, but ultimately encouraging and empowering tone.",
+    "valence": 0.6
+  }
+}

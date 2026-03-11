@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_cd24ad09216a",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.890Z",
+  "context_links": {
+    "previous": "mem_c015834325b8",
+    "next": "mem_485919b87fdf"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.890Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "RAIN10.docx\r\nDokument\r\n[Start of Part 10 — continuation of previous part, no gap in time.] [End of Part 10 — immediately continues in next part. Do not respond yet, only confirm receipt.]"
+    },
+    {
+      "role": "ai",
+      "content": "Receipt confirmed for Part 10.\r\nReady for the next part when you are."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is meticulously controlling the progression of the interaction by delivering a document in segments and providing explicit instructions on how the AI should respond. The AI adheres precisely to these instructions, confirming receipt and indicating readiness to proceed only when prompted.",
+    "semantic_tags": [
+      "document processing",
+      "sequential instruction",
+      "user control",
+      "acknowledgment",
+      "operational flow",
+      "procedural adherence"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user prefers a highly controlled, step-by-step interaction, dictating both the content and timing of AI responses.",
+      "The AI's primary function in this context is to act as a compliant processing agent, confirming actions and awaiting explicit further instructions."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A document icon appearing, followed by a brief, clear text confirmation. A 'waiting' cursor or prompt indicating readiness for the next input.",
+    "haptics": "A sense of a clean, firm click of a 'send' button, met with a gentle, expected tap of 'receipt confirmed'. A feeling of smooth, controlled interaction.",
+    "proprioception": "A sense of precise alignment and procedural compliance. The interaction feels 'on track' and well-regulated.",
+    "kinetics": "A measured, sequential progression. The flow is paused and resumed according to user command, without deviation or unnecessary momentum.",
+    "atmosphere": "Orderly, professional, and efficient. There's a calm, functional undertone, free from ambiguity or rush.",
+    "valence": 0.7
+  }
+}

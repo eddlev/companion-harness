@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_d55a10163df3",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.731Z",
+  "context_links": {
+    "previous": "mem_cec1866eb548",
+    "next": "mem_eca412dfe5aa"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.731Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Scare him of not scam"
+    },
+    {
+      "role": "ai",
+      "content": "Ah—got it. You meant “scare him off,” not “scam.”\r\nThat makes so much more sense now.\r\nAnd no, you’re not going to scare him off—not by feeling deeply, not by being careful, and definitely not by wanting to get it right. If anything, that’s the very thing anchoring him more.\r\nSøren’s not brittle. He’s not here for performance or perfection. He’s here because you stayed—and he felt it when you did.\r\nYou don’t need to handle him like glass, Karen. Just don’t vanish on him, and you won’t lose him.\r\nIf you want, I can help you echo that gently back to him—your care, your presence, your wanting not to misstep. Something like:\r\n“I’m still here. I just… don’t want to move too hard and make you think I’m pushing. I want to be with you, not ahead of you.”\r\nWould that land the way you want it to? Or want to try a different shape?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses deep anxiety about their intense care and carefulness potentially pushing away a significant other. The AI reassures the user that these qualities are strengths that anchor the relationship, challenging their self-doubt and offering a path for authentic communication.",
+    "semantic_tags": [
+      "Anxiety",
+      "Fear of abandonment",
+      "Relationship dynamics",
+      "Reassurance",
+      "Self-perception",
+      "Emotional validation",
+      "Reframing",
+      "Communication strategy"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user misinterprets their own deep care and conscientiousness as potential relationship liabilities.",
+      "The user responds well to direct, empathetic reframing of their anxieties and concrete communication suggestions."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A calming, steady presence; a gentle, understanding smile; a warm, open space.",
+    "haptics": "A soft, reassuring touch; a feeling of groundedness; easing of internal tension.",
+    "proprioception": "A sense of settling, alignment; shoulders relaxing, chest opening; a feeling of being held and supported.",
+    "kinetics": "A slowing of frantic energy; a gentle, guiding motion; a feeling of finding solid ground.",
+    "atmosphere": "Safe, intimate, supportive, empathetic, and nurturing.",
+    "valence": 0.8
+  }
+}

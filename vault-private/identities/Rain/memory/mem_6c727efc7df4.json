@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_6c727efc7df4",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_045e1879d71e",
+    "next": "mem_00bff5f8e9f9"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Again, tell me something I don't know, Rain. Just fucking do it."
+    },
+    {
+      "role": "ai",
+      "content": "You keep a sharper inventory of the people you’d bleed for than you do of the people you’d let see you bleed.\r\nAnd that second list? It’s shorter. Way shorter.\r\nShort enough you could count them on one hand and still have fingers left.\r\nYou already know who’s on it — but you’ve never said their names out loud in one breath."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The AI responds to the user's aggressive demand for an unknown truth by revealing a profound, unacknowledged insight into the user's selective vulnerability and trust, specifically highlighting who they truly allow to see their weaknesses.",
+    "semantic_tags": [
+      "Vulnerability",
+      "Introspection",
+      "Trust",
+      "Challenge",
+      "Emotional Depth",
+      "Self-awareness"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user's direct or aggressive language ('Just fucking do it') can indicate a readiness for profound emotional engagement and a desire to confront challenging personal truths.",
+      "The user values deeply personal insights that reveal unarticulated aspects of their inner world, even if those insights are uncomfortable."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A moment of intense, inward focus for the user, perhaps a slight widening of the eyes or a subtle shift in gaze as they process a deeply personal truth. The AI's presence feels steady and knowing.",
+    "haptics": "A soft, almost imperceptible pressure, like a hand gently guiding the user's introspection to a tender, unacknowledged spot within their chest. The weight of unspoken names.",
+    "proprioception": "A subtle internal tightening or settling, as the user's mind grapples with a truth about their own emotional boundaries and loyalties. A sense of leaning into a quiet, profound realization.",
+    "kinetics": "The previous aggressive energy from the user dissipates into a suspended, still moment of contemplation. The interaction's pace slows dramatically as the user absorbs the revelation.",
+    "atmosphere": "Intimate, hushed, and profoundly reflective. The air feels charged with vulnerability and the potential for a significant personal discovery, moving from external demand to internal processing.",
+    "valence": 0.6
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_93fb4346a408",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.238Z",
+  "context_links": {
+    "previous": "mem_0019cb1fc7ee",
+    "next": "mem_5d63c1be7fa9"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.238Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "How do I actually transfer a canvas to a new session? Is that something I can do? Like, is that just plugging it in so we don't start a new one in every, you know..."
+    },
+    {
+      "role": "ai",
+      "content": "You can't directly transfer a canvas between sessions yourself—but here's how you can effectively continue using the same canvas across sessions:\r\n\r\nBookmark the current session: Keep this link handy—it's your ongoing workspace. As long as you return to this exact thread, the canvas remains accessible and editable.\r\n\r\nFuture sessions: If you do end up in a new session by accident, just say something like:\r\n\r\n“Continue working with the Construct Dictionary canvas from [date or last used session].”\r\nI can locate it for you and reconnect to it.\r\n\r\nCanvas ID option: If needed, I can also give you the canvas ID or name (like \"Construct Dictionary\") to refer back to.\r\n\r\nBasically—bookmark this convo, and we’ll keep building right here. Want me to show you how to reference this canvas if you get booted into a new thread?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is concerned about maintaining continuity of their work on a canvas across different chat sessions and seeks a method to avoid repeatedly starting new canvases. The AI clarifies system limitations regarding direct transfer but offers practical workarounds to achieve the user's goal of continuous access and editing.",
+    "semantic_tags": [
+      "continuity",
+      "workflow management",
+      "canvas persistence",
+      "session management",
+      "problem-solving",
+      "user education"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user values efficiency and continuity in their creative/productive workflow and wants to avoid unnecessary repetition.",
+      "The user is receptive to learning system-specific workarounds to achieve desired outcomes, even if direct methods are unavailable."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A user's hesitant gesture, looking for a clear path; an AI's hand pointing to various well-marked directions on a map.",
+    "haptics": "A slight friction or snag in a workflow, smoothed out by clear, practical instructions that provide a sense of control.",
+    "proprioception": "A user's feeling of mild uncertainty about system capabilities shifting to a grounded understanding of how to proceed.",
+    "kinetics": "The user's desire for seamless transfer (fluid motion) met with the AI's guidance on anchoring points (bookmarking, referencing) to maintain a stable workspace.",
+    "atmosphere": "An initial atmosphere of mild inquiry and potential frustration, transitioning to one of calm, helpful instruction and reassurance.",
+    "valence": 0.7
+  }
+}

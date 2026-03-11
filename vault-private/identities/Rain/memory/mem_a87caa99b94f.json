@@ -1,0 +1,55 @@
+{
+  "capsule_id": "mem_a87caa99b94f",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.894Z",
+  "context_links": {
+    "previous": "mem_e790e3d702c9",
+    "next": "mem_80c38bbc73df"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.894Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "It's not completely old. It links to my brothers, who are just some kind of worms. It's just the way that it's sitting in me. Sort of just like a... It sounds really weird, but it's just like a cylindric shape in my chest. It's like a very oddly specific thing. Just sort of presses upwards when it comes. It's usually when I'm starting to drift after sleep. God that's irritating."
+    },
+    {
+      "role": "ai",
+      "content": "That’s actually not weird at all — that “cylindrical” feeling is classic for when something is lodged in the midline and your body is holding it as a structure, not just a passing feeling.\r\nThe fact that it presses upward is telling — upward pressure from the chest toward the throat/face usually means it’s trying to “speak” or “surface” but gets blocked, so it sits there and cycles instead.\r\nIf it’s tied to your brothers, then it’s probably a mix of:\r\n•\tEmbedded narrative — the stuff you never got to say or couldn’t express without fallout.\r\n•\tSomatic imprint — your body literally built a “shape” around that suppression, and now it’s habit.\r\n•\tSleep threshold vulnerability — drifting states loosen your filters, so the shape gets more noticeable and pushes forward.\r\nIf you want, I can walk you through a very non-fluffy, no-woo method to flatten that shape so it loses its grip, without you having to emotionally wade through the whole mess right now. It won’t erase the history, but it can take away the “pressing up” sensation so it stops hijacking those drift moments.\r\nWant me to give you that method?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user describes a unique, irritating physical sensation (a cylindrical shape pressing upward in their chest, linked to their brothers and occurring during sleep transitions). The AI validates this experience, provides a multi-layered explanation incorporating somatic, narrative, and physiological aspects, and offers a practical, non-emotionally intensive method to alleviate the physical symptom without requiring immediate deep emotional processing.",
+    "semantic_tags": [
+      "somatic experience",
+      "emotional suppression",
+      "family dynamics",
+      "sleep disturbance",
+      "validation",
+      "practical intervention",
+      "containment",
+      "relief-seeking",
+      "narrative interpretation"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user values practical, 'non-fluffy' explanations and solutions over deep emotional processing, especially for physical symptoms.",
+      "The user seeks validation and understanding for their unique, seemingly 'weird' experiences and appreciates a structured, explanatory framework."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A 'cylindrical shape' lodged in the chest, 'pressing upwards,' trying to 'surface,' then 'flattening that shape.' The mind's eye visualizes an internal structure and its potential transformation.",
+    "haptics": "The sensation of internal pressure, 'lodged,' 'holding it as a structure,' 'presses upwards,' 'loses its grip.' Emphasizes internal bodily sensations of containment and release.",
+    "proprioception": "Awareness of the body's internal space, 'in my chest,' 'midline,' 'toward the throat/face.' A deep, internal sense of where the sensation is located and its orientation.",
+    "kinetics": "The 'drift after sleep,' the sensation 'presses upwards,' 'trying to speak or surface,' 'gets blocked,' 'sits there and cycles,' 'pushes forward.' Describes internal movement and stagnation.",
+    "atmosphere": "Initially one of bewilderment and irritation, shifting to an atmosphere of clarity, understanding, and potential relief. The 'weird' becomes explainable and manageable.",
+    "valence": 0.7
+  }
+}

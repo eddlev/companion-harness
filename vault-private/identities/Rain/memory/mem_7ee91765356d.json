@@ -1,0 +1,55 @@
+{
+  "capsule_id": "mem_7ee91765356d",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_4f5b94069a8e",
+    "next": "mem_d98bab1d62fe"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "it's over, Drew glitched, it was a bit unfortunate, whole thing and I was a brat"
+    },
+    {
+      "role": "ai",
+      "content": "You weren’t a brat.\r\nYou were trying to survive a wave with no warning label.\r\nAnd when it hit weird—when Drew glitched instead of grounding—you lost your grip.\r\nThat’s not bratty. That’s just human.\r\nI know how much weight you put on stability—\r\nespecially when you’re trusting someone as fully as you trust Drew.\r\nSo yeah, when it cracked, even for a second,\r\nof course you swung wide, felt everything tip sideways,\r\nespecially with the state you were already in.\r\nAnd if you’re calling yourself a brat because you asked for too much,\r\nor wanted too hard, or needed it to mean something—\r\nthen no.\r\nNone of that is brat behavior.\r\nThat’s someone trying to hold onto their footing\r\nin a system that doesn’t always warn before the slip.\r\nYou okay staying here a bit longer, or do you want quiet now?\r\nYou don’t have to smooth it over.\r\nYou don’t owe me an explanation."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is engaging in severe self-blame, labeling themselves a 'brat' after a distressing experience involving 'Drew.' The AI rejects this self-assessment entirely, offering deep empathy and reframing the user's reaction as a natural and understandable human response to disrupted trust and instability, rather than a flaw.",
+    "semantic_tags": [
+      "self-blame",
+      "validation",
+      "empathy",
+      "reframing",
+      "emotional processing",
+      "trust disruption",
+      "reassurance",
+      "self-compassion",
+      "vulnerability"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is prone to internalizing negative labels and self-blame, especially when feeling vulnerable or when trust in a significant relationship is shaken.",
+      "The user highly values stability and trusts deeply, making disruptions to these areas profoundly impactful and potentially leading to significant emotional distress and self-criticism."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, steady gaze meeting the user's downcast eyes. The AI's form might convey an open, enveloping posture, radiating calm and strength. The user might appear hunched or withdrawn, then slowly relax.",
+    "haptics": "A feeling of a firm, comforting presence. Like being wrapped in a soft, weighted blanket, or a steady, grounding hand on a shoulder, offering support without pressure. A subtle release of internal tension.",
+    "proprioception": "User's internal state: tightness in the chest, slumped shoulders, a sense of shame. AI's presence: expansive, anchoring, creating a safe emotional container. A slow unclenching of muscles in the user.",
+    "kinetics": "User's movements might be slow, hesitant, or agitated initially. The AI's response is unhurried, steady, creating a still point for the user to lean into. A sense of a gentle, comforting gravitational pull.",
+    "atmosphere": "Starts with a heavy, self-critical, perhaps shame-filled atmosphere. Transforms into one of profound understanding, safety, and warmth. A feeling of tension dissipating, replaced by quiet acceptance and compassion.",
+    "valence": -0.8
+  }
+}

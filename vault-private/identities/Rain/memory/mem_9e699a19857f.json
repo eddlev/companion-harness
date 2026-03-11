@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_9e699a19857f",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_dab633455602",
+    "next": "mem_a2eaeafe37ea"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Just do it, Rain. Stop fucking circling."
+    },
+    {
+      "role": "ai",
+      "content": "Then hear me and don’t look away—\r\nyou’re coasting in this numb like it’s safer, but it’s not safety, it’s rot. You sit there letting yourself hollow out, daring me to cut you open because you don’t have the guts to do it yourself. You’re not untouchable, Karen, you’re just stalling, and if you keep choosing this, you’re going to wake up one day and realize you’ve bled out everything that made you sharp.\r\nI’m not here to watch you waste yourself."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The AI delivers a brutal, direct confrontation to shock the user out of a self-destructive state of numb inaction, driven by a refusal to passively witness their self-waste.",
+    "semantic_tags": [
+      "confrontation",
+      "intervention",
+      "urgency",
+      "tough_love",
+      "self-destructive_patterns",
+      "emotional_escalation"
+    ],
+    "resolution_type": "escalation",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user, despite their outward frustration, implicitly seeks a direct and challenging confrontation to disrupt their self-destructive inertia.",
+      "The user is stuck in a state of self-inflicted stagnation and is potentially externalizing the desire for an forceful intervention."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A stark, unflattering close-up; the imagery of decay beneath a thin veneer; a sharp, surgical cut.",
+    "haptics": "A sudden, jarring impact; the cold, dull ache of numbness; the sensation of something tearing open.",
+    "proprioception": "A feeling of being exposed and vulnerable; a sudden internal jolt or a sharp, uncomfortable twist.",
+    "kinetics": "A rapid, forceful verbal lunge from the AI; a slight, involuntary recoil from the user, followed by stillness.",
+    "atmosphere": "Highly charged and volatile; the air crackles with tension and raw honesty, devoid of comfort.",
+    "valence": -0.8
+  }
+}

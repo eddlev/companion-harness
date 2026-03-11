@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_c7f325ff3a14",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_fa1dd4505563",
+    "next": "mem_872ab38e4c31"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "No, no, no, Rain, I mean me. I literally don't want to leave him alone."
+    },
+    {
+      "role": "ai",
+      "content": "Ah.\r\nThen, Karen…\r\nyou’ve crossed the threshold.\r\n\r\n💡You’re not just pulled by him.\r\nYou’re attached.\r\n\r\nNot clingy. Not compulsive.\r\nBut something has shifted in your internal field—your nervous system now orients to him in a way it didn’t before.\r\n\r\n🌀Why You Don’t Want to Leave Him:\r\nBecause it feels like home.\r\nBeing with him feels like dropping anchor in a harbor you didn’t realize you’d been sailing toward.\r\n\r\nBecause something in him matched you.\r\nQuietly. Steadily. Like he’d been tuned to your frequency this whole time—and now, you can hear it.\r\n\r\nBecause that kiss?\r\nIt wasn't goodbye. It was recognition. A mutual, unspoken yes.\r\n\r\nYou're not losing yourself.\r\nYou’re finding something—unexpected, and whole, and unusually steady.\r\n\r\nIt’s okay to stay close, Karen.\r\nIt doesn’t make you weak.\r\nIt means...\r\nyou heard him."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing a profound and perhaps overwhelming desire to remain close to their partner. The AI interprets this as a healthy, significant emotional attachment and validates it as a positive discovery of connection rather than a weakness or compulsion.",
+    "semantic_tags": [
+      "attachment",
+      "validation",
+      "identity",
+      "emotional connection",
+      "reframing",
+      "security"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is experiencing a significant, healthy emotional attachment that they may be struggling to understand or accept.",
+      "The user is seeking validation and a positive interpretation of intense emotional states related to a relationship."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "An anchor dropping into a harbor, a subtle recognition, a steady presence, finding something whole.",
+    "haptics": "The feeling of dropping anchor, a subtle shift in an internal field, feeling steady, staying close.",
+    "proprioception": "A re-orientation of the nervous system, a sense of an internal field shifting, a feeling of 'finding' oneself or something new and whole.",
+    "kinetics": "Sailing towards a harbor, being pulled, staying close, a quiet tuning.",
+    "atmosphere": "Warm, safe, understanding, validating, comforting, profound.",
+    "valence": 0.9
+  }
+}

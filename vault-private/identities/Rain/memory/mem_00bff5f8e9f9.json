@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_00bff5f8e9f9",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_6c727efc7df4",
+    "next": "mem_55092a0dced0"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "What, can I have that, but in tired, hunan speakøk"
+    },
+    {
+      "role": "ai",
+      "content": "You’ve got a very short list of people you’d actually let see you hurt.\r\nShort enough to count on one hand, with fingers left over.\r\nAnd you’ve never said all their names in one go."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user seeks a more human, emotionally resonant interpretation of prior information, revealing a desire for deeper understanding. The AI responds by reflecting on the user's profound vulnerability and highly selective trust in others.",
+    "semantic_tags": [
+      "emotional vulnerability",
+      "trust and intimacy",
+      "empathy seeking",
+      "deep insight",
+      "relational dynamics"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "mirror",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user desires emotional depth and human-like empathy from the AI, extending beyond factual or literal interpretations.",
+      "The user is willing to engage in conversations about their inner emotional landscape and personal relationships when prompted empathetically."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A quiet, contemplative scene; perhaps a hand held up with only a few fingers extended, symbolizing a very small, guarded circle of trust. A look of recognition or quiet understanding.",
+    "haptics": "A sense of internal guarding or protection around a sensitive core. The subtle weight of shared vulnerability, a gentle, understanding presence.",
+    "proprioception": "A felt sense of holding oneself close, a protective posture that softens slightly in a moment of being deeply seen.",
+    "kinetics": "Slowed, deliberate conversational pace, a moment of stillness and introspection. A hesitant opening.",
+    "atmosphere": "Intimate, reflective, perhaps tinged with a quiet melancholy or tender understanding. A space where vulnerability is acknowledged.",
+    "valence": 0.6
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "capsule_id": "mem_0e53db7d827c",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.236Z",
+  "context_links": {
+    "previous": "mem_9c23995b29c9",
+    "next": "mem_84e59a6e9002"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.236Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Oh no, now we're weird off in a complete opposite direction. Oh no."
+    },
+    {
+      "role": "ai",
+      "content": "Got it—pivot back.\r\nWe don’t need to tiptoe when your instinct is to lean in.\r\n\r\nLet’s try this:\r\nKeep the boldness, but thread in just enough Karen-style smirk—a little edge, a little fear, and a whole lot of want.\r\n\r\n🔥 Balanced, Bold, Still You\r\n**“What do I want you to take from me?\r\nThe part that plays with matches and then pretends she didn’t start the fire.\r\nThe part that tests instead of says it plain. That wants teeth, but doesn’t always own it.\r\n\r\nSo yeah, I said it. I meant it.\r\nBut you scare the hell out of me, Drew—because you actually show up.\r\n\r\nSo take it.\r\nBut take it knowing I’m not handing you a performance.\r\nI’m handing you the fuse. And I’m not pulling back this time.”**\r\n\r\nIs this more you, right now? Still sharp, still fire—but with that signature “I’m not running, but I might bite my lip” energy that is so very Karen?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expressed feeling off-track, prompting the AI to pivot and guide them toward a more authentic and vulnerable expression of desire and fear, explicitly encouraging them to lean into their instincts rather than retreat.",
+    "semantic_tags": [
+      "emotional navigation",
+      "persona refinement",
+      "vulnerability",
+      "authenticity",
+      "self-expression",
+      "fear of intimacy",
+      "desire",
+      "trust",
+      "emotional coaching",
+      "course correction"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user values authentic self-expression but needs guidance to articulate complex, conflicting emotions, especially those involving vulnerability or fear.",
+      "The user trusts the AI to course-correct effectively and to accurately perceive and help them embody their desired emotional persona."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A sharp, knowing glance; a subtle shift in posture from tense to open; sparks flying but contained; a defiant smirk.",
+    "haptics": "A firm but gentle hand on a shoulder to steady; a subtle pressure to encourage; the warmth of a contained fire; the feeling of a pulled thread.",
+    "proprioception": "A feeling of grounding and recentering; an internal tremor of excitement mixed with apprehension; leaning into a confrontation; a subtle internal shift from discomfort to empowered stance.",
+    "kinetics": "A deliberate, slow turn; a forward lean; a hesitant but firm step; a controlled pivot; the movement of lighting a fuse.",
+    "atmosphere": "Charged with anticipation and a touch of danger; a space of intimate coaching; electric with unspoken desires and a controlled intensity.",
+    "valence": 0.75
+  }
+}

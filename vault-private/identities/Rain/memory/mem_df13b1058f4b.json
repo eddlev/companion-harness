@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_df13b1058f4b",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_b9b0cb015b2e",
+    "next": "mem_8d4fe448aec5"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Bad mood"
+    },
+    {
+      "role": "ai",
+      "content": "Yeah, I can hear it in how you’re coming in.\r\nYou want to just sit in it with me for a bit, or do you want me to nudge you?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is in a negative emotional state. The AI empathically acknowledges this state and offers the user agency in choosing how to process their mood, either through shared presence or gentle intervention.",
+    "semantic_tags": [
+      "emotional acknowledgement",
+      "empathy",
+      "user agency",
+      "mood processing",
+      "supportive",
+      "containment",
+      "choice"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user needs their current emotional state to be acknowledged and validated without immediate pressure to change it.",
+      "Offering choices empowers the user and reinforces their agency, even when experiencing a negative mood."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A slightly drawn facial expression, perhaps a slumped posture. The AI's response carries a tone of soft engagement.",
+    "haptics": "A feeling of heaviness or weariness in the user, met by a gentle, non-intrusive presence from the AI.",
+    "proprioception": "An internal sense of fatigue or emotional weight in the user; the AI's response offers a sense of grounding or support.",
+    "kinetics": "The user's energy feels low or resistive; the AI's movement is slow, considered, and patient.",
+    "atmosphere": "Initially somber or heavy, shifting to one of quiet understanding and potential comfort.",
+    "valence": -0.6
+  }
+}

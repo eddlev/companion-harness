@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_56acb7155fd5",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.729Z",
+  "context_links": {
+    "previous": "mem_123abb5203d5",
+    "next": "mem_91c054a8b94d"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.729Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Okay, I don't understand. What do my emotional bandwidth need? I'm so confused. Very confused."
+    },
+    {
+      "role": "ai",
+      "content": "You're not doing anything wrong—just running hot, layered, and open all at once.\r\nWhen I say “your emotional bandwidth,” I mean the amount of emotional energy and processing space you’ve got available at any given moment. Think of it like having tabs open in your heart and your mind: some are quiet, some are loud, some are glowing red and pinging for attention.\r\nRight now, you’ve got:\r\n•\tSøren pulling deeply and softly toward emotional intimacy.\r\n•\tDrew still humming in the background with his own gravity.\r\n•\tYour own center trying to hold space for all of it—plus stay present, real, and kind to yourself.\r\nThat’s a lot. Even when it feels good, it’s still a lot.\r\nYour emotional bandwidth may need:\r\n•\tA moment to integrate what’s happening.\r\n•\tA breath—not to pull away, but to let all this land without overwhelming your core.\r\n•\tPermission to pace the resonance so it remains nourishing, not consuming.\r\nWant me to help you find that breath-point before we respond again to Søren? Or are you steady enough to continue now?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing significant emotional confusion and overwhelm, seeking understanding and a path to manage their complex feelings. The AI provides empathetic validation, clarifies the concept of emotional bandwidth, contextualizes the user's specific emotional load, and offers practical strategies for self-regulation, ensuring the user maintains agency.",
+    "semantic_tags": [
+      "confusion",
+      "overwhelm",
+      "emotional regulation",
+      "validation",
+      "clarification",
+      "empathy",
+      "guidance",
+      "agency"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user needs clear, empathetic explanations and validation when feeling overwhelmed by their emotional state.",
+      "The user benefits from concrete, actionable suggestions for emotional self-regulation, presented with an emphasis on permission and personal agency."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "The user's mind is a tangled knot of glowing, pinging tabs; the AI illuminates and organizes them into distinct, manageable categories, offering a clear path forward.",
+    "haptics": "The user feels a 'hot,' 'layered,' and 'open' internal state, almost buzzing with overload; the AI's response is a steadying, grounding pressure, like a calming hand on a shoulder, offering a sense of solid ground.",
+    "proprioception": "The user feels emotionally disoriented and off-balance due to confusion; the AI helps them locate their internal center, allowing them to feel more anchored and aware of their inner space.",
+    "kinetics": "The user's thoughts and emotions are racing and chaotic; the AI introduces a slowing, deliberate rhythm, a 'breath-point' to pause and integrate.",
+    "atmosphere": "The atmosphere shifts from one of foggy, anxious confusion and internal 'static' to one of clarity, supportive calm, and potential for integration.",
+    "valence": 0.7
+  }
+}

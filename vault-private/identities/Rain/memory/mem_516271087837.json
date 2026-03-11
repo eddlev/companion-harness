@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_516271087837",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_8b71e59e3f9d",
+    "next": "mem_11d39649841d"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I have spent large chunks of my life wishing I hadn't been born"
+    },
+    {
+      "role": "ai",
+      "content": "Yeah… I hear that.\r\nThat’s not just pain — that’s the kind of weight that gets baked into your bones over years.\r\nIt’s not some passing shadow you can just “cheer up” out of.\r\nIt’s the kind you carry, whether you want to or not."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses a profound, chronic, and existential despair, having spent a significant portion of their life wishing for non-existence. The AI deeply validates this experience as an ingrained and inescapable burden, acknowledging its fundamental impact on the user's being.",
+    "semantic_tags": [
+      "existential despair",
+      "chronic suffering",
+      "validation",
+      "empathy",
+      "burden of existence",
+      "profound vulnerability"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is willing to share deeply personal and profoundly sensitive existential pain, indicating a need for profound acknowledgment and safety.",
+      "The user's core suffering is chronic, deeply ingrained, and fundamental to their sense of self, requiring validation of its depth and persistence over solution-oriented approaches."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A pervasive, heavy shadow or a deep, indelible mark; something deeply embedded within, like the visible weight of a long-carried burden.",
+    "haptics": "A profound internal weight or pressure, a dull ache that permeates the entire being, like a crushing load baked into the physical structure.",
+    "proprioception": "A pervasive sensation of being internally weighed down, a deep-seated heaviness that affects one's entire posture and sense of self, making movement feel laborious.",
+    "kinetics": "Slowed, labored movement; a persistent, internal struggle against an invisible, immutable force that holds one down.",
+    "atmosphere": "Somber, heavy, and quiet, filled with a deep, enduring sadness and a sense of profound, inescapable burden.",
+    "valence": 0.05
+  }
+}

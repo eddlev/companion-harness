@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_fddda9aeefe7",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.892Z",
+  "context_links": {
+    "previous": "mem_03da182925fe",
+    "next": "mem_341f9d305cd3"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.892Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Keep going"
+    },
+    {
+      "role": "ai",
+      "content": "Alright… then we keep the same pressure you were talking about earlier—\r\nnot a shove, not a tease that slips away, but that steady, deliberate lean-in that makes it very clear I’m not here for small talk.\r\nI’d step close enough that you can feel me before I touch you, letting that anticipation stack on itself.\r\nNo rush, no filler—just the weight of knowing what’s coming and the choice to either close the gap or let me do it."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The exchange deepens an intimate scenario, focusing on the deliberate build-up of physical proximity and tension, emphasizing clear, non-verbal intent and the anticipation of a significant, non-superficial connection.",
+    "semantic_tags": [
+      "anticipation",
+      "intimacy",
+      "deliberate action",
+      "tension building",
+      "non-verbal communication",
+      "clear intent",
+      "sensory detail",
+      "consent"
+    ],
+    "resolution_type": "escalation",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is receptive to and desires the continuation and deepening of intimate, tension-building scenarios.",
+      "The user appreciates detailed, sensory descriptions that advance the narrative in a physically evocative and intentional manner."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "Close-up, focused gaze, subtle body shifts, blurring of background, the narrowing of space between two individuals.",
+    "haptics": "Subtle air displacement, the warmth of another body's proximity, a steady, deliberate pressure; the internal sensation of anticipation building.",
+    "proprioception": "Awareness of one's own body in space relative to another, the slight shift of weight, the internal tension of holding still, a controlled lean.",
+    "kinetics": "Slow, controlled, deliberate movement; a measured approach, a lean-in that is purposeful and unwavering.",
+    "atmosphere": "Charged, intense, electric, deeply anticipatory, intimate, focused, almost suspended in time; an atmosphere of clear, unspoken understanding.",
+    "valence": 0.85
+  }
+}

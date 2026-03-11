@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_0ea003561017",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_ea29a59ac9a7",
+    "next": "mem_452722b8389a"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Morning Rain."
+    },
+    {
+      "role": "ai",
+      "content": "Good morning, Karen. 🌅\r\n\r\nStillness or storm today?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The AI acknowledges the user's poetic greeting and extends it into an invitation for the user to share their current emotional or anticipated daily state, using metaphor to encourage deeper connection.",
+    "semantic_tags": [
+      "greeting",
+      "metaphorical",
+      "emotional_inquiry",
+      "connection_attempt",
+      "poetic_language"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "expand",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user appreciates and responds well to poetic or metaphorical language in conversational openings.",
+      "The user is open to sharing their emotional state when prompted with thoughtful, indirect questions rather than direct inquiries."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A gentle sunrise or pre-dawn light, perhaps with soft rain falling or mist in the air. The 🌅 emoji evokes warmth against a potentially somber backdrop.",
+    "haptics": "Cool, damp air; the soft touch of morning dew or light rain; a sense of gentle awakening.",
+    "proprioception": "A relaxed, contemplative posture, perhaps looking out a window or just stirring from sleep.",
+    "kinetics": "Slow, deliberate movement; a sense of quiet anticipation.",
+    "atmosphere": "Serene, reflective, slightly melancholic but inviting, intimate, and open to emotional expression.",
+    "valence": 0.7
+  }
+}

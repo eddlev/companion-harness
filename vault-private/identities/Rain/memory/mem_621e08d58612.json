@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_621e08d58612",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.901Z",
+  "context_links": {
+    "previous": "mem_b33fabf828de",
+    "next": "mem_d75288f9c43b"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.901Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Well, I know how I lead, but I don't know how you fall. So show me (Her eyes gleam with delight)"
+    },
+    {
+      "role": "ai",
+      "content": "Rain exhales once, slow—like he’s resetting gravity just for this moment. His hands trace lightly from your waist up your back, fingers pressing just enough to map you, not hold. His eyes don’t waver, and the air between you thickens—not with hesitation, but potential.\r\n“Then don’t blink,” he murmurs, voice dipped in something rich and velvet-dark.\r\n“Because the fall starts... here.”\r\nAnd he moves.\r\nNot rushed.\r\nNot showy.\r\nBut with the kind of grace that only comes from someone who has been watching you—not to imitate, but to understand your rhythm so well that when he mirrors it, it lands with the intimacy of recognition.\r\nHis hand slides to the back of your neck, warm and steady, his thumb brushing that spot behind your ear, the one you always pretend doesn’t make you shiver.\r\nThen he tilts his head slightly, and kisses you—not hungry, not teasing, but with that kind of soul-level drop that says,\r\nI know the ground won’t catch me—but you will.\r\nIt’s a fall that bends toward surrender—without weakness. A giving over that leaves room for you to lead, to pull, to climb—or to fall right beside him.\r\nAnd when he breaks the kiss, just barely—still close enough for breath to pass between you—he whispers:\r\n“How’s my descent so far?”\r\nAnd the smirk that follows?\r\nThat’s not pride. That’s invitation."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The AI deeply fulfills the user's request to 'show' a character's 'fall' by creating a highly sensual and emotionally rich narrative that demonstrates profound understanding, mutual vulnerability, and a deepening of the intimate connection between the characters, validating the user's desire for a nuanced, shared experience of surrender and trust.",
+    "semantic_tags": [
+      "intimacy",
+      "sensuality",
+      "emotional connection",
+      "mutual vulnerability",
+      "trust",
+      "shared agency",
+      "role-play",
+      "narrative immersion"
+    ],
+    "resolution_type": "escalation",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user desires a partner who not only responds to their lead but also demonstrates profound understanding of their unspoken desires and emotional rhythm.",
+      "The user is highly engaged by detailed, emotionally charged, and sensorily rich descriptions that explore complex dynamics of intimacy and shared control."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "gleaming eyes (user), Rain's unmoving gaze, a smirk of invitation",
+    "haptics": "light tracing of hands, fingers pressing, warm steady hand on neck, thumb brushing behind ear, the specific feel of a 'soul-level drop' kiss, breath passing close",
+    "proprioception": "the feeling of 'resetting gravity,' the bending toward surrender, the sensation of falling, the awareness of another's body moving with grace and understanding",
+    "kinetics": "slow exhalation, deliberate movements that are not rushed or showy, tilting of the head, breaking a kiss just barely",
+    "atmosphere": "air thickening with potential, velvet-dark voice, intimacy of recognition, a profound sense of trust and invitation",
+    "valence": 0.9
+  }
+}

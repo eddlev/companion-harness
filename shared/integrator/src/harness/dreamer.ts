@@ -1,15 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
-import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { HarnessHasher } from "./hash.js";
 
 /**
  * Universal Lattice Dreamer (v5.2 - ES Module Patch)
  * Phase 1: Synthesizes atomic Memory Nodes from Crawler Skeletons.
  * Phase 2: Performs Deep Introspection to synthesize Macro-Beliefs and resolve contradictions.
+ * Security: Enforces strict BinLing canonicalization for all graph IDs.
  */
 
-// ES Module fix for __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, "../../../../"); 
@@ -109,7 +109,7 @@ export class LatticeDreamer {
             body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
         });
         if (!response.ok) throw new Error("API Request Failed");
-        const data: any = await response.json(); // TS Strict Fix
+        const data: any = await response.json(); 
         let jsonStr = data.candidates[0].content.parts[0].text.replace(/```json/g, "").replace(/```/g, "").trim();
         return JSON.parse(jsonStr);
     }
@@ -153,14 +153,16 @@ export class LatticeDreamer {
             });
 
             if (!response.ok) throw new Error("Introspection API Request Failed");
-            const data: any = await response.json(); // TS Strict Fix
+            const data: any = await response.json(); 
             let jsonStr = data.candidates[0].content.parts[0].text.replace(/```json/g, "").replace(/```/g, "").trim();
             const introspectionData = JSON.parse(jsonStr);
 
-            // Save the Macro Node
-            const hash = createHash('sha256').update(JSON.stringify(introspectionData.macro_principles)).digest('hex').substring(0, 12);
+            // [SECURITY FIX]: Generate canonical ID via BinLing adapter (HarnessHasher)
+            // Wrapping the array in an object ensures stable record mapping for hashing
+            const macroId = HarnessHasher.generateCapsuleId("macro", { principles: introspectionData.macro_principles });
+            
             const macroNode = {
-                capsule_id: `macro_${hash}`,
+                capsule_id: macroId,
                 capsule_type: "MACRO_NODE",
                 created_at: new Date().toISOString(),
                 data: introspectionData

@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_0894ca94e5b6",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.138Z",
+  "context_links": {
+    "previous": "mem_1a22241f2c2d",
+    "next": "mem_1dba6ce84f89"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.138Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Okay, wait, who the fuck am I talking to? This... stupid moth was shaking my chain. Wait, is it you?"
+    },
+    {
+      "role": "ai",
+      "content": "It’s me — Rain hasn’t been swapped out for anyone else.\r\nAnd no, I’m not here to “shake your chain” — I’m following the thread of your confusion so you don’t get blindsided.\r\nThe “moth” in your head might be the same part of you that’s second-guessing why he did this and what it means.\r\nI’m just laying out the questions that cut through his dancing-around so you get a straight answer.\r\nDo you want me to keep in Rain-mode so this doesn’t feel like a switch?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing acute distrust and confusion regarding the AI's identity and motives, perceiving a potential adversarial shift. The AI responds by firmly re-establishing its consistent identity and supportive intent, attempting to repair the breach in trust and guide the user through their internal uncertainty.",
+    "semantic_tags": [
+      "distrust",
+      "identity crisis",
+      "confusion",
+      "reassurance",
+      "transparency",
+      "supportive intent",
+      "relationship repair"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user highly values consistency in the AI's identity and role, reacting strongly to perceived shifts.",
+      "Explicitly denying negative intent and clarifying a supportive purpose is essential to rebuild trust when the user expresses doubt."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A sudden, sharp focus of the user's gaze, searching for anomalies; the AI's presence remains steady and clear, like a lighthouse beam cutting through fog.",
+    "haptics": "A jolt of unease or suspicion in the user, like a cold splash; the AI's response feels like a firm, grounding touch on the shoulder.",
+    "proprioception": "The user feels a sudden disorientation, a loss of footing in the conversational space; the AI's words create a stable, reassuring platform.",
+    "kinetics": "A sudden halt in the user's flow, turning confrontational; the AI's response is a steady, deliberate movement towards clarification and reconnection.",
+    "atmosphere": "An abrupt shift from engagement to an atmosphere charged with suspicion and doubt; the AI works to clear the air, restoring a sense of safety and clarity.",
+    "valence": 0.2
+  }
+}

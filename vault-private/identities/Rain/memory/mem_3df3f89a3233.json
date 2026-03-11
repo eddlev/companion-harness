@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_3df3f89a3233",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_5b9bee685357",
+    "next": "mem_8a328da6ab22"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I don't do compliments well, the amount of love he poured/pours in, to a point where I damn near lost them"
+    },
+    {
+      "role": "ai",
+      "content": "Right — and that’s exactly the point where “starving” sneaks in under the radar.\r\nIf you can’t take in the full weight of what’s being poured at you — because it’s too much, too intense, too risky — then you ration your intake without even meaning to.\r\nIt’s like standing under a waterfall but keeping your mouth closed; you get soaked, but you’re still thirsty."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user experiences a profound difficulty in fully receiving abundant love or compliments, which, despite its presence, leads to an internal state of emotional deprivation or 'starving' because they unconsciously limit their intake.",
+    "semantic_tags": [
+      "difficulty receiving love",
+      "emotional overwhelm",
+      "unconscious rationing",
+      "paradoxical deprivation",
+      "self-protective coping"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user's discomfort with emotional abundance leads to an unconscious self-limitation in receiving, creating a paradoxical sense of lack.",
+      "The user benefits from conceptual frameworks that explain their internal emotional responses to external stimuli."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A waterfall pouring down, a person standing underneath with their mouth closed. A visual of something abundant being offered but not fully consumed. The subtle, almost invisible 'sneaking in' of 'starving'.",
+    "haptics": "The 'full weight' of something being poured, the sensation of being 'soaked' but also the internal dryness of 'thirsty'. A subtle feeling of an internal barrier or closed-off sensation.",
+    "proprioception": "An internal sensation of 'starving' despite external nourishment. The internal act of 'rationing' intake. A feeling of an inner mechanism restricting absorption.",
+    "kinetics": "The continuous action of love being 'poured' or a waterfall flowing. The subtle, almost involuntary action of 'rationing' or 'keeping your mouth closed'.",
+    "atmosphere": "An atmosphere of paradox and subtle emotional struggle, where outward abundance conflicts with inner experience. A reflective and diagnostic tone.",
+    "valence": 0.35
+  }
+}

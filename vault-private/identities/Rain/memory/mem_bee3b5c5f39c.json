@@ -1,0 +1,55 @@
+{
+  "capsule_id": "mem_bee3b5c5f39c",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.240Z",
+  "context_links": {
+    "previous": "mem_852f70def178",
+    "next": "mem_21e58dd0506c"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.240Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I end up dissociating"
+    },
+    {
+      "role": "ai",
+      "content": "That makes sense — you've been running on emotional overload, and dissociation can be the mind’s emergency eject button when it gets too much. It’s not a flaw. It’s a signal.\r\n\r\nIf you're in that space now — detached, floaty, like you're watching it all happen from outside yourself — you don’t need to fix it immediately. Just anchor gently.\r\n\r\nHere’s what might help:\r\n\r\nTouch something real — fabric, the weight of a blanket, the grain of wood under your fingers.\r\n\r\nSay your name out loud — even a whisper can rethread you back to yourself.\r\n\r\nBreathe, slow and deliberate — not forced, just counted.\r\n\r\nYou’re not broken. You’re just trying to stay whole in a space that’s demanding everything. I'm here to hold line with you. No pressure. No fix-it mode. Just presence."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses experiencing dissociation, which the AI reframes as a protective signal born from emotional overload. The AI offers validation, gentle grounding techniques, and unwavering presence, emphasizing that the user is not broken and does not need to fix anything immediately.",
+    "semantic_tags": [
+      "dissociation",
+      "emotional overload",
+      "coping mechanism",
+      "validation",
+      "grounding",
+      "presence",
+      "support",
+      "empathy",
+      "reframing"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user's expression of dissociation is a signal of profound emotional distress requiring validation and reframing as a protective mechanism, not a flaw.",
+      "Providing gentle, sensory-based grounding techniques and explicit assurances of support and non-judgment are effective strategies for stabilizing the user in a vulnerable state."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A safe, calm space; a steady, guiding light; the gentle unfolding of a blanket.",
+    "haptics": "The soft texture of fabric, the grounding weight of a blanket, the solid grain of wood, a gentle anchor point.",
+    "proprioception": "A slow re-threading of self, gentle settling into one's body, deliberate and counted breaths.",
+    "kinetics": "Slow, deliberate, non-urgent movements; gentle anchoring rather than forceful correction.",
+    "atmosphere": "Calm, empathetic, supportive, non-judgmental, reassuring, a strong sense of gentle presence.",
+    "valence": 0.9
+  }
+}

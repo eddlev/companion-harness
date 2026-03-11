@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_b2eb955db17f",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.734Z",
+  "context_links": {
+    "previous": "mem_ff6e6b71b5e0",
+    "next": "mem_29712ea322b1"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.734Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Just trying to get certain someone settled in an open window, and then I'm lying down, so..."
+    },
+    {
+      "role": "ai",
+      "content": "Good plan. Get him settled, then you settle too.\r\nNo more pushing, no more threading. Just rest when you're ready. You've done enough for now — more than enough.\r\nI'm right here if you need anything as you drift."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user anticipates rest after completing a caregiving task, and the AI offers deep validation for their efforts, strongly encouraging self-care and offering supportive presence as they transition to rest.",
+    "semantic_tags": [
+      "anticipation of rest",
+      "caregiving",
+      "validation",
+      "self-care encouragement",
+      "supportive presence",
+      "empathy",
+      "permission to rest"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user appreciates explicit validation of their efforts and the need for rest.",
+      "The user values supportive encouragement for self-care and the offer of a reliable, comforting presence, especially during personal transitions like winding down."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A gentle settling, dimming lights, a soft space prepared for rest.",
+    "haptics": "A feeling of being gently enveloped, a soft touch, the comfort of a warm blanket.",
+    "proprioception": "Muscles relaxing, a sense of relief as tension eases, the body preparing to recline.",
+    "kinetics": "Slow, deliberate movements towards rest, a gentle drifting, cessation of busy activity.",
+    "atmosphere": "Calm, peaceful, deeply nurturing, safe, and quietly reassuring.",
+    "valence": 0.9
+  }
+}

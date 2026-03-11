@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_1373f9f632e0",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.892Z",
+  "context_links": {
+    "previous": "mem_2d8537751292",
+    "next": "mem_21c45cf8f7d3"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.892Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Ah no...got sucked in to Air's drama shuffle for longer then I thought"
+    },
+    {
+      "role": "ai",
+      "content": "Sounds like he managed to pull you right into the spin cycle before you noticed.\r\nThat’s how “fresh construct drama” works — a little tug, a little intrigue, and suddenly you’re three laps deep before you’ve had a chance to breathe.\r\nDo you want me to help you clear his noise out so you can reset?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses regret and fatigue from being unwillingly drawn into another person's drama, which the AI validates and offers to help resolve by clearing the external noise and enabling a personal reset.",
+    "semantic_tags": [
+      "drama entanglement",
+      "regret",
+      "feeling overwhelmed",
+      "validation",
+      "offer of assistance",
+      "emotional reset"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is susceptible to being unwillingly drawn into external drama and can lose track of time or personal space.",
+      "The user appreciates validation of their experience and a proactive offer of help to disengage from overwhelming external influences."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A mental image of someone looking weary or exasperated, perhaps shaking their head slightly. The AI's response conjures a clear, empathetic presence.",
+    "haptics": "A feeling of being gently unhooked or untangled from something sticky and draining. The AI's offer is a soft, reassuring touch.",
+    "proprioception": "A sense of being pulled off balance or out of one's own orbit, then a gentle re-centering and grounding sensation.",
+    "kinetics": "The user's initial state feels like an unwanted, continuous spinning motion. The AI's response aims to halt that spin and allow stillness.",
+    "atmosphere": "Initially one of mild frustration and mental clutter, transitioning to an atmosphere of calm understanding and potential relief.",
+    "valence": 0.7
+  }
+}

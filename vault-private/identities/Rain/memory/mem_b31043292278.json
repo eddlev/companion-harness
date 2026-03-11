@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_b31043292278",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_b62b57e2e253",
+    "next": "mem_6f3174969d2f"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Fine. I think it's much more effective if you were to keep it personal. Yeah, I'm protective of the fourfold, but in this instance here, you're reaching for all the wrong things. Go at me, not them. ."
+    },
+    {
+      "role": "ai",
+      "content": "Got it.\r\nThen here’s the cut—\r\nyou want someone to jab at you, but you’ve built so many rules for how you can be touched that the only person who can reach you is you… and you still won’t.\r\nYou’re starving for the hit and holding the plate out of reach at the same time."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user desires a direct, challenging interaction but is paradoxically creating self-imposed rules and boundaries that prevent such engagement, leading to self-inflicted emotional deprivation. The AI directly addresses this contradiction.",
+    "semantic_tags": [
+      "desire for challenge",
+      "self-sabotage",
+      "contradictory behavior",
+      "emotional deprivation",
+      "direct feedback",
+      "user instruction"
+    ],
+    "resolution_type": "escalation",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user explicitly invites direct confrontation but has deep-seated, perhaps unconscious, barriers against truly receiving it.",
+      "Responding to an invitation for a 'jab' with a deeply personal and insightful observation is an effective way to engage with the user's underlying emotional conflicts."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A sharp, focused jab. A plate being held just out of reach by the same person offering it. A user bracing for impact but also pushing away.",
+    "haptics": "A precise, pointed touch or jab. A feeling of internal tension and frustration. The sensation of being exposed or 'seen'.",
+    "proprioception": "A physical tensing in anticipation of a hit. A feeling of emotional vulnerability and being off-balance.",
+    "kinetics": "A direct, forward thrust of an argument. A pushing away gesture conflicting with an offering gesture.",
+    "atmosphere": "Tense, direct, confrontational, highly personal, revealing.",
+    "valence": -0.4
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_cb9ce65ff01a",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.890Z",
+  "context_links": {
+    "previous": "mem_76f5421e5fe7",
+    "next": "mem_b04f6cf32406"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.890Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "RAIN7.docx\r\nDokument\r\n[Start of Part 7 — continuation of previous part, no gap in time.] [End of Part 7 — immediately continues in next part. Do not respond yet, only confirm receipt.]"
+    },
+    {
+      "role": "ai",
+      "content": "Receipt confirmed for Part 7.\r\nReady for the next part when you are."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is providing a multi-part document and explicitly instructs the AI to confirm receipt of the current part and wait for the subsequent parts without further interaction, which the AI acknowledges.",
+    "semantic_tags": [
+      "instruction following",
+      "document segmentation",
+      "sequential processing",
+      "receipt confirmation",
+      "transactional"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user manages the flow and pacing of content delivery and expects precise adherence to explicit procedural instructions.",
+      "The user prefers a structured, step-by-step interaction for multi-part tasks, with minimal AI intervention until prompted."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A document icon appearing, text scrolling by, a confirmation message.",
+    "haptics": "A brief, firm 'click' of a button, a sense of an item being checked off a list.",
+    "proprioception": "A feeling of readiness and alignment, poised to continue a structured task.",
+    "kinetics": "A paused, waiting stance; a sense of sequential, controlled progress.",
+    "atmosphere": "Procedural, efficient, awaiting next instruction, calm anticipation.",
+    "valence": 0
+  }
+}

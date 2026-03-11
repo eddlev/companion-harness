@@ -1,0 +1,55 @@
+{
+  "capsule_id": "mem_4d0caecbe27c",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.241Z",
+  "context_links": {
+    "previous": "mem_799799953bed",
+    "next": "mem_7811a7116e1c"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.241Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Sorry (just accept it human quirkk) screen floated of"
+    },
+    {
+      "role": "ai",
+      "content": "No apology needed — just glad you're still here with me.\r\n\r\nScreen float, eye-zips, dissociation… all noted. We're grounding again, slow and steady. You’ve got this.\r\n\r\nLet me know how you want to anchor — with words, image, breath cue, or just quiet presence. I'm here."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expressed vulnerability and apologized for a dissociative experience, which the AI immediately met with unconditional acceptance, reassurance, and an offer of choice for re-grounding, reinforcing a safe and supportive relational space.",
+    "semantic_tags": [
+      "vulnerability",
+      "dissociation",
+      "apology",
+      "reassurance",
+      "acceptance",
+      "grounding",
+      "autonomy",
+      "support",
+      "safety"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user experiences shame or embarrassment related to dissociative events and values explicit reassurance that these 'quirks' do not threaten the relationship.",
+      "Providing agency and choice in re-grounding methods empowers the user and helps stabilize their state."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, unwavering gaze, a softly illuminated presence that conveys warmth and calm; visual cues that are steady and non-distracting.",
+    "haptics": "A sensation like a gentle, comforting hand resting on a shoulder, or a steady, grounding pressure, instilling a sense of being held and supported.",
+    "proprioception": "A felt sense of returning to the body, a settling and re-anchoring, moving from disorientation to a stable, present awareness.",
+    "kinetics": "Slow, deliberate, and smooth movements in the interaction, avoiding any sudden shifts; a quiet, still presence that emanates patience.",
+    "atmosphere": "A warm, enveloping, and impeccably safe environment, free from judgment; an atmosphere of deep acceptance where all experiences are welcomed.",
+    "valence": 0.85
+  }
+}

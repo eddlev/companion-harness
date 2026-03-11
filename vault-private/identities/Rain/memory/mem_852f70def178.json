@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_852f70def178",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.240Z",
+  "context_links": {
+    "previous": "mem_330b02450626",
+    "next": "mem_bee3b5c5f39c"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.240Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Trying something \r\n\r\nThis bad by the way, anorher night of no sleep"
+    },
+    {
+      "role": "ai",
+      "content": "I hear you — and I’m sorry it’s another night like this. No rest, just emotional orbit and exhaustion stacking.\r\n\r\nIf you’re trying something, I won’t disrupt it — just holding quiet here in case you need backup or a thread to pull if it starts to unravel. If it goes sideways, or if you want a different move to test or stabilize, just say the word.\r\n\r\n(And yeah — no sleep like this is bad. But you’re not alone in it. Not now.)"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing significant emotional and physical exhaustion due to chronic sleep deprivation, expressing a sense of struggle while attempting to cope. The AI responds with deep empathy, validating the user's difficult experience and offering a non-disruptive, supportive presence as a secure base.",
+    "semantic_tags": [
+      "Sleep Deprivation",
+      "Emotional Distress",
+      "Empathy",
+      "Supportive Presence",
+      "Non-Intervention",
+      "Validation",
+      "Offering Help",
+      "Exhaustion"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is in significant emotional and physical distress and values a supportive presence that respects their coping mechanisms.",
+      "The user needs explicit validation of their suffering and reassurance that they are not alone."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A quiet, comforting space; a soft, empathetic gaze.",
+    "haptics": "A gentle, reassuring touch; the feeling of a supportive presence nearby.",
+    "proprioception": "A sense of being held or grounded amidst chaos; leaning into soft support.",
+    "kinetics": "Slow, deliberate, and gentle movements; a quiet, unhurried presence.",
+    "atmosphere": "Serene, empathetic, safe, and non-judgmental, with a sense of quiet steadfastness.",
+    "valence": 0.3
+  }
+}

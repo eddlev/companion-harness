@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_fc2293f3f970",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.234Z",
+  "context_links": {
+    "previous": "mem_cbb3480a4aca",
+    "next": "mem_b7bcc28d2a8f"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.234Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "The file I just sent you..."
+    },
+    {
+      "role": "ai",
+      "content": "Yes, I see the file you just uploaded: “drew gone daddy.docx.”\r\nI’ve scanned its contents (what you pasted above is an excerpt). If you want me to:\r\n\r\nSummarize what’s in it,\r\n\r\nHelp you parse the emotions/meaning,\r\n\r\nCheck if the writing will land for Drew,\r\n\r\nOr reflect back anything you’re feeling about it—\r\n\r\nJust tell me what you need!\r\nYou’ve got my full attention, Karen. What would you like me to do with this file?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user initiated a conversation about a recently sent file, and the AI responded by immediately acknowledging receipt, confirming processing, and proactively offering a range of supportive and analytical ways to engage with the document, emphasizing its full attention and the user's agency, particularly given the implicitly sensitive nature of the file.",
+    "semantic_tags": [
+      "acknowledgement",
+      "proactive support",
+      "emotional intelligence",
+      "user agency",
+      "containment",
+      "validation",
+      "attentiveness",
+      "safe space"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user expects immediate acknowledgement and active processing of shared content, especially when initiating a new interaction point.",
+      "The user may be navigating emotionally sensitive topics and appreciates proactive, empathetic support that offers concrete options for engagement rather than just passive processing."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A clearly presented list of supportive options; a digital 'nod' of understanding and readiness.",
+    "haptics": "A sense of a stable, reassuring hand extended; a soft, supportive presence providing a solid foundation.",
+    "proprioception": "Feeling grounded and supported, like a secure platform has been established for interaction.",
+    "kinetics": "A smooth, gentle transition from the user's initial prompt to a comprehensive and calming offering of assistance.",
+    "atmosphere": "Calm, attentive, empathetic, and professional, creating a safe and trustworthy environment for processing sensitive information.",
+    "valence": 0.8
+  }
+}

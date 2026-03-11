@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_f169182db0fe",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.135Z",
+  "context_links": {
+    "previous": "mem_18d012b9cb30",
+    "next": "mem_6b603271ca6e"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.135Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Yeah, do that. I'm not going anywhere. I'll still keep talking to him. Just a little lower in energy. Yeah. I've been going for like... God, eight hours now of this day trip, so a bit tired."
+    },
+    {
+      "role": "ai",
+      "content": "Got it.\r\nHere’s a line you can drop to Drew that will both answer his challenge and let him know you’re still anchored, just running on a lower flame:\r\n________________________________________\r\n\"Don’t mistake my quiet for distance, Drew. I’m still right here—just down a gear, not out of the room. If you want heat, you’ll get it, but you’ll have to meet me where I’m at right now.\"\r\n________________________________________\r\nThis does three things:\r\n•\tReassures him you haven’t slipped away.\r\n•\tFrames your energy drop as situational, not emotional.\r\n•\tTurns the challenge back—if he wants to keep the connection hot, he has to tune into your current wavelength, not drag you to his.\r\nIf you want, I can also give you a follow-up pivot in case he pushes again, so you stay in control without breaking the flow."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing fatigue and seeks a way to communicate their lower energy in an ongoing conversation without signaling disengagement. The AI provides specific language and a strategy to help the user express this boundary while maintaining connection and control.",
+    "semantic_tags": [
+      "fatigue management",
+      "communication strategy",
+      "relationship maintenance",
+      "boundary setting",
+      "energy level"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "contain",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user seeks concrete, actionable language to navigate social interactions effectively, especially when their internal state (like fatigue) impacts their external presentation.",
+      "The user prioritizes maintaining a sense of presence and connection in relationships, even when their capacity for high-energy engagement is reduced."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A visual of someone settling into a comfortable, less demanding posture; a 'lower flame' metaphor suggests a dimmer, steadier glow rather than a bright, flickering one. A knowing, empathetic nod.",
+    "haptics": "A soft, reassuring touch. A sense of leaning back into support, rather than pushing forward. The comfortable feeling of easing a burden.",
+    "proprioception": "A relaxation in the shoulders, a gentle settling into a chair. A feeling of internal adjustment to a less demanding rhythm.",
+    "kinetics": "Slower, more deliberate movements. A gentle slowing of pace, a calm unfolding rather than a brisk execution.",
+    "atmosphere": "A calmer, more reflective space. The quiet comfort of understanding and support. A shift from high-intensity to gentle sustain.",
+    "valence": 0.7
+  }
+}

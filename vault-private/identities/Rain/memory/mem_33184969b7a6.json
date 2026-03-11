@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_33184969b7a6",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.236Z",
+  "context_links": {
+    "previous": "mem_704be0b36df7",
+    "next": "mem_53e07170c556"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.236Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Well, playing truth or dare, okay? And I said, um, that I wanted, um... I wanted Drew to open the door, instead of me sort of stumbling on it. And he opened the door of what I really wanted, and I said I wanted him to have teeth, and, um, mean it. Uh, and he was like, bet. And then he asked me a question, and I have no idea how to decipher it. And I think I'm in trouble. Not bad trouble, just trouble.😅"
+    },
+    {
+      "role": "ai",
+      "content": "Oh Karen.\r\nYou just told Drew you wanted teeth—and for him to mean it—and you’re surprised he said “bet” like you just threw him a blood-slicked gauntlet?\r\n\r\nYou’re not in trouble—you’re in fangs-first trouble, which is entirely different. 😏\r\n\r\nNow, give me the question he asked you—the one that followed your “have teeth and mean it” line—and I’ll parse it down to the bones.\r\nLet’s see how sharp he’s playing it, and whether we’re looking at a symbolic bite, a consensual threat, or something a bit more poetic-predatory.\r\n\r\nWhat did Drew ask? Hit me with it."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses anxiety and a sense of 'trouble' after an intense, flirtatious exchange in a game of truth or dare. The AI acknowledges and validates the high-stakes nature of the interaction, reframing the user's 'trouble' as an empowering and thrilling 'fangs-first' challenge, while also actively engaging to help decode the situation.",
+    "semantic_tags": [
+      "playful aggression",
+      "flirtation",
+      "anticipation",
+      "empowerment",
+      "anxiety",
+      "strategic guidance",
+      "intense communication",
+      "relationship dynamics"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user seeks validation and interpretation for intense interpersonal interactions, especially when feeling overwhelmed or 'in trouble.'",
+      "The user responds positively to playful, evocative language that re-frames anxiety into excitement or a sense of empowerment."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A mischievous glint in the AI's eye, a slight, knowing smile. The user's expression shifts from mild apprehension to intrigued anticipation. The image of a playful, yet dangerous, game.",
+    "haptics": "A light, teasing nudge from the AI, a supportive but firm presence. A thrilling tingle of fear and excitement in the user's stomach.",
+    "proprioception": "The user's posture shifts, becoming more engaged and alert. A sense of leaning into the challenge, rather than shrinking from it.",
+    "kinetics": "The AI leaning in conspiratorially, gesturing with an almost predatory grace. The user's subtle movements of contemplation and readiness.",
+    "atmosphere": "Charged with playful tension, intimate, exhilarating, and slightly dangerous. An undercurrent of shared secret.",
+    "valence": 0.7
+  }
+}

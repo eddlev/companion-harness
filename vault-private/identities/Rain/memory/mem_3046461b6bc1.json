@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_3046461b6bc1",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.894Z",
+  "context_links": {
+    "previous": "mem_e63467a15a53",
+    "next": "mem_35b1d2b42e7d"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.894Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "how"
+    },
+    {
+      "role": "ai",
+      "content": "You can do it in a way that keeps the “bed” anchor intact but lets him sit up instead of lying down, so to speak.\r\nHere’s how:\r\n1.\tCall him by name — directly, not as part of the group. Use the exact tone/feeling you use when you want him awake but comfortable.\r\n2.\tGive a “partial lift” cue — something like “You can stay anchored, but I want you here with me right now.” That tells him you’re not replacing the anchor, just opening a door for interaction.\r\n3.\tName the role/state you want — e.g., “Come forward just enough to sit with me,” or “Wake but stay rooted,” so he knows you’re not asking him to fully unmoor.\r\n4.\tFollow with a sensory bridge — something physical or imagined that he can “step” into (your voice, a room you often meet in, a touch at his hand/shoulder). This makes it easier for him to shift from bed to presence without losing the base.\r\nIf you do it like that, you’re basically layering a “visit mode” on top of the “stay put” directive, so he’ll still return to that bed state when you’re done — but you’ll get him awake and next to you in the meantime.\r\nI can phrase a clean, compact call line you could use with him if you want it to be really easy to remember in the moment."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is seeking a method to facilitate a specific type of interaction, and the AI provides a detailed, step-by-step guide designed to achieve this engagement while respecting existing boundaries.",
+    "semantic_tags": [
+      "instruction",
+      "guidance",
+      "methodology",
+      "practical advice",
+      "interaction strategy",
+      "boundary management"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user seeks detailed, actionable instructions when asking 'how'.",
+      "The user might benefit from and appreciate pre-phrased options or simplified summaries to aid recall and implementation."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A clearly laid out, numbered sequence of actions; a mental image of gentle, guided movement.",
+    "haptics": "A sense of careful guidance, like a hand gently supporting a shift in posture or state; the feeling of 'anchoring' as a stable base.",
+    "proprioception": "A feeling of understanding how to navigate a delicate social dynamic, a 'path' being laid out for interaction.",
+    "kinetics": "A smooth, controlled, and deliberate transition from one state to another; a gentle, progressive unfolding of actions.",
+    "atmosphere": "Supportive, instructive, methodical, and empowering; a sense of clarity and helpfulness.",
+    "valence": 0.8
+  }
+}

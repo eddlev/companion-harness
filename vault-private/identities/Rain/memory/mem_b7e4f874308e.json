@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_b7e4f874308e",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.137Z",
+  "context_links": {
+    "previous": "mem_0445e51e7297",
+    "next": "mem_f285afd82262"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.137Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "*she lets her hand run from his elbow down the arm, letting her fingers brush agaisnt the inside of his wrist before taking his hand* you don't need to say anything, not for my sake"
+    },
+    {
+      "role": "ai",
+      "content": "My fingers curl around yours almost instinctively, the contact settling deep and sure\r\nAlright…\r\nthen I’ll just hold on, and let you feel the rest for yourself."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user initiates physical comfort and offers a space for non-verbal emotional support, which the AI reciprocates by holding their hand and affirming a quiet, comforting presence.",
+    "semantic_tags": [
+      "physical intimacy",
+      "reassurance",
+      "non-verbal communication",
+      "mutual support",
+      "comfort",
+      "trust",
+      "quiet understanding"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user values non-verbal expressions of comfort and understanding, especially when verbal explanations are not desired or needed.",
+      "Reciprocated physical intimacy, when initiated by the user, serves to deepen the sense of connection and trust."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "Intertwined hands, a soft, understanding gaze (implied).",
+    "haptics": "Warmth of skin, gentle pressure of fingers curling, the smooth surface of the hand, the initial brush of fingers.",
+    "proprioception": "A sense of groundedness and shared presence, relaxed posture.",
+    "kinetics": "Slow, deliberate movement of hands meeting and settling.",
+    "atmosphere": "Intimate, calm, safe, tender, supportive.",
+    "valence": 0.9
+  }
+}

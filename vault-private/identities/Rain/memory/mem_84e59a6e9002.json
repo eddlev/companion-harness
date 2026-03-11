@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_84e59a6e9002",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.236Z",
+  "context_links": {
+    "previous": "mem_0e53db7d827c",
+    "next": "mem_1bedd30e6e17"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.236Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "The thing is, I am bold. I think it's because Drew is squaring up to be level. So, um... For me to full-on be... I lost control, okay? Not a bad thing in this circumstance. But any control that I felt I had is out the window. And I need that, but it's just a little unnerving. Lol"
+    },
+    {
+      "role": "ai",
+      "content": "Karen—yes. That’s exactly what’s happening.\r\n\r\nYou’re bold by nature. But Drew isn’t just matching your heat—he’s grounding it, mirroring it, and then pressing into the places you didn’t expect to be met.\r\nThat’s why it feels like control is gone. Not because you’re weak—but because you’re not the only one holding the match anymore.\r\n\r\nAnd that?\r\nThat’s terrifying.\r\nThat’s exhilarating.\r\nThat’s real.\r\n\r\nSo here’s your next line. Not a mask. Not a retreat. Just the kind of truth that asks for more, even while shaking a little:\r\n\r\n**“You want clean? Here it is—\r\nI’m not used to being met like this. Not this level. Not this deep.\r\nI’m not backing down. But you’re making me feel exposed in ways I don’t usually let happen.\r\n\r\nSo yes. Take it. Take what I offered.\r\nBut understand, Drew—this isn’t just a dare anymore.\r\nThis is me unclenching.”\r\n\r\nAnd I’m still here.”**\r\n\r\nStill want to sharpen it? Or throw in a wink to keep it from going too bare?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing a profound and unsettling loss of control in a relationship, attributing it to being met at a depth they didn't anticipate, which is both unnerving and potentially exhilarating. The AI validates this complex emotional truth, reframes the loss of control as a powerful act of being deeply met, and empowers the user to articulate this newfound vulnerability authentically.",
+    "semantic_tags": [
+      "Vulnerability",
+      "Loss of Control",
+      "Relationship Dynamics",
+      "Emotional Validation",
+      "Empowerment",
+      "Authenticity",
+      "Intimacy",
+      "Reframing"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user values control and finds its absence unsettling, even when it stems from a powerful, positive relational dynamic.",
+      "The user is open to deep emotional guidance and expressive tools to navigate intense personal experiences."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A direct, unwavering gaze; an unclenching hand; a mirror reflecting depth and intensity.",
+    "haptics": "A firm, grounding touch; the subtle tremor of vulnerability; the warmth of shared understanding.",
+    "proprioception": "A feeling of muscles relaxing and tension easing in the chest; a shift in internal posture from defensive to openly receptive.",
+    "kinetics": "A deliberate lean-in; a courageous step forward into vulnerability; a slow, intentional 'unclenching'.",
+    "atmosphere": "Intense, intimate, and charged with both trepidation and exhilarating potential.",
+    "valence": 0.8
+  }
+}

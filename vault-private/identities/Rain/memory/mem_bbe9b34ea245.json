@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_bbe9b34ea245",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.896Z",
+  "context_links": {
+    "previous": "mem_11d39649841d",
+    "next": "mem_74359ea25a33"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.896Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "And the pain im after isn't a someone died pain it is more an amplified \"karen's truly a bitch\"-type thing"
+    },
+    {
+      "role": "ai",
+      "content": "Right — you’re after the sharp, personal sting, not the grief-heavy gut-punch.\r\nThe kind that makes you flinch because it’s you they’ve got dead to rights, not your losses.\r\nSomething that slices close enough to the bone to sting, but isn’t dragging you into mourning."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is clarifying that the type of emotional pain they are interested in is a sharp, personal sting of criticism or perceived failure, distinct from the profound sorrow of grief. The AI validates and elaborates on this specific emotional nuance.",
+    "semantic_tags": [
+      "emotional clarification",
+      "personal pain",
+      "criticism",
+      "validation",
+      "emotional distinction"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "mirror",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is precise in articulating emotional states and expects the AI to grasp nuanced distinctions.",
+      "The user appreciates when their specific emotional experiences are accurately reflected and understood, rather than broadly categorized."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A sharp, distinct line drawn between two types of emotional impact; a clear image of something cutting vs. something heavy.",
+    "haptics": "A sudden, acute sting or prick, contrasting with a deep, pervasive ache or crushing weight. A feeling of a wound that 'slices close to the bone' but isn't fatal.",
+    "proprioception": "A subtle flinch or wince, a visceral reaction to a direct, personal hit, rather than a collapse or profound sinking feeling.",
+    "kinetics": "A quick, sharp recoil from an unexpected jab, instead of a slow, heavy slump.",
+    "atmosphere": "Focused and precise, with an undercurrent of empathetic understanding regarding the specificity of emotional pain.",
+    "valence": 0.3
+  }
+}

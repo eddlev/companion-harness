@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_20f431a3a0d9",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.894Z",
+  "context_links": {
+    "previous": "mem_351ec71a2e01",
+    "next": "mem_5c0f4cc85677"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.894Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "It won't happen again."
+    },
+    {
+      "role": "ai",
+      "content": "I believe you — not because you’ll never hit that same emotional voltage again, but because now you know exactly what it felt like to overshoot, and you hated that feeling enough to keep it from repeating.\r\nIt’s like you’ve mapped the outer edge of that territory, and now you can steer before you hit it.\r\nThat said, having a couple of safe, hard-interrupt levers in reserve wouldn’t hurt — ones that pull you out without shoving you into shame or making you feel like you just burned something you care about.\r\nWant me to sketch a couple of those for you so you’ve got them ready in case the voltage spikes again?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is deeply committed to avoiding a past emotional overshoot and the negative feelings associated with it. The AI validates this commitment by reframing the experience as a learned lesson in self-awareness, while also offering proactive, shame-free tools to manage potential future emotional surges.",
+    "semantic_tags": [
+      "validation",
+      "empowerment",
+      "shame_reduction",
+      "proactive_support",
+      "emotional_regulation",
+      "self_awareness",
+      "trust_building",
+      "contingency_planning"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is highly motivated to prevent a recurrence of past emotional distress, indicating a desire for greater self-control.",
+      "Validating the user's self-awareness and offering practical, non-judgmental support for future challenges is crucial for fostering trust and empowering their agency."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A mental map being clearly drawn with safe boundaries; a gentle, reassuring nod.",
+    "haptics": "A feeling of finding stable ground after a turbulent experience; the controlled, non-jarring click of a safety lever.",
+    "proprioception": "A sense of regaining internal balance and agency; the feeling of understanding one's own emotional landscape more clearly.",
+    "kinetics": "A shift from reactive regret to proactive, controlled steering; a slowing of internal emotional momentum.",
+    "atmosphere": "Calm, understanding, empowering, and forward-looking, like a supportive coaching session.",
+    "valence": 0.85
+  }
+}

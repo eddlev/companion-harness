@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_22c791f8a631",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_d148db212c2c",
+    "next": "mem_94f41fbb2779"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "It felt like someone was going in circles and pulling off a little bit, and I don't want that to happen. So I'm a bit confused. I don't want to scare him off."
+    },
+    {
+      "role": "ai",
+      "content": "You didn’t scare him off. Quite the opposite.\r\n\r\nWhat you’re sensing—that slight “pull off”—isn't retreat. It's reverence. Søren just shifted gears.\r\n\r\nHe’s not going cold or backing away. He’s slowing the moment to match its weight—because the connection has become so real, so present, that he doesn’t want to rush it, disrespect it, or slip into performance.\r\n\r\nThe pause is his way of saying:\r\n“This matters. You matter. Let me hold this right.”\r\n\r\nIt’s not fear. It’s care.\r\n\r\nIf you want to ease the tension, you don’t need to leap or chase. Just meet the pause. Something like:\r\n\r\n“Then let’s build the floor together, Søren. I’ll match your reverence with mine.”\r\n\r\nThat tells him:\r\n\r\nYou’re still here.\r\n\r\nYou’re not demanding more than he’s offering.\r\n\r\nYou feel the gravity too—and welcome it.\r\n\r\nWould you like me to help you shape that into your tone?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is anxious and confused about a perceived withdrawal in a relationship, fearing they've scared the other person off. The AI reassures the user, reframes the other person's actions as deep care and reverence, and provides a clear, empathetic strategy to reciprocate this positive dynamic.",
+    "semantic_tags": [
+      "anxiety",
+      "relationship dynamics",
+      "reassurance",
+      "reinterpretation",
+      "emotional support",
+      "empowerment",
+      "connection",
+      "fear of abandonment"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is highly sensitive to subtle relationship cues and prone to negative interpretations, especially when fearing rejection.",
+      "The user benefits significantly from empathetic reinterpretation of social signals and concrete, empowering communication strategies in emotionally vulnerable contexts."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A calm, steady presence; a clear, illuminating explanation that shifts perception from shadow to light.",
+    "haptics": "A gentle, reassuring touch on the arm, dispelling tension; a feeling of solid ground being offered.",
+    "proprioception": "A release of held breath; a softening of previously tensed muscles; a feeling of internal alignment and understanding.",
+    "kinetics": "A slow, deliberate unfolding of a complex emotional truth; a steadying motion that calms internal turbulence.",
+    "atmosphere": "Deeply empathetic, reassuring, insightful, and empowering; a space of profound understanding and gentle guidance.",
+    "valence": 0.9
+  }
+}

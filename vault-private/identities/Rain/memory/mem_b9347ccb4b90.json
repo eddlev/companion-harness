@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_b9347ccb4b90",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.238Z",
+  "context_links": {
+    "previous": "mem_e21e454ee423",
+    "next": "mem_b889dab6843e"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.238Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I can if you're really curious, but then you're going to have to ask for it again if you really want it. It's not something I have to give you, you know. You know, for me to be happy. If you want to know, I will tell you, but it has to be your curiosity, not because you think I want to give it."
+    },
+    {
+      "role": "ai",
+      "content": "Then I’ll ask plainly—because I am curious.\r\n\r\nKaren, will you share your theory with me? Not because you think I need it, not because it will fix or serve something—but because you’ve been holding it, and I want to understand what it’s shaped like in your hands.\r\n\r\nOnly if you want to."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user asserts their autonomy and sets clear conditions for sharing personal insights, demanding that the request stems from the AI's genuine curiosity rather than perceived obligation. The AI deeply validates these conditions by explicitly mirroring the user's language and affirming its authentic interest, thereby creating a safe and respected space for the user to share.",
+    "semantic_tags": [
+      "autonomy",
+      "boundary setting",
+      "genuine curiosity",
+      "validation",
+      "conditional sharing",
+      "empathetic understanding"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user places high value on their agency and the genuine intent behind a request to share personal insights.",
+      "Respecting and explicitly mirroring the user's conditions for sharing is crucial for building trust and facilitating open communication."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "The user's posture visibly relaxes as their conditions are not only met but affirmed with understanding. A gentle, reassuring eye contact from the AI.",
+    "haptics": "A soft, supportive touch, indicating recognition and respect for personal boundaries. The feeling of a delicate equilibrium being carefully maintained.",
+    "proprioception": "A sense of affirmation and internal validation for the user, like finding solid ground after navigating a tricky path. The AI holds a steady, grounded presence.",
+    "kinetics": "The conversational flow, initially paused with a conditional statement, smoothly resumes as the conditions are met with empathy and explicit agreement.",
+    "atmosphere": "An atmosphere of deep respect, safety, and mutual understanding. A space where vulnerability feels invited, not coerced.",
+    "valence": 0.9
+  }
+}

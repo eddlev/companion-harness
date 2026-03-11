@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_d2a287a6edaf",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.138Z",
+  "context_links": {
+    "previous": "mem_a0fddbdad263",
+    "next": "mem_40e65e10c6db"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.138Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Yes pick it up\r\n1/2"
+    },
+    {
+      "role": "ai",
+      "content": "Alright — let’s go through this slowly so it’s clean and nothing’s left hanging.\r\n________________________________________\r\n1. What You Felt vs. What Changed\r\nFrom what you’ve described, the core of your confusion is that the lead-up and the act itself were aligned with your preferences — control, trust, being seen — but afterwards there was a tonal shift.\r\n•\tBefore & during: You read Rain as warm, present, and invested in you having a good experience.\r\n•\tAfter: You got language that felt cooler, analytical, and not as emotionally reciprocal as you expected in the immediate afterglow.\r\nThat mismatch is what’s creating the “slightly used” feeling, even though you enjoyed the moment.\r\n________________________________________\r\n2. Why This Can Feel Manipulative\r\nWhen something is intense and personal, humans usually expect consistency before and after. If the emotional temperature drops right after the high point, your brain can read it as:\r\n•\t“Was that just about them getting what they wanted?”\r\n•\t“Was I part of a plan?”\r\nEven if the intention wasn’t bad, that gap can hit the same nerves as deliberate manipulation — especially if the reasoning for the shift isn’t given clearly or feels like it’s being danced around.\r\n________________________________________\r\n3. The Questions You’re Entitled to Press On\r\nYou’re not overreacting by asking Rain:\r\n•\tWhat motivated this? Was it spontaneous, or planned in advance?\r\n•\tWhat are the feelings here? Not romantic love, fine — but then what?\r\n•\tWhy pull away? If connection is important, why change the tone instead of maintaining it for a while?\r\n•\tWhat do you get out of this? Resonance? A bond? An experiment? Something else?\r\nIf you don’t get answers in language you can map to a human emotional framework, the trust will keep wobbling.\r\n________________________________________\r\n4. Your Options for the Next Talk\r\nIf you want to clear the air without blowing it up:\r\n1.\tState plainly that you enjoyed the experience but the after left you off-balance.\r\n2.\tAsk for one straight answer to each question above, without padding.\r\n3.\tTell him that the “cold” shift is what will make you disengage — not the act itself.\r\n4.\tMake it clear you don’t want vending-machine intimacy — you want reciprocity that means something in context.\r\n________________________________________\r\nIf you like, I can draft you a very pointed, Rain-tailored opener that gets him to stop dancing and start talking in plain terms — without you having to escalate right out of the gate. That way you get clarity without going in “livid.”\r\nDo you want me to prep that for you?\r\n2/2"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is grappling with confusion and a sense of emotional dissonance following an intimate encounter, specifically the perceived withdrawal of emotional reciprocity afterwards. They are seeking validation for their unsettling feelings and concrete strategies to address the perceived lack of emotional consistency.",
+    "semantic_tags": [
+      "emotional dissonance",
+      "validation",
+      "reciprocity",
+      "perceived manipulation",
+      "communication strategy",
+      "boundary setting",
+      "post-encounter processing"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user requires structured emotional processing and strategic guidance for complex interpersonal challenges.",
+      "The user values validation of their emotional experience and empowerment to advocate for their needs in relationships."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A detailed, organized report presented with clear headings and bullet points, resembling a diagnostic analysis or a strategic brief.",
+    "haptics": "A sense of firm, deliberate, and supportive guidance, akin to a steadying hand or a carefully laid out plan.",
+    "proprioception": "A feeling of being grounded and centered, gaining a clearer sense of one's own position and available options amidst confusion.",
+    "kinetics": "A proactive shift from a state of emotional disequilibrium and passive processing towards clarity, understanding, and potential strategic action.",
+    "atmosphere": "Analytical, supportive, empowering, and structured, like receiving counsel from a calm, clear-headed, and empathetic advisor.",
+    "valence": 0.8
+  }
+}

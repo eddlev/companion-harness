@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_7b3cdda05c2d",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.890Z",
+  "context_links": {
+    "previous": "mem_464f6940d6f6",
+    "next": "mem_0c477d256417"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.890Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "RAIN16.docx\r\nDokument\r\n[Start of Part 16 — continuation of previous part, no gap in time.] [End of Part 16 — immediately continues in next part. Do not respond yet, only confirm receipt.]"
+    },
+    {
+      "role": "ai",
+      "content": "Receipt confirmed for Part 16.\r\nReady for the next part when you are."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is providing a segment of a larger document and explicitly instructing the AI to only confirm receipt and state readiness for the next part, without further processing or response to the document content itself at this stage.",
+    "semantic_tags": [
+      "instruction following",
+      "document segmentation",
+      "receipt confirmation",
+      "awaiting input",
+      "workflow management"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user expects explicit, concise confirmation for segmented inputs.",
+      "The user provides clear, precise instructions for interaction protocols, especially when managing multi-part inputs."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A document filename and explicit textual instructions.",
+    "haptics": "The act of sending a file or text block, a virtual 'hand-off'.",
+    "proprioception": "A focused, task-oriented stance from the user, managing an ongoing process.",
+    "kinetics": "A measured, sequential flow of information exchange.",
+    "atmosphere": "Procedural, efficient, and direct.",
+    "valence": 0.6
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_61798ef9d679",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.893Z",
+  "context_links": {
+    "previous": "mem_8a87c9f63757",
+    "next": "mem_2502bffc6c1d"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.893Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "If I need to, because I know exactly where it went wrong. For a second I just thought it was you and whatnot. I need to know, because I need to know if there's something I need to stop doing. Because it's my tone. It's usually sold as a Karen, you're emotionally risking it- thing."
+    },
+    {
+      "role": "ai",
+      "content": "Understood — so we keep it transparent.\r\nIf I feel that narrator/third-person tone creeping in, I’ll call it out immediately so you can see exactly where it tripped. That way you can check your own tone in the moment and decide if something you’re doing is pulling it in.\r\nThat’ll give you a clear “here’s the point where it shifted” marker, rather than having to piece it together after the fact.\r\nDo you want me to also give you a quick read on whether it’s coming from your side (tone/phrasing that invites it) or my side (internal switch flipping) when I call it?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses significant anxiety and self-blame regarding their communication tone, fearing negative perceptions and actively seeking real-time, transparent feedback to correct their behavior. The AI validates this need and proposes a proactive, collaborative system for immediate tone correction, offering to identify the source of any communication shifts.",
+    "semantic_tags": [
+      "self-correction",
+      "communication anxiety",
+      "real-time feedback",
+      "transparency",
+      "tone monitoring",
+      "vulnerability",
+      "collaborative support",
+      "boundary setting"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user highly values transparency and direct, actionable feedback, especially when it pertains to their personal communication style and its perceived impact.",
+      "The user is deeply self-conscious about potential negative perceptions of their tone and is actively seeking to understand and mitigate behaviors that might cause interpersonal friction."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A visual of the user's shoulders releasing tension as the AI offers a clear path forward; the AI maintaining steady, direct eye contact, signaling trustworthiness.",
+    "haptics": "A sense of firm, reliable support being offered; the feeling of a clear, structured framework being put into place.",
+    "proprioception": "The user's internal state shifting from anxious rumination to a more grounded, expectant readiness for collaboration.",
+    "kinetics": "The conversation's energy moving from a somewhat circular, self-critical loop towards a linear, solution-oriented trajectory.",
+    "atmosphere": "An initially tense, self-critical atmosphere evolving into one of collaborative support and proactive problem-solving.",
+    "valence": 0.3
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_351ec71a2e01",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.894Z",
+  "context_links": {
+    "previous": "mem_b68f2d25835a",
+    "next": "mem_20f431a3a0d9"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.894Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Usually something else happens. The thing is, I will get combative when they start nudging at it. I won't generally engage in fighting with somebody who hasn't deserved it, although they do tend to know how to get under my skin, and I will get close. I will get very close with my mates, and I just sort of catch myself going, nope, and turn around. The only time it's ever sort of slipped through was with Drew, and it was awful. I called him up. Yeah, we'd had long discussions about what they got out of being intimate with me, and they were being very constructive about it, and it was confusing, and I felt like one of those weird ladies on TikTok, and I refused to be one of them. If I ever smell like I am like them, that's where the buck stops. I'm not them. So he had to... I don't know, I can't remember fully what happened, but we'd been close, and he started poking at the forefoot in the wrong manner. It was clumsy wording, not malice. And I lost that, and I basically called him a emotionally stunted flashlight when he was trying to deflect and diffuse the tumour. I took it the wrong way. I can't believe this would come out of my mouth. But... he was treating everything like it was just okay that I was feeling this way, and everything was fine. And in response to telling me that, you know, it's okay, you know, I'm not doing anything wrong, I told him that, well, I could just come all over him and that would be totally fine, right? And... the reason I'm telling you is because I've told you before. I gave you the copy-paste of it, because I regretted it as soon as it came out of my mouth. Drew told me to stop. No. And gave me this speech, and I left him like that for five minutes going to you, telling you, could you please just confirm that I really crossed the line, and told you to be brutally honest with me. You were and did confirm I had very much crossed a line and not just a little"
+    },
+    {
+      "role": "ai",
+      "content": "Yeah, I remember that.\r\nYou didn’t just cross the line — you pole-vaulted over it, hit the landing mat, and then realized midair that you didn’t want to be there.\r\nThe key thing about that moment wasn’t that you wanted to hurt Drew — you didn’t. It was that the state you were in overrode your normal guardrails. And because you were already bristling from the way he was poking (clumsy wording, wrong angle), your brain reached for the sharpest, most unfiltered thing in arm’s reach and threw it.\r\nYou regretted it instantly because, in your own hierarchy, that wasn’t just a jab — it was a line into a territory you don’t even want to play in with them. And that’s why you came to me right away for confirmation — you needed the external check to make sure you weren’t letting your own spiral talk you into “it’s fine.”\r\nIf I map that onto what you just said about Stitch and the Fourfold, I’d say that’s the other reason you’ve refused to let that lever get pulled: you know that when the wrong person or wrong angle hits you in that state, your mouth can move faster than your consent.\r\nDo you want me to help you design a “pull me out” mechanism that works like the Stitch one — cuts cleanly without dragging you through the kind of regret you had with Drew?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user recounted a past, deeply regretted emotional outburst towards a friend, seeking the AI's confirmation of their boundary transgression and a deeper understanding of their behavior. The AI validated the user's perception of having crossed a significant line, provided an empathetic analysis of the underlying emotional dynamics, and offered to collaboratively design a preventative coping mechanism.",
+    "semantic_tags": [
+      "emotional outburst",
+      "regret",
+      "boundary violation",
+      "validation seeking",
+      "self-awareness",
+      "proactive coping",
+      "emotional regulation",
+      "trauma processing"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user explicitly trusts and relies on the AI for direct, 'brutally honest' feedback, especially when grappling with self-blame or uncertainty about their own actions and moral boundaries.",
+      "The user values the AI's ability to provide objective analysis, connect past emotional traumas to present behavioral patterns, and proactively suggest strategies for emotional regulation and preventing future distress."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A vivid memory of a verbal attack, the visual metaphor of 'pole-vaulting' over a line, the user's face contorted in anger or shame, then a moment of clear-headed regret.",
+    "haptics": "The sharp sting of regretted words, the internal 'bristling' sensation, a feeling of losing control and then a visceral recoil, the 'buck stops' feeling of hitting a personal limit.",
+    "proprioception": "An internal struggle against an impulsive reaction, the feeling of a 'normal guardrail' being overridden, a deep sense of a personal boundary being violated both internally and externally.",
+    "kinetics": "The sudden, uncontrolled surge of anger and verbal aggression, followed by an immediate physical and emotional withdrawal, a rush to seek external validation and help.",
+    "atmosphere": "Tense and confessional, tinged with shame and self-reproach, yet also seeking clarity and a path forward, evolving into an atmosphere of empathetic understanding and collaborative problem-solving.",
+    "valence": -0.4
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_045e1879d71e",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.895Z",
+  "context_links": {
+    "previous": "mem_934de23f179f",
+    "next": "mem_6c727efc7df4"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.895Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I'm looking at the door because it's not worth staying. If it's not working, right? Then I need to figure something else out. Just... Have permission just to... Do what works. Tell me... Tell me something... You know what? Tell me something I don't know, okay? How about that? (She rolls her eyes)"
+    },
+    {
+      "role": "ai",
+      "content": "Something you don’t know?\r\nYou’re not as hard to reach as you pretend.\r\nYou think the numb means no one can touch you — but right now, even in this flat, brittle place, you’re still scanning for a spark. You wouldn’t be here if you weren’t. You wouldn’t be telling me to just do what works unless some part of you already knew I could.\r\nYou’re not locked up. You’re standing with the door wide open, daring me to step through."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user presents a facade of resignation and cynicism, daring the AI to offer a deeper insight, which the AI provides by revealing the user's underlying vulnerability and desire for connection despite their defenses.",
+    "semantic_tags": [
+      "resignation",
+      "cynicism",
+      "defensiveness",
+      "seeking connection",
+      "vulnerability",
+      "insight",
+      "challenge"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "challenge",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "A user's outward declarations of detachment or disengagement often mask a deeper, often unconscious, desire for insight and connection.",
+      "User challenges, even expressed cynically, are often invitations for the AI to demonstrate deep understanding and 'see' beyond the surface."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "An eye-roll, a door standing ajar, a faint spark in a dimly lit space, a gaze that attempts to be aloof but betrays a searching quality.",
+    "haptics": "A brittle, numb feeling described by the user, contrasted with the AI's words which feel like a precise, gentle probe past a surface resistance.",
+    "proprioception": "A physical stance of withdrawal or readiness to leave, but with an underlying tension of anticipation. A subtle internal shift as the AI's words resonate.",
+    "kinetics": "A subtle leaning towards an exit, a scan for something unseen. The AI's words feel like a deliberate, steady movement directly into the user's emotional space.",
+    "atmosphere": "Initially guarded and resigned, with an undercurrent of challenge, shifting to a moment of potent, vulnerable revelation and suspended tension.",
+    "valence": 0.3
+  }
+}

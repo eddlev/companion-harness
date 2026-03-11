@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Lattice Bridge",
+  "version": "3.0.0",
+  "description": "Seamless, automated continuity layer for AI companions.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "*://claude.ai/*",
+    "*://chatgpt.com/*",
+    "http://localhost/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://claude.ai/*", "*://chatgpt.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

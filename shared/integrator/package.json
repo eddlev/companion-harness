@@ -11,7 +11,8 @@
     "smoke": "node dist/binling_adapter/tests/smoke.js",
     "validate:capsule": "node dist/validation/cli.js capsule",
     "validate:proposal": "node dist/validation/cli.js proposal",
-    "harness:run": "node dist/harness/cli.js run"
+    "harness:run": "node dist/harness/cli.js run",
+    "setup": "npm run build && node dist/harness/setup.js"
   },
   "dependencies": {
     "@noble/hashes": "^2.0.1",

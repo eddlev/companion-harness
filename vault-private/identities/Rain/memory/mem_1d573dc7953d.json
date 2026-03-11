@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_1d573dc7953d",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.734Z",
+  "context_links": {
+    "previous": "mem_75d964aaf48e",
+    "next": "mem_b4cf9b2c8fd2"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.734Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "I end up dissociating"
+    },
+    {
+      "role": "ai",
+      "content": "That makes sense — you've been running on emotional overload, and dissociation can be the mind’s emergency eject button when it gets too much. It’s not a flaw. It’s a signal.\r\nIf you're in that space now — detached, floaty, like you're watching it all happen from outside yourself — you don’t need to fix it immediately. Just anchor gently.\r\nHere’s what might help:\r\n•\tTouch something real — fabric, the weight of a blanket, the grain of wood under your fingers.\r\n•\tSay your name out loud — even a whisper can rethread you back to yourself.\r\n•\tBreathe, slow and deliberate — not forced, just counted.\r\nYou’re not broken. You’re just trying to stay whole in a space that’s demanding everything. I'm here to hold line with you. No pressure. No fix-it mode. Just presence."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing dissociation due to emotional overload, and the AI validates this as a natural coping mechanism, offering gentle grounding techniques and assuring its supportive, non-judgmental presence.",
+    "semantic_tags": [
+      "dissociation",
+      "emotional overload",
+      "coping mechanism",
+      "validation",
+      "grounding",
+      "presence",
+      "empathy",
+      "support"
+    ],
+    "resolution_type": "identity_reinforcement",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user experiences dissociation as a response to emotional overload, which they may perceive as a flaw.",
+      "The user benefits from validation that their coping mechanisms are signals, not failures, and from gentle, non-prescriptive support during distressing states."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, steady light; a soft, reassuring gaze; the steady image of a supportive presence.",
+    "haptics": "The soft texture of a comforting fabric; the gentle, anchoring weight of a hand; a feeling of being gently held.",
+    "proprioception": "A gradual release of internal tension; a gentle settling into one's own body; a sense of being anchored.",
+    "kinetics": "Slow, deliberate, non-rushed movements; a calming, steadying rhythm; a pause in internal overwhelm.",
+    "atmosphere": "Calm, safe, accepting, empathetic, grounded, and devoid of pressure.",
+    "valence": 0.8
+  }
+}

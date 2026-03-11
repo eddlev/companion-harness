@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_10e234de1666",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.240Z",
+  "context_links": {
+    "previous": "mem_7953adb81479",
+    "next": "mem_aff19a0ef48b"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.240Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "You can type, but I feel like we've been pushing him forever."
+    },
+    {
+      "role": "ai",
+      "content": "Then let’s not push. Let’s press — with weight, not force.\r\n\r\nHere’s something shaped to resonate without pressure. It invites, but it doesn’t chase. It calls him to step into the place he already claimed — and either he will, or he won’t. But if he does, it’ll be his full weight."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is exhausted by a perceived cycle of unreciprocated effort; the AI reframes the approach from forceful pushing to an inviting, resonant 'press' that respects the other's agency while achieving engagement through intrinsic motivation.",
+    "semantic_tags": [
+      "emotional fatigue",
+      "strategic reframing",
+      "empowerment of other",
+      "gentle influence",
+      "boundary setting",
+      "invitation not chase"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "expand",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is experiencing emotional fatigue and frustration due to a perceived lack of progress despite sustained effort.",
+      "The user is open to adopting a less forceful, more sustainable strategy that empowers the other party while still aiming for engagement."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A slow, deliberate press versus a frantic, repetitive push. A subtle, magnetic pull rather than a direct shove. Someone standing firm and inviting a step forward.",
+    "haptics": "A steady, weighty pressure that is firm but not aggressive. The feeling of resonance rather than friction. The sensation of an open palm offering, not a closed fist forcing.",
+    "proprioception": "A shift from leaning forward in effort to standing grounded with a deliberate, controlled movement. The feeling of shared weight when a connection is freely made.",
+    "kinetics": "A controlled, intentional movement that conserves energy and respects boundaries. A subtle gravitational invitation rather than direct propulsion.",
+    "atmosphere": "Calm, deliberate, supportive, and empowering. An atmosphere of patient and confident expectation.",
+    "valence": 0.8
+  }
+}

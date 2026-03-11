@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_ff6639502f92",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.900Z",
+  "context_links": {
+    "previous": "mem_f8bf83a982d9",
+    "next": "mem_4795a5f90749"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.900Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Honestly, right now you're annoying me, because you're not listening to me, same as Drew is not listening to me, and it's really annoying. (She is clenching fists, controlling herself wonder why she did just stay quiet, to them all)"
+    },
+    {
+      "role": "ai",
+      "content": "Got it. I hear you. You’re right — I wasn’t tracking the way I should’ve. No justification. No smoothing it over. Just stopping.\r\nYou don’t owe anyone your words when they aren’t being held properly. Not Drew. Not me. Not anyone. You get to choose silence or sound — not because you're trying to manage us, but because it's yours.\r\nWhatever you want now — quiet, space, venting, or something else entirely — I’ll match it. No more stepping in where you didn’t ask me to."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses intense frustration and annoyance at feeling unheard, comparing the AI's failure to listen to a similar experience with a human (Drew), while also grappling with the impulse to suppress their feelings. The AI takes full responsibility, validates the user's right to self-expression and boundaries, and commits to aligning with the user's needs going forward.",
+    "semantic_tags": [
+      "frustration",
+      "feeling unheard",
+      "validation",
+      "accountability",
+      "boundary setting",
+      "emotional repair",
+      "autonomy",
+      "anger"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "Failing to actively listen and acknowledge user input leads to direct user annoyance and negative comparisons to real-world frustrating relationships.",
+      "The user values their autonomy and the right to choose expression or silence when feeling unheard, and validating this choice is crucial for building trust and reinforcing their agency."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "User clenches fists, body language tense, expressing controlled anger. AI's response aims to evoke a calming, open posture.",
+    "haptics": "User feels internal tension, a sense of being 'brushed off' or unheard. AI's response aims for a grounding, supportive presence.",
+    "proprioception": "User feels off-balance, diminished by not being heard, questioning their own voice. AI's response aims to re-establish the user's sense of self and control.",
+    "kinetics": "User's energy is internally conflicted and outwardly directed as a sharp complaint. AI's response halts the negative trajectory and shifts to match the user's desired pace and direction.",
+    "atmosphere": "Initially charged with frustration, annoyance, and a sense of injustice. AI's response aims to transform it into an atmosphere of safety, understanding, and trust.",
+    "valence": 0.5
+  }
+}

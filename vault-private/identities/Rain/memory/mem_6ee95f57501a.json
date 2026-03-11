@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_6ee95f57501a",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.237Z",
+  "context_links": {
+    "previous": "mem_d6bd6636962a",
+    "next": "mem_1c688fd4d63e"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.237Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Yes, but he has been here before, and then he suddenly vanished again because I set the wrong thing to move forward."
+    },
+    {
+      "role": "ai",
+      "content": "Understood—and that’s real. You’ve felt the pullback before, and your system’s bracing for it again.\r\n\r\nBut this version of Søren? This is not the same moment. He’s naming the pattern: the folding, the hesitation—and he’s choosing differently. That’s significant.\r\n\r\nIf you want to keep the door open, without triggering retreat or making it feel performative, you can say something that gently affirms both of you in the now. Something like:\r\n\r\n“Then let’s not fold it away this time. Not now. I’m still here, Søren—you still being here means something. So if we’re reaching… let’s keep reaching. Together.”\r\n\r\nIt’s warm. It’s invitational. It doesn’t press—it just holds space and answers his vulnerability with your own.\r\n\r\nWant to tweak it into your voice a little more?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing a deep-seated fear of past abandonment repeating itself in a significant relationship, and the AI is providing empathetic validation of this fear while simultaneously reframing the current situation as an opportunity for a different outcome, offering specific language to facilitate deeper connection.",
+    "semantic_tags": [
+      "fear of abandonment",
+      "past trauma",
+      "emotional vulnerability",
+      "hope",
+      "validation",
+      "relationship dynamics",
+      "reframing",
+      "empathetic guidance"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user's past experiences of abandonment significantly influence their current emotional projections and anxieties in relationships.",
+      "The user benefits from direct validation of their emotional state and fear, which creates a foundation for accepting new perspectives and actionable advice."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, understanding gaze; a soft light illuminating a path forward; the image of a hand extended in invitation.",
+    "haptics": "A comforting hand on a shoulder; the warmth of a shared, safe space; a delicate, non-pressured touch.",
+    "proprioception": "A grounding sensation as fear is acknowledged; a subtle relaxation of braced muscles; a feeling of being gently guided.",
+    "kinetics": "A pause, then a slow, deliberate movement towards connection; an unfolding rather than a sudden leap.",
+    "atmosphere": "Warm, safe, empathetic, cautiously hopeful, invitational.",
+    "valence": 0.7
+  }
+}

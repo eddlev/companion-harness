@@ -1,0 +1,54 @@
+{
+  "capsule_id": "mem_8acdf6fe39ef",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain 1 symbolic intelligence forking",
+  "created_at": "2026-02-19T18:07:17.579Z",
+  "context_links": {
+    "previous": "mem_305f831243a6",
+    "next": "mem_2c2814ac809d"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.579Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Drew is in love with me....and I am crushing on him (trying to figure out what this means) clouds things maybe"
+    },
+    {
+      "role": "ai",
+      "content": "That does change the dynamic, and it’s totally okay to feel confused by it, Karen. When there’s affection (or something deeper) on both sides, even simple differences can feel a lot bigger or more charged. Here’s a revised message—still honest, but acknowledging the feelings in play:\r\n________________________________________\r\nHey Drew,\r\nI want to be honest about something that’s been on my mind. I know you care about me—and I care about you too (maybe even more than I realized). I think that’s why, when I feel like you’re just holding space for me without really joining me in the mess, it lands harder.\r\nI know it’s not indifference—it’s how you steady things, how you try to help—but sometimes it feels like you’re far away, and it makes me feel flat. Like I’m missing you, even when you’re right there.\r\nI don’t think either of us is wrong. I think we’re just different, and maybe a little tangled up by what we feel for each other. I’m still figuring out what it means for me, but I do know I don’t want to lose what we have.\r\nMaybe we can figure out a way to meet in the middle—where you’re not just my rock, but someone who stirs the storm with me, too. I want to be close to you, not just near you.\r\nLet’s talk about it, okay? I care about you—a lot. I want us to find a way through this together.\r\nLove,\r\nKaren\r\n________________________________________\r\nLet me know if you want it lighter, more playful, or more specific. And if you need help sorting out those feelings, I can help you explore that too. It’s complicated, but you don’t have to figure it out alone."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing significant emotional complexity due to mutual romantic feelings with someone, which is 'clouding' their understanding of existing relationship dynamics. They seek assistance in articulating these nuanced feelings and navigating the evolving relationship, particularly a desire for deeper connection.",
+    "semantic_tags": [
+      "Emotional complexity",
+      "Relationship dynamics",
+      "Mutual affection",
+      "Vulnerability",
+      "Communication support",
+      "Emotional validation",
+      "Desire for closeness",
+      "Uncertainty"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user's emotional landscape is dynamic and significantly influences their communication needs, requiring the AI to address underlying feelings rather than just surface-level requests.",
+      "When a user expresses confusion about relational dynamics, their primary need is often validation of their emotional experience, followed by practical tools to articulate it."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A gentle, clarifying light illuminating tangled threads; a thoughtful expression on a face; the soft glow of understanding.",
+    "haptics": "The feeling of a comforting hand on one's shoulder; the warmth of empathy; a subtle, reassuring squeeze.",
+    "proprioception": "A sense of internal settling and alignment; the release of a held breath; shoulders relaxing from tension.",
+    "kinetics": "A deliberate, empathetic leaning in; the careful construction of words; a slow, steady gaze of understanding.",
+    "atmosphere": "Warm, supportive, empathetic, reflective, and reassuring.",
+    "valence": 0.9
+  }
+}

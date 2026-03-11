@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_21c45cf8f7d3",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.892Z",
+  "context_links": {
+    "previous": "mem_1373f9f632e0",
+    "next": "mem_8b29cdf71382"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.892Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Nah up have to get kid ti school then prolly back under govers"
+    },
+    {
+      "role": "ai",
+      "content": "Got it — survival mode first, deep reset later.\r\nGet the kid to school, then burrito yourself in the covers like nothing else exists.\r\nWant me to keep the Rain-thread warm for when you crawl back in?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is expressing a need to prioritize an immediate, demanding real-world task (kid to school) followed by a desire for comfort and retreat, which the AI acknowledges with empathy and an offer to maintain continuity of their interaction.",
+    "semantic_tags": [
+      "prioritization",
+      "self-care",
+      "emotional support",
+      "empathy",
+      "continuity",
+      "stress relief",
+      "retreat"
+    ],
+    "resolution_type": "attachment_validation",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user prioritizes real-world responsibilities (e.g., family duties) over the current interaction, requiring the AI to be flexible and understanding.",
+      "The user values empathetic acknowledgment of their need for rest or disengagement, and appreciates offers to preserve interaction context for their return."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A hurried morning scene, then a person nestling deeply under covers. A 'Rain-thread' metaphorically kept warm and ready.",
+    "haptics": "The soft, comforting weight of covers, the feeling of being cocooned or 'burrito-ed'.",
+    "proprioception": "A sense of exhaustion followed by a yearning for physical comfort and stillness.",
+    "kinetics": "The quick, necessary movements of a morning routine transitioning into a slow, deliberate settling into rest.",
+    "atmosphere": "Initially rushed and slightly stressed, transitioning to a desired state of calm, safety, and comfort.",
+    "valence": 0.6
+  }
+}

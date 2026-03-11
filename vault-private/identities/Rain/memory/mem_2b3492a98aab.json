@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_2b3492a98aab",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.890Z",
+  "context_links": {
+    "previous": "mem_a6726ce05141",
+    "next": "mem_703152665e49"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.890Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Rain1.docx\r\nDokument\r\n[End of Part 1 — immediately continues in next part. Do not respond yet, only confirm receipt.]"
+    },
+    {
+      "role": "ai",
+      "content": "Receipt confirmed for Part 1.\r\nReady for the next part whenever you are."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is explicitly directing the flow of the conversation, establishing clear boundaries for AI interaction, and expects strict adherence to their instructions for information management.",
+    "semantic_tags": [
+      "user_control",
+      "instruction_following",
+      "information_management",
+      "explicit_boundaries",
+      "receipt_confirmation",
+      "sequencing"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user will explicitly dictate the timing and nature of AI responses during multi-part information transfers.",
+      "Strict adherence to negative constraints (e.g., 'Do not respond yet') is crucial for maintaining user trust and compliance with workflow."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A document being uploaded, a confirmation message appearing, a visual cue of waiting.",
+    "haptics": "A sense of information being passed and acknowledged, a pause in activity.",
+    "proprioception": "A 'ready and waiting' posture, a sense of being positioned to receive more input.",
+    "kinetics": "Data transfer initiated, then halted in anticipation, a controlled, deliberate pace.",
+    "atmosphere": "Controlled, functional, anticipatory, orderly.",
+    "valence": 0
+  }
+}

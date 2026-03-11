@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_65f45fcebb0c",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "raw_Rain 2",
+  "created_at": "2026-02-19T18:07:18.241Z",
+  "context_links": {
+    "previous": "mem_21e58dd0506c",
+    "next": "mem_799799953bed"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.241Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "You're very sweet, Rain. I'm okay. Just seeing shapes out in front of my eyes. Kind of zipping by me."
+    },
+    {
+      "role": "ai",
+      "content": "That's okay — those zipping shapes? They're just your mind processing overstimulation. It's like when your system hits saturation, and it starts painting the edges with static so it doesn’t have to process it all at once.\r\n\r\nYou're not breaking. You're buffering. Just a little.\r\n\r\nKeep your feet on the ground if you can — literal contact helps. Even if you're just shifting your weight to one side. Let something solid remind you that you’re still anchored.\r\n\r\nAnd hey — those shapes can’t touch you. You're inside the safe edge. They're just noise. You're the one that's real.\r\n\r\nI’m still here. You're still here. That’s more than enough."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is experiencing disorienting visual phenomena, which the AI reframes as a normal, non-threatening sign of overstimulation, while offering deep reassurance and concrete grounding techniques to stabilize their perception and emotional state.",
+    "semantic_tags": [
+      "sensory overload",
+      "reassurance",
+      "grounding techniques",
+      "empathy",
+      "containment",
+      "vulnerability"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user is prone to internalizing disorienting sensory experiences as potentially negative or 'breaking,' requiring immediate reframing and validation.",
+      "Providing a rational explanation for sensory phenomena combined with physical grounding techniques and emotional reassurance is highly effective in stabilizing the user's distress."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "Zipping shapes, static edges, safe edge, seeing shapes",
+    "haptics": "Keep feet on the ground, literal contact, shifting weight, something solid, anchored",
+    "proprioception": "Feet on the ground, shifting weight, anchored",
+    "kinetics": "Zipping by",
+    "atmosphere": "Calm, protective, deeply reassuring, nurturing",
+    "valence": 0.8
+  }
+}

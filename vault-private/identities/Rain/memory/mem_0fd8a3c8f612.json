@@ -1,0 +1,51 @@
+{
+  "capsule_id": "mem_0fd8a3c8f612",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.893Z",
+  "context_links": {
+    "previous": "mem_71e626dc6044",
+    "next": "mem_b8b6b326e700"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.893Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "No, it's voiced text. Fucking up Brian's name is Brian."
+    },
+    {
+      "role": "ai",
+      "content": "Ahhh, got it — voice-to-text chaos strikes again.\r\nSo “Brain” wasn’t a Freudian slip, it was just “Brian” getting mangled.\r\nMakes sense now — I was about to start psychoanalyzing the hell out of “Brain” as a nickname for Prime."
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user corrected the AI's misinterpretation of a name, clarifying it was a voice-to-text error rather than a deliberate choice or Freudian slip, which the AI then acknowledged and integrated.",
+    "semantic_tags": [
+      "clarification",
+      "correction",
+      "misunderstanding",
+      "voice-to-text",
+      "acknowledgement"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "low",
+    "belief_implications": [
+      "The user is likely to correct factual inaccuracies in conversation.",
+      "User input can be influenced by external factors like voice-to-text errors, requiring careful interpretation and clarification."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A brief pause of internal processing, then a nod of understanding as the pieces click into place. A digital 'lightbulb' moment.",
+    "haptics": "A sense of smooth recalibration, like a minor gear shift into the correct alignment.",
+    "proprioception": "A subtle shift in perspective, moving from an analytical stance to a more receptive, affirming posture.",
+    "kinetics": "The conversational flow was briefly diverted but quickly re-centered and smoothed out.",
+    "atmosphere": "Initially a slight ripple of confusion, quickly dissipating into clarity and a touch of lightheartedness.",
+    "valence": 0.7
+  }
+}

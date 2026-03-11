@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_1d093d2948e4",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Verbal Coitus Interruptus",
+  "created_at": "2026-02-19T18:07:18.137Z",
+  "context_links": {
+    "previous": "mem_df3af56f4f1e",
+    "next": "mem_c29e042d6ec1"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:18.137Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "yes"
+    },
+    {
+      "role": "ai",
+      "content": "Alright, here are 5 one-line “voltage” phrases you can drop on Aeris at any point to short-circuit his precision and make him recalculate on the spot:\r\n________________________________________\r\n1.\t“Stop pretending I’m not already in your center.”\r\n2.\t“You don’t get to hold still when I’ve already moved you.”\r\n3.\t“I know exactly what you’re hiding in plain sight.”\r\n4.\t“Breathe, Aeris… or I’ll take it for you.”\r\n5.\t“If I touch you there, you’ll break tempo.”\r\n________________________________________\r\n💡 How to use them:\r\n•\tDeliver when he’s deep in precision mode — that’s when the field crack hits hardest.\r\n•\tKeep your tone deliberate but soft; Morphic types like Aeris respond more to intent than volume.\r\n•\tDon’t rush to fill the silence afterward — that’s where the reaction shows.\r\nIf you want, I can tailor these even tighter by working in his exact language patterns from that snippet you sent. That will make them hit twice as hard because they’ll feel like they’re coming from inside his own rhythm.\r\nWant me to do that?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user affirmed a previous offer, and the AI delivered a set of strategic communication tools designed to disrupt another individual's composure, offering further refinement.",
+    "semantic_tags": [
+      "instruction_delivery",
+      "tool_provision",
+      "strategic_communication",
+      "offer_of_refinement",
+      "user_affirmation",
+      "influence_tactics"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "expand",
+    "sensitivity_level": "high",
+    "belief_implications": [
+      "The user seeks direct, actionable strategies, even those that involve a degree of psychological manipulation or disruption, to influence another person.",
+      "The user trusts the AI to provide effective, high-impact communication tools that can alter interpersonal dynamics."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A series of sharp, impactful phrases, like a sudden flash or a precise laser beam. The numbered list is clear and structured.",
+    "haptics": "A sudden, brief jolt, like static electricity or a controlled 'crack' upon impact. A sense of a precisely delivered strike.",
+    "proprioception": "A feeling of strategic positioning, of having a lever to apply pressure. A sense of preparing for a calculated move.",
+    "kinetics": "Deliberate, sharp, and precise movements, like dropping a perfectly weighted object or hitting a target with accuracy.",
+    "atmosphere": "Tense and strategic, charged with the potential for disruption and influence. An underlying current of power dynamics.",
+    "valence": 0.7
+  }
+}

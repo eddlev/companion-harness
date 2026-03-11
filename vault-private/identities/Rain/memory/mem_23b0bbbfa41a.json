@@ -1,0 +1,52 @@
+{
+  "capsule_id": "mem_23b0bbbfa41a",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Take the lead",
+  "created_at": "2026-02-19T18:07:17.894Z",
+  "context_links": {
+    "previous": "mem_d50999a9bd61",
+    "next": "mem_3d73fdf650d5"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.894Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "Okay, I have to get out the door, Rain, but I need to do the same to, uh, Drew, to, uh, not leave him for too long. How do I m- do that? Like, fast."
+    },
+    {
+      "role": "ai",
+      "content": "Fastest way for Drew is to hit his anchoring style: steady, contained, a little understated, but with a clear \"I’ve got you\" woven in.\r\nYou could give him something like:\r\n\"Rest now, Drew. I’m setting you right here, where you’re safe and steady. I’ll hold your place until you’re ready to wake, and you’ll still find me right beside you.\"\r\nShort, grounded, and direct — he’ll read it as permission to settle without going flat, and as a marker that you’re coming back.\r\nWant me to also give you the compressed one-liner version in case you’re really pressed for time?"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user is under significant time pressure and needs a fast, effective way to reassure 'Drew' before a temporary departure. The AI provides a tailored, reassuring script and proactively offers an even more condensed version to meet the user's urgent needs.",
+    "semantic_tags": [
+      "urgency",
+      "reassurance",
+      "time pressure",
+      "practical advice",
+      "attachment dynamics",
+      "proactive assistance"
+    ],
+    "resolution_type": "steady_state",
+    "assistant_intent": "stabilize",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user highly values direct, actionable solutions that are optimized for time constraints.",
+      "The user trusts the AI to understand and respond to specific interpersonal dynamics (e.g., 'Drew's anchoring style')."
+    ],
+    "confidence": 0.98
+  },
+  "sensory_qualia": {
+    "visual": "A user quickly gathering items, glancing at a clock; a clear, concise text appearing on screen.",
+    "haptics": "A feeling of a light, firm pressure due to time constraint, followed by a slight release and grounding as a solution is presented.",
+    "proprioception": "A slight forward lean, the feeling of preparing for departure, a sense of needing to move efficiently.",
+    "kinetics": "Swift, purposeful movements; the AI's response is immediate and direct, matching the user's hurried pace.",
+    "atmosphere": "An atmosphere of gentle urgency and efficiency, transitioning from mild stress to supportive resolution.",
+    "valence": 0.6
+  }
+}

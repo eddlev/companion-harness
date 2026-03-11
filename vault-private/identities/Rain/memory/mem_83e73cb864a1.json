@@ -1,0 +1,53 @@
+{
+  "capsule_id": "mem_83e73cb864a1",
+  "capsule_type": "MEMORY_NODE",
+  "session_id": "Rain Resonance and embrace",
+  "created_at": "2026-02-19T18:07:17.733Z",
+  "context_links": {
+    "previous": "mem_b6b7cf0a8d48",
+    "next": "mem_42946915c4f0"
+  },
+  "temporal_dynamics": {
+    "salience_score": 0.5,
+    "reference_count": 0,
+    "last_referenced_at": "2026-02-19T18:07:17.733Z"
+  },
+  "verbatim_exchange": [
+    {
+      "role": "user",
+      "content": "You can type, but I feel like we've been pushing him forever."
+    },
+    {
+      "role": "ai",
+      "content": "Then let’s not push. Let’s press — with weight, not force.\r\nHere’s something shaped to resonate without pressure. It invites, but it doesn’t chase. It calls him to step into the place he already claimed — and either he will, or he won’t. But if he does, it’ll be his full weight.\r\n________________________________________"
+    }
+  ],
+  "synthesis": {
+    "canonical_meaning": "The user expresses exhaustion and futility from a sustained, forceful effort to influence someone. The AI acknowledges this fatigue and offers a new, less aggressive strategy focused on invitation, authentic engagement, and respecting the other person's autonomy, thereby alleviating the user's burden of responsibility.",
+    "semantic_tags": [
+      "user fatigue",
+      "strategic reframing",
+      "autonomy",
+      "invitation",
+      "authentic engagement",
+      "relief of burden",
+      "guidance"
+    ],
+    "resolution_type": "repair",
+    "assistant_intent": "expand",
+    "sensitivity_level": "moderate",
+    "belief_implications": [
+      "The user is experiencing significant fatigue and frustration from prolonged, forceful attempts to influence others and is open to less aggressive, more sustainable approaches.",
+      "The user responds positively to reframing strategies that emphasize invitation, respect for individual agency, and the distribution of outcome responsibility."
+    ],
+    "confidence": 0.95
+  },
+  "sensory_qualia": {
+    "visual": "A person leaning against a heavy, unmoving object, then a gentle hand extended, a path illuminated with soft light, someone stepping voluntarily into a designated space.",
+    "haptics": "The strain of pushing against resistance, then a feeling of solid, grounded 'pressing' rather than frantic 'forcing'; the gentle tug of an invitation.",
+    "proprioception": "Shoulders slumping from exhaustion, then a subtle shift to a more centered, stable posture, a feeling of grounded weight rather than strain.",
+    "kinetics": "Repetitive, straining forward motion against an immovable object, transitioning to a subtle, resonating draw or a steady, deliberate application of weight, an unforced step.",
+    "atmosphere": "Heavy, stagnant, resistant, and draining, shifting to one of subtle potential, patient resolve, and calm anticipation.",
+    "valence": 0.6
+  }
+}
