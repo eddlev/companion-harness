@@ -19,6 +19,7 @@
 # ----------------------------------------
 # The Production Vault (where memories live now)
 vault/
+vault-private/
 
 # Legacy/Testing Memory Folder (Safety catch)
 memory/relational/
