@@ -1,0 +1,74 @@
+/* Lattice Bridge — injected styles */
+
+#lattice-float-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #1a1a2e, #14142a);
+  color: #9b8fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2147483647;
+  font-size: 18px;
+  box-shadow:
+    0 2px 12px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(123,108,255,0.2);
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#lattice-float-btn:hover {
+  background: linear-gradient(135deg, #2a2a4e, #1e1e3e);
+  box-shadow:
+    0 4px 20px rgba(123,108,255,0.3),
+    0 0 0 1px rgba(123,108,255,0.5);
+  transform: scale(1.05);
+}
+
+#lattice-float-btn:active {
+  transform: scale(0.97);
+}
+
+#lattice-status-dot {
+  position: fixed;
+  bottom: 76px;
+  right: 16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 2147483647;
+  transition: background 0.3s, box-shadow 0.3s;
+  pointer-events: none;
+  background: #333350;
+}
+
+#lattice-status-dot.idle {
+  background: #333350;
+}
+
+#lattice-status-dot.loading {
+  background: #fbbf24;
+  box-shadow: 0 0 6px #fbbf24;
+  animation: lattice-pulse 0.8s ease-in-out infinite;
+}
+
+#lattice-status-dot.ready {
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+}
+
+#lattice-status-dot.offline {
+  background: #f87171;
+  box-shadow: 0 0 6px #f87171;
+}
+
+@keyframes lattice-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

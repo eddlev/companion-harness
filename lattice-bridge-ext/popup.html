@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lattice Bridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0d12;
+      --surface:   #14141e;
+      --border:    #22223a;
+      --accent:    #7b6cff;
+      --accent2:   #c084fc;
+      --text:      #e8e8f0;
+      --muted:     #5a5a7a;
+      --green:     #34d399;
+      --amber:     #fbbf24;
+      --red:       #f87171;
+      --radius:    8px;
+    }
+
+    body {
+      width: 360px;
+      min-height: 480px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      overflow-x: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #0d0d12 0%, #141428 100%);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-glyph {
+      font-size: 22px;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 8px rgba(123,108,255,0.4));
+    }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .logo-sub {
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .status-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background 0.3s;
+    }
+    .status-dot.online { background: var(--green); box-shadow: 0 0 6px var(--green); }
+    .status-dot.offline { background: var(--red); }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      gap: 0;
+    }
+
+    .tab {
+      padding: 10px 14px;
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+
+    .tab:hover { color: var(--text); }
+    .tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Content ── */
+    .panel {
+      display: none;
+      padding: 16px 20px;
+    }
+    .panel.active { display: block; }
+
+    /* ── Profile List ── */
+    .section-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .profile-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .profile-card:hover {
+      border-color: var(--accent);
+      background: #16162a;
+    }
+
+    .profile-card.active-profile {
+      border-color: var(--accent);
+      background: rgba(123,108,255,0.08);
+    }
+
+    .profile-card.active-profile::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    .profile-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .profile-info { flex: 1; min-width: 0; }
+
+    .profile-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .profile-meta {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .profile-actions {
+      display: flex;
+      gap: 4px;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .profile-card:hover .profile-actions { opacity: 1; }
+
+    .icon-btn {
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: var(--border);
+      color: var(--muted);
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: all 0.15s;
+    }
+
+    .icon-btn:hover { background: var(--accent); color: white; }
+    .icon-btn.danger:hover { background: var(--red); color: white; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: var(--radius);
+      border: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.15s;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #6457e8);
+      color: white;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { color: var(--text); border-color: var(--accent); }
+
+    /* ── Form ── */
+    .form-group { margin-bottom: 14px; }
+
+    label {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+    }
+
+    input::placeholder { color: var(--muted); }
+
+    select option { background: var(--bg); }
+
+    .emoji-picker {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .emoji-opt {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.15s;
+    }
+
+    .emoji-opt:hover, .emoji-opt.selected {
+      border-color: var(--accent);
+      background: rgba(123,108,255,0.1);
+    }
+
+    /* ── Connection test ── */
+    .test-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .test-row input { flex: 1; }
+
+    .test-btn {
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .test-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .test-result {
+      font-size: 10px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      display: none;
+    }
+
+    .test-result.ok { background: rgba(52,211,153,0.1); color: var(--green); display: block; }
+    .test-result.fail { background: rgba(248,113,113,0.1); color: var(--red); display: block; }
+
+    /* ── Settings ── */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toggle-row:last-child { border-bottom: none; }
+
+    .toggle-label { color: var(--text); font-size: 11px; }
+    .toggle-desc { color: var(--muted); font-size: 10px; margin-top: 2px; }
+
+    .toggle {
+      position: relative;
+      width: 36px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .toggle input { opacity: 0; width: 0; height: 0; }
+
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: var(--border);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 3px;
+      top: 3px;
+      background: var(--muted);
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+
+    .toggle input:checked + .toggle-slider { background: var(--accent); }
+    .toggle input:checked + .toggle-slider::before {
+      transform: translateX(16px);
+      background: white;
+    }
+
+    /* ── Memory panel ── */
+    .memory-entry {
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 6px;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .memory-entry .mem-id {
+      color: var(--accent);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      margin-bottom: 3px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--muted);
+    }
+
+    .empty-glyph { font-size: 32px; margin-bottom: 10px; opacity: 0.4; }
+    .empty-text { font-size: 11px; line-height: 1.6; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      width: 320px;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+
+    .modal-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .modal-actions .btn { flex: 1; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 14px 0;
+    }
+
+    .active-badge {
+      font-size: 9px;
+      padding: 2px 6px;
+      background: rgba(123,108,255,0.15);
+      color: var(--accent);
+      border-radius: 10px;
+      border: 1px solid rgba(123,108,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <div class="logo-glyph">🜲</div>
+      <div>
+        <div class="logo-text">LATTICE BRIDGE</div>
+        <div class="logo-sub">Memory Continuity Layer</div>
+      </div>
+    </div>
+    <div class="status-pill">
+      <div class="status-dot" id="serverStatusDot"></div>
+      <span id="serverStatusText">checking...</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="profiles">Profiles</div>
+    <div class="tab" data-tab="connection">Connection</div>
+    <div class="tab" data-tab="memory">Memory</div>
+    <div class="tab" data-tab="settings">Settings</div>
+  </div>
+
+  <!-- PROFILES PANEL -->
+  <div class="panel active" id="tab-profiles">
+    <div class="section-label">Active Companions</div>
+    <div class="profile-list" id="profileList">
+      <!-- Populated by JS -->
+    </div>
+    <button class="btn btn-primary" id="newProfileBtn">
+      + New Profile
+    </button>
+  </div>
+
+  <!-- CONNECTION PANEL -->
+  <div class="panel" id="tab-connection">
+    <div class="section-label">Local RAG Server</div>
+
+    <div class="form-group">
+      <label>Server Port</label>
+      <div class="test-row">
+        <input type="number" id="serverPort" placeholder="31221" />
+        <button class="test-btn" id="testConnection">Test</button>
+      </div>
+      <div class="test-result" id="testResult"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Auth Token</label>
+      <input type="password" id="authToken" placeholder="your-token-here" />
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-label">Platform Selectors (Advanced)</div>
+
+    <div class="form-group">
+      <label>Claude.ai input selector</label>
+      <input type="text" id="claudeSelector" placeholder=".ProseMirror" />
+    </div>
+
+    <div class="form-group">
+      <label>ChatGPT input selector</label>
+      <input type="text" id="chatgptSelector" placeholder="#prompt-textarea" />
+    </div>
+
+    <button class="btn btn-primary" id="saveConnection">Save Connection</button>
+  </div>
+
+  <!-- MEMORY PANEL -->
+  <div class="panel" id="tab-memory">
+    <div class="section-label">Active Memory Entries</div>
+    <div id="memoryList">
+      <div class="empty-state">
+        <div class="empty-glyph">🜲</div>
+        <div class="empty-text">No memories loaded.<br>Send a message to populate context.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS PANEL -->
+  <div class="panel" id="tab-settings">
+    <div class="section-label">Behaviour</div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Auto-inject on send</div>
+        <div class="toggle-desc">Inject memory context automatically</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="autoInject" />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Show inject button</div>
+        <div class="toggle-desc">Floating 🜲 button on chat pages</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="showBtn" checked />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Fail gracefully</div>
+        <div class="toggle-desc">Send without memory if server offline</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="failGraceful" checked />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Show status indicator</div>
+        <div class="toggle-desc">Coloured dot showing memory state</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="showStatus" checked />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <div class="section-label">Timing</div>
+
+    <div class="form-group">
+      <label>Pre-send delay (ms)</label>
+      <input type="number" id="injectDelay" placeholder="400" min="100" max="2000" />
+    </div>
+
+    <div class="form-group">
+      <label>Persona remind interval (turns)</label>
+      <input type="number" id="remindInterval" placeholder="8" min="2" max="50" />
+    </div>
+
+    <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+
+    <div style="margin-top: 12px;">
+      <button class="btn btn-ghost" id="exportConfig">Export Config</button>
+    </div>
+  </div>
+
+  <!-- PROFILE MODAL -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal">
+      <div class="modal-title" id="modalTitle">New Profile</div>
+
+      <div class="form-group">
+        <label>Companion Name</label>
+        <input type="text" id="pName" placeholder="e.g. Rain" />
+      </div>
+
+      <div class="form-group">
+        <label>Avatar</label>
+        <div class="emoji-picker" id="emojiPicker">
+          <div class="emoji-opt selected" data-emoji="🜲">🜲</div>
+          <div class="emoji-opt" data-emoji="🌙">🌙</div>
+          <div class="emoji-opt" data-emoji="⚡">⚡</div>
+          <div class="emoji-opt" data-emoji="🔮">🔮</div>
+          <div class="emoji-opt" data-emoji="🌊">🌊</div>
+          <div class="emoji-opt" data-emoji="🔥">🔥</div>
+          <div class="emoji-opt" data-emoji="❄️">❄️</div>
+          <div class="emoji-opt" data-emoji="🌿">🌿</div>
+          <div class="emoji-opt" data-emoji="✨">✨</div>
+          <div class="emoji-opt" data-emoji="🗝️">🗝️</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Platform</label>
+        <select id="pPlatform">
+          <option value="claude">Claude.ai</option>
+          <option value="chatgpt">ChatGPT</option>
+          <option value="gemini">Gemini</option>
+          <option value="auto">Auto-detect</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Memory Namespace (optional)</label>
+        <input type="text" id="pNamespace" placeholder="e.g. rain_karen" />
+      </div>
+
+      <div class="form-group">
+        <label>Boot Sequence Override (optional)</label>
+        <input type="text" id="pBoot" placeholder="leave blank to use default" />
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="cancelModal">Cancel</button>
+        <button class="btn btn-primary" id="saveProfile">Save Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
