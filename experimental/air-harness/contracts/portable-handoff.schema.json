@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/eddlev/companion-harness/blob/experimental/air-harness-portability-v0.1/experimental/air-harness/contracts/portable-handoff.schema.json",
+  "title": "AIR Harness experimental portable handoff (no authority transfer)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "project_id", "task", "evidence_refs", "authority_transfer",
+    "approval_scopes", "material_action_status", "restore_policy", "assurance"
+  ],
+  "properties": {
+    "schema_version": { "const": "AIR_HARNESS_PORTABLE_STATE_V0_1" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "task": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["task_id", "scope", "benchmark"],
+          "properties": {
+            "task_id": { "type": "string", "minLength": 1 },
+            "scope": { "type": "string", "minLength": 1 },
+            "benchmark": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "authority_transfer": { "const": "NONE" },
+    "approval_scopes": { "type": "array", "maxItems": 0 },
+    "material_action_status": { "const": "REQUIRES_NEW_SESSION_REVIEW" },
+    "restore_policy": { "const": "REVIEW_AND_EXPLICIT_TASK_RECONFIRMATION" },
+    "assurance": { "const": "PORTABLE_UNAUTHENTICATED_STATE" }
+  }
+}
