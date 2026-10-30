@@ -41,3 +41,9 @@
 | G8 Human-approved adoption after evidence and licensing review | Not approved |
 
 **Before live execution** reconcile the original Companion Harness's post-dispatch checks, time-incorrect observer snapshots, revocation handling and competing canonicalization paths. Do not attach a side-effecting adapter to legacy `HarnessRunner` without that review.
+
+## v0.2 checkpoint
+
+- **Implemented in detached branch:** separated local development hashing and unverified external BinLing adapter assertions; handoff state envelope and review-only restore; Graphify no longer required for ENHANCED mode.
+- **Not implemented:** direct Rust VM bridge; signed source and actor authentication; durable idempotency; executable policy-core verification; complete R23/R135 reconciliation; real host acceptance; external adapter validation; real-environment runner acceptance.
+- **Evidence limitation:** the committed state-integrity test suite is present but has not been executed against a checked-out GitHub branch; development reference had 17/17 local tests. Run `npm test` in a clean checkout before acceptance.
