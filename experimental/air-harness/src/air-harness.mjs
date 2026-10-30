@@ -10,7 +10,7 @@ export const CAPABILITY_CONTRACT_VERSION = 'AIR_HARNESS_CAPABILITY_V0_1';
 export const PORTABLE_HANDOFF_VERSION = 'AIR_HARNESS_PORTABLE_STATE_V0_1';
 const MODES = new Set(['STANDALONE', 'HARNESS', 'ENHANCED']);
 const MINIMUM_EFFECT_ADAPTERS = ['verifyApproval', 'dispatchMaterial', 'verifyEffect'];
-const OPTIONAL_ENHANCEMENT_ADAPTERS = ['canonicalizeState', 'verifyState', 'graphLookup'];
+const OPTIONAL_ENHANCEMENT_ADAPTERS = ['canonicalizeState', 'verifyState']; // Graphify remains independently optional
 
 export class AirHarnessError extends Error {
   constructor(code, message) {
