@@ -34,3 +34,11 @@ The JSON Schemas in `contracts/` are contract declarations; strict runtime JSON 
 - The repository is AGPL-3.0; AIR Kit is Apache-2.0. Legal/license review required before combining software.
 
 See `MIGRATION_PLAN.md` for incomplete work and acceptance gates.
+
+## v0.2 state-integrity experiment
+
+`src/state-integrity.mjs` adds a deterministic **development-only** JSON fingerprint and a separate externally provided adapter interface. `test/state-integrity.test.mjs` provides negative cases for mutation, approval transfer, unknown profiles and forged proof claims. Both envelopes are **non-authorizing**, and neither verifies BinLing VM execution or authenticity of the source. `AirStateBridge` exports review-only state and restores via explicit task reconfirmation. No real provider, protected storage, Graphify, BinLing VM or effect broker is connected.
+
+Local validation of a reference prototype passed 17 unit tests. The committed variant includes a new 15-case Node test suite; it has not been executed in a clean GitHub checkout in this environment. Run `npm test` before treating the branch as tested. GitHub's connector verifies that the files exist, not runtime correctness.
+
+**Portability correction:** Graphify is not required for ENHANCED mode; only the two canonical-state adapter interfaces are required. This is interface registration, **not verified enforcement**.
