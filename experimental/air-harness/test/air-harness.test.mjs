@@ -36,8 +36,9 @@ test('complete registered adapters remain unverified',()=>{
 test('explicit standalone does not upgrade automatically',()=>{
   assert.equal(capabilityReport({requested_mode:'STANDALONE',host,adapters:adapters()}).effective_mode,'STANDALONE');
 });
-test('enhanced requires state and graph interfaces',()=>{
+test('enhanced requires state interfaces but never Graphify',()=>{
   assert.equal(capabilityReport({requested_mode:'ENHANCED',host,adapters:adapters()}).effective_mode,'HARNESS');
+  assert.equal(capabilityReport({requested_mode:'ENHANCED',host,adapters:{...adapters(),canonicalizeState(){},verifyState(){}}}).effective_mode,'ENHANCED');
   assert.equal(capabilityReport({requested_mode:'ENHANCED',host,adapters:{...adapters(),canonicalizeState(){},verifyState(){},graphLookup(){}}}).effective_mode,'ENHANCED');
 });
 test('single task and task-bound actions',()=>{
