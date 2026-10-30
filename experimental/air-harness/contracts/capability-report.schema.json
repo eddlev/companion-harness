@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/eddlev/companion-harness/blob/experimental/air-harness-portability-v0.1/experimental/air-harness/contracts/capability-report.schema.json",
+  "title": "AIR Harness experimental portable capability report",
+  "description": "Non-authorizing report of interface availability. REGISTERED_UNVERIFIED is not assurance or permission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_version", "host", "requested_mode", "effective_mode", "capabilities", "assurance"],
+  "properties": {
+    "contract_version": { "const": "AIR_HARNESS_CAPABILITY_V0_1" },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "model"],
+      "properties": {
+        "provider": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 }
+      }
+    },
+    "requested_mode": { "$ref": "#/$defs/mode" },
+    "effective_mode": { "$ref": "#/$defs/mode" },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "portable_cognitive_work", "portable_handoff", "scoped_approval_verifier",
+        "external_material_dispatch", "effect_evidence_verifier",
+        "binling_canonical_state", "graph_retrieval"
+      ],
+      "properties": {
+        "portable_cognitive_work": { "const": "PROMPT_CAPABLE_NOT_MODEL_TESTED" },
+        "portable_handoff": { "const": "LOCAL_REFERENCE_ONLY" },
+        "scoped_approval_verifier": { "$ref": "#/$defs/interfaceStatus" },
+        "external_material_dispatch": { "$ref": "#/$defs/interfaceStatus" },
+        "effect_evidence_verifier": { "$ref": "#/$defs/interfaceStatus" },
+        "binling_canonical_state": { "$ref": "#/$defs/interfaceStatus" },
+        "graph_retrieval": { "$ref": "#/$defs/interfaceStatus" }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backend_enforcement_claimed", "source_authenticity_claimed",
+        "host_behavior_verified", "adapter_implementation_verified", "note"
+      ],
+      "properties": {
+        "backend_enforcement_claimed": { "const": false },
+        "source_authenticity_claimed": { "const": false },
+        "host_behavior_verified": { "const": false },
+        "adapter_implementation_verified": { "const": false },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "mode": { "enum": ["STANDALONE", "HARNESS", "ENHANCED"] },
+    "interfaceStatus": { "enum": ["NOT_CONNECTED", "REGISTERED_UNVERIFIED"] }
+  }
+}
